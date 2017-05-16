@@ -14,6 +14,7 @@ namespace Conflow
     {
         Cadastro_MoradoresUC moradoresUC;
         Cadastro_PrediosUC prediosUC;
+        Cadastro_BlocosUC blocosUC;
 
         public Cadastro_OpcoesUC()
         {
@@ -40,6 +41,22 @@ namespace Conflow
 
             CadastrarOPPanel.Controls.Clear();
             CadastrarOPPanel.Controls.Add(prediosUC);
+        }
+
+        private void Cadastrar_BlocoBtn_Click(object sender, EventArgs e)
+        {
+            if (blocosUC == null)
+            {
+                blocosUC = new Cadastro_BlocosUC();
+            }
+
+            CadastrarOPPanel.Controls.Clear();
+            CadastrarOPPanel.Controls.Add(blocosUC);
+        }
+
+        private void Cadastrar_CondominioBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

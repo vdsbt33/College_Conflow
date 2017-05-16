@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cadastro_BlocosUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cadastro_BlocosUC.Designer.cs">
+      <DependentUpon>Cadastro_BlocosUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cadastro_OpcoesUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="UCPessoa_Juridica.Designer.cs">
       <DependentUpon>UCPessoa_Juridica.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Cadastro_BlocosUC.resx">
+      <DependentUpon>Cadastro_BlocosUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cadastro_OpcoesUC.resx">
       <DependentUpon>Cadastro_OpcoesUC.cs</DependentUpon>
     </EmbeddedResource>

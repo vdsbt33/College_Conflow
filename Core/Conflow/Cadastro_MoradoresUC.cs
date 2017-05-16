@@ -148,13 +148,9 @@ namespace Conflow
                     dataDia += "0";
                 }
                 dataDia += datanascimentoDtp.Value.Date.Day.ToString();
-
-                MessageBox.Show("Data de nascimento: " + dataDia);
+                
 
                 String cmdTxt = "INSERT INTO MORADORES(NOME_MORADOR, RG_MORADOR, CPF_MORADOR, DAT_NASCIMENTO_MORADOR ) VALUES(\"" + nomeTbox.Text + "\", \"" + rgTbox.Text + "\", \"" + cpfCnpjDesmascarado.Text + "\", \"" + dataDia + "\" );";
-
-                MessageBox.Show("cmdTxt: ", cmdTxt.ToString());
-                nomeTbox.Text = cmdTxt;
 
                 ExecutarComandoSql(cmdTxt, "Novo usuário adicionado com sucesso!", "Não foi possível adicionar o usuário.");
 

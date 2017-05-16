@@ -21,6 +21,27 @@ namespace Conflow
         public String str = @"server=127.0.0.1;database=conflow;userid=root;password=123456;"; // YEEEE BOOOI
         public MySqlConnection conn = null;
 
+        public void AtualizarCondominioLista()
+        {
+            conn = new MySqlConnection(str);
+            conn.Open();
+
+            String textoCmd = "SELECT COD_BLOCO, ID_BLOCO, QTD_PREDIOS_BLOCO FROM BLOCOS;";
+
+            MySqlCommand comandoSql = new MySqlCommand(textoCmd, conn);
+            comandoSql.Prepare();
+
+            condominioList.Items.Clear();
+
+            using (MySqlDataReader leitor = comandoSql.ExecuteReader())
+            {
+                while (leitor.Read())
+                {
+                    int index = dgView.Rows.Add();
+                }
+            }
+                }
+
         private void AtualizarDgView()
         {
             try
@@ -45,7 +66,7 @@ namespace Conflow
                         linhaTabela.Cells["QTD_APARTAMENTOS_PREDIO"].Value = leitor["QTD_APARTAMENTOS_PREDIO"];
                         linhaTabela.Cells["VAL_MENSALIDADES_PREDIO"].Value = String.Format("R${0}", Convert.ToInt32(leitor["VAL_MENSALIDADES_PREDIO"]) * 1.00m);
                         linhaTabela.Cells["VAL_FRACAO_IDEAL_PREDIO"].Value = String.Format("R${0}", Convert.ToInt32(leitor["VAL_FRACAO_IDEAL_PREDIO"]) * 1.00m);
-                        
+
                     }
                 }
 
