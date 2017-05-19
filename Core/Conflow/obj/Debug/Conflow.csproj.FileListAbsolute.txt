@@ -31,3 +31,4 @@ C:\Users\Vinicius\Documents\Visual Studio 2017\Projects\Conflow\Core\Conflow\obj
 C:\Users\Vinicius\Documents\Visual Studio 2017\Projects\Conflow\Core\Conflow\obj\Debug\Conflow.exe
 C:\Users\Vinicius\Documents\Visual Studio 2017\Projects\Conflow\Core\Conflow\obj\Debug\Conflow.pdb
 C:\Users\Vinicius\Documents\Visual Studio 2017\Projects\Conflow\Core\Conflow\obj\Debug\Conflow.Cadastro_BlocosUC.resources
+C:\Users\Vinicius\Documents\Visual Studio 2017\Projects\Conflow\Conflow\obj\Debug\Conflow.Cadastro_BlocosUC.resources

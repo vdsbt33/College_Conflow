@@ -37,6 +37,7 @@ namespace Conflow
                 MySqlCommand comandoSql = new MySqlCommand(textoCmd, conn);
                 comandoSql.Prepare();
                 comandoSql.ExecuteNonQuery();
+
                 if (msgSucesso.Length > 0)
                 {
                     MessageBox.Show(msgSucesso);
@@ -69,7 +70,16 @@ namespace Conflow
                 conn = new MySqlConnection(str);
                 conn.Open();
 
-                String textoCmd = "SELECT NOME_MORADOR, RG_MORADOR, CPF_MORADOR, DAT_NASCIMENTO_MORADOR FROM MORADORES;";
+                String textoCmd =   "SELECT MOR.NOME_MORADOR" +
+                                        ",MOR.RG_MORADOR" +
+                                        ",MOR.DAT_NASCIMENTO_MORADOR" +
+                                        ",CPF.CPF_MORADOR" +
+                                        ",CNPJ.CNPJ_MORADOR" +
+                                    "  FROM MORADORES MOR" +
+                                    "  LEFT JOIN MORADOR_CPF CPF ON MOR.COD_MORADOR = CPF.COD_MORADOR" +
+                                    "  LEFT JOIN MORADOR_CNPJ CNPJ ON MOR.COD_MORADOR = CNPJ.COD_MORADOR" +
+                                    "  WHERE MOR.IDF_ATIVO = \'S\'" +
+                                    "GROUP BY MOR.COD_MORADOR;";
 
                 MySqlCommand comandoSql = new MySqlCommand(textoCmd, conn);
                 comandoSql.Prepare();
@@ -84,6 +94,7 @@ namespace Conflow
                         DataGridViewRow linhaTabela = dgView.Rows[index];
                         linhaTabela.Cells["NOME_MORADOR"].Value = leitor["NOME_MORADOR"];
                         linhaTabela.Cells["RG_MORADOR"].Value = leitor["RG_MORADOR"];
+                        linhaTabela.Cells["CNPJ_MORADOR"].Value = leitor["CNPJ_MORADOR"];
                         linhaTabela.Cells["CPF_MORADOR"].Value = leitor["CPF_MORADOR"];
 
                         DateTime dataNascimento = Convert.ToDateTime(leitor["DAT_NASCIMENTO_MORADOR"]);
@@ -105,6 +116,45 @@ namespace Conflow
                     conn.Clone();
                 }
             }
+        }
+
+        public void AtualizarTabControl()
+        {
+            try
+            {
+                conn = new MySqlConnection(str);
+                conn.Open();
+
+                String textoCmd = "SELECT COD_CONDOMINIO, ID_CONDOMINIO FROM CONDOMINIOS WHERE IDF_ATIVO = \'S\';";
+
+                MySqlCommand comandoSql = new MySqlCommand(textoCmd, conn);
+                comandoSql.Prepare();
+
+                CondominioLB.Items.Clear();
+
+                using (MySqlDataReader leitor = comandoSql.ExecuteReader())
+                {
+                    while (leitor.Read())
+                    {
+                        CondominioLB.Items.Add(leitor["COD_CONDOMINIO"] + " - " + leitor["ID_CONDOMINIO"]);
+
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Erro: Não foi possível acessar o banco de dados para recuperar os dados. \n\nDescrição: " + e.Message.ToString());
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Clone();
+                }
+            }
+            
+
         }
 
         private void CriarBtn_Click(object sender, EventArgs e)
@@ -148,11 +198,40 @@ namespace Conflow
                     dataDia += "0";
                 }
                 dataDia += datanascimentoDtp.Value.Date.Day.ToString();
+
                 
+                // Criando Morador
+                String cmdTxt = "INSERT INTO MORADORES(NOME_MORADOR, RG_MORADOR, DAT_NASCIMENTO_MORADOR ) VALUES(\"" + nomeTbox.Text + "\", \"" + rgTbox.Text + "\", \"" + dataDia + "\" );";
+                ExecutarComandoSql(cmdTxt, "Novo morador adicionado com sucesso!", "Não foi possível adicionar o morador.");
 
-                String cmdTxt = "INSERT INTO MORADORES(NOME_MORADOR, RG_MORADOR, CPF_MORADOR, DAT_NASCIMENTO_MORADOR ) VALUES(\"" + nomeTbox.Text + "\", \"" + rgTbox.Text + "\", \"" + cpfCnpjDesmascarado.Text + "\", \"" + dataDia + "\" );";
+                /* ################
+                 * PARTE COM ERRO
+                 * ################
+                 * Descrição do problema:
+                 * 
+                 * Não consegui encontrar uma maneira de pegar o COD_MORADOR do morador que acabou de ser criado
+                 * para criar e vinculá-lo à seu respectivo CPF / CNPJ.
+                 * 
+                 * Por isso, o morador é criado mas o cpf/cnpj não.
+                
+                // Obtendo COD_MORADOR do último morador criado
+                object codMorador;
 
-                ExecutarComandoSql(cmdTxt, "Novo usuário adicionado com sucesso!", "Não foi possível adicionar o usuário.");
+                cmdTxt = "SELECT MAX(COD_MORADOR) FROM MORADOR_CPF;";
+
+                MySqlCommand comandoSql = new MySqlCommand(cmdTxt, conn);
+                comandoSql.Prepare();
+
+                using (MySqlDataReader leitor = comandoSql.ExecuteReader())
+                {
+                    while (leitor.Read())
+                    {
+                        MessageBox.Show("Último Morador criado: " + leitor["COD_MORADOR"]);
+
+                    }
+                }
+
+                */
 
                 AtualizarDgView();
             }

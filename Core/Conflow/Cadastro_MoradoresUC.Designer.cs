@@ -44,20 +44,23 @@
             this.nomeTbox = new System.Windows.Forms.TextBox();
             this.LerBtn = new System.Windows.Forms.Button();
             this.dgView = new System.Windows.Forms.DataGridView();
-            this.NOME_MORADOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RG_MORADOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF_MORADOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DAT_NASCIMENTO_MORADOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CriarBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.localizacaoGB = new System.Windows.Forms.GroupBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabCondominio = new System.Windows.Forms.TabPage();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.CondominioLB = new System.Windows.Forms.ListBox();
             this.tabBloco = new System.Windows.Forms.TabPage();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.BlocoLB = new System.Windows.Forms.ListBox();
             this.tabPredio = new System.Windows.Forms.TabPage();
             this.tabApartamento = new System.Windows.Forms.TabPage();
+            this.PredioLB = new System.Windows.Forms.ListBox();
+            this.ApartamentoLB = new System.Windows.Forms.ListBox();
+            this.NOME_MORADOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RG_MORADOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF_MORADOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CNPJ_MORADOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DAT_NASCIMENTO_MORADOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numeroestacionamentoNud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,6 +68,8 @@
             this.tabControl.SuspendLayout();
             this.tabCondominio.SuspendLayout();
             this.tabBloco.SuspendLayout();
+            this.tabPredio.SuspendLayout();
+            this.tabApartamento.SuspendLayout();
             this.SuspendLayout();
             // 
             // label6
@@ -229,32 +234,13 @@
             this.NOME_MORADOR,
             this.RG_MORADOR,
             this.CPF_MORADOR,
+            this.CNPJ_MORADOR,
             this.DAT_NASCIMENTO_MORADOR});
             this.dgView.Location = new System.Drawing.Point(340, 64);
             this.dgView.Name = "dgView";
             this.dgView.Size = new System.Drawing.Size(295, 154);
             this.dgView.TabIndex = 26;
             this.dgView.TabStop = false;
-            // 
-            // NOME_MORADOR
-            // 
-            this.NOME_MORADOR.HeaderText = "Nome";
-            this.NOME_MORADOR.Name = "NOME_MORADOR";
-            // 
-            // RG_MORADOR
-            // 
-            this.RG_MORADOR.HeaderText = "RG";
-            this.RG_MORADOR.Name = "RG_MORADOR";
-            // 
-            // CPF_MORADOR
-            // 
-            this.CPF_MORADOR.HeaderText = "CPF/CNPJ";
-            this.CPF_MORADOR.Name = "CPF_MORADOR";
-            // 
-            // DAT_NASCIMENTO_MORADOR
-            // 
-            this.DAT_NASCIMENTO_MORADOR.HeaderText = "Data de Nascimento";
-            this.DAT_NASCIMENTO_MORADOR.Name = "DAT_NASCIMENTO_MORADOR";
             // 
             // CriarBtn
             // 
@@ -304,7 +290,7 @@
             // 
             // tabCondominio
             // 
-            this.tabCondominio.Controls.Add(this.listBox1);
+            this.tabCondominio.Controls.Add(this.CondominioLB);
             this.tabCondominio.Location = new System.Drawing.Point(4, 29);
             this.tabCondominio.Name = "tabCondominio";
             this.tabCondominio.Padding = new System.Windows.Forms.Padding(3);
@@ -313,18 +299,18 @@
             this.tabCondominio.Text = "Condomínio";
             this.tabCondominio.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // CondominioLB
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(6, 6);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(282, 104);
-            this.listBox1.TabIndex = 0;
+            this.CondominioLB.FormattingEnabled = true;
+            this.CondominioLB.ItemHeight = 20;
+            this.CondominioLB.Location = new System.Drawing.Point(6, 6);
+            this.CondominioLB.Name = "CondominioLB";
+            this.CondominioLB.Size = new System.Drawing.Size(282, 104);
+            this.CondominioLB.TabIndex = 0;
             // 
             // tabBloco
             // 
-            this.tabBloco.Controls.Add(this.listBox2);
+            this.tabBloco.Controls.Add(this.BlocoLB);
             this.tabBloco.Location = new System.Drawing.Point(4, 29);
             this.tabBloco.Name = "tabBloco";
             this.tabBloco.Padding = new System.Windows.Forms.Padding(3);
@@ -333,17 +319,18 @@
             this.tabBloco.Text = "Bloco";
             this.tabBloco.UseVisualStyleBackColor = true;
             // 
-            // listBox2
+            // BlocoLB
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(6, 6);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(282, 104);
-            this.listBox2.TabIndex = 1;
+            this.BlocoLB.FormattingEnabled = true;
+            this.BlocoLB.ItemHeight = 20;
+            this.BlocoLB.Location = new System.Drawing.Point(6, 6);
+            this.BlocoLB.Name = "BlocoLB";
+            this.BlocoLB.Size = new System.Drawing.Size(282, 104);
+            this.BlocoLB.TabIndex = 1;
             // 
             // tabPredio
             // 
+            this.tabPredio.Controls.Add(this.PredioLB);
             this.tabPredio.Location = new System.Drawing.Point(4, 29);
             this.tabPredio.Name = "tabPredio";
             this.tabPredio.Padding = new System.Windows.Forms.Padding(3);
@@ -354,6 +341,7 @@
             // 
             // tabApartamento
             // 
+            this.tabApartamento.Controls.Add(this.ApartamentoLB);
             this.tabApartamento.Location = new System.Drawing.Point(4, 29);
             this.tabApartamento.Name = "tabApartamento";
             this.tabApartamento.Padding = new System.Windows.Forms.Padding(3);
@@ -361,6 +349,49 @@
             this.tabApartamento.TabIndex = 3;
             this.tabApartamento.Text = "Apartamento";
             this.tabApartamento.UseVisualStyleBackColor = true;
+            // 
+            // PredioLB
+            // 
+            this.PredioLB.FormattingEnabled = true;
+            this.PredioLB.ItemHeight = 20;
+            this.PredioLB.Location = new System.Drawing.Point(6, 6);
+            this.PredioLB.Name = "PredioLB";
+            this.PredioLB.Size = new System.Drawing.Size(282, 104);
+            this.PredioLB.TabIndex = 57;
+            // 
+            // ApartamentoLB
+            // 
+            this.ApartamentoLB.FormattingEnabled = true;
+            this.ApartamentoLB.ItemHeight = 20;
+            this.ApartamentoLB.Location = new System.Drawing.Point(6, 6);
+            this.ApartamentoLB.Name = "ApartamentoLB";
+            this.ApartamentoLB.Size = new System.Drawing.Size(282, 104);
+            this.ApartamentoLB.TabIndex = 2;
+            // 
+            // NOME_MORADOR
+            // 
+            this.NOME_MORADOR.HeaderText = "Nome";
+            this.NOME_MORADOR.Name = "NOME_MORADOR";
+            // 
+            // RG_MORADOR
+            // 
+            this.RG_MORADOR.HeaderText = "RG";
+            this.RG_MORADOR.Name = "RG_MORADOR";
+            // 
+            // CPF_MORADOR
+            // 
+            this.CPF_MORADOR.HeaderText = "CPF";
+            this.CPF_MORADOR.Name = "CPF_MORADOR";
+            // 
+            // CNPJ_MORADOR
+            // 
+            this.CNPJ_MORADOR.HeaderText = "CNPJ";
+            this.CNPJ_MORADOR.Name = "CNPJ_MORADOR";
+            // 
+            // DAT_NASCIMENTO_MORADOR
+            // 
+            this.DAT_NASCIMENTO_MORADOR.HeaderText = "Data de Nascimento";
+            this.DAT_NASCIMENTO_MORADOR.Name = "DAT_NASCIMENTO_MORADOR";
             // 
             // Cadastro_MoradoresUC
             // 
@@ -394,6 +425,8 @@
             this.tabControl.ResumeLayout(false);
             this.tabCondominio.ResumeLayout(false);
             this.tabBloco.ResumeLayout(false);
+            this.tabPredio.ResumeLayout(false);
+            this.tabApartamento.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,17 +451,20 @@
         private System.Windows.Forms.Button LerBtn;
         private System.Windows.Forms.DataGridView dgView;
         private System.Windows.Forms.Button CriarBtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_MORADOR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RG_MORADOR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPF_MORADOR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DAT_NASCIMENTO_MORADOR;
         private System.Windows.Forms.GroupBox localizacaoGB;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabCondominio;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox CondominioLB;
         private System.Windows.Forms.TabPage tabBloco;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox BlocoLB;
         private System.Windows.Forms.TabPage tabPredio;
         private System.Windows.Forms.TabPage tabApartamento;
+        private System.Windows.Forms.ListBox PredioLB;
+        private System.Windows.Forms.ListBox ApartamentoLB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_MORADOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RG_MORADOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF_MORADOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CNPJ_MORADOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DAT_NASCIMENTO_MORADOR;
     }
 }

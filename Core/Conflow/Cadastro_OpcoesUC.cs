@@ -29,6 +29,7 @@ namespace Conflow
             }
 
             CadastrarOPPanel.Controls.Clear();
+            moradoresUC.AtualizarTabControl();
             CadastrarOPPanel.Controls.Add(moradoresUC);
         }
 
