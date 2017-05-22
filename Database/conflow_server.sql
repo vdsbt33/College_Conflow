@@ -20,6 +20,7 @@ USE `conflow`;
 CREATE TABLE IF NOT EXISTS `apartamentos` (
   `COD_APARTAMENTO` int(11) NOT NULL AUTO_INCREMENT,
   `DON_APARTAMENTO` int(11) DEFAULT NULL,
+  `VAL_FRACAO_IDEAL` float DEFAULT '0',
   PRIMARY KEY (`COD_APARTAMENTO`),
   KEY `DON_APARTAMENTO` (`DON_APARTAMENTO`),
   CONSTRAINT `apartamentos_ibfk_1` FOREIGN KEY (`DON_APARTAMENTO`) REFERENCES `moradores` (`COD_MORADOR`)
@@ -35,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `blocos` (
   PRIMARY KEY (`COD_BLOCO`),
   KEY `COD_CONDOMINIO` (`COD_CONDOMINIO`),
   CONSTRAINT `blocos_ibfk_1` FOREIGN KEY (`COD_CONDOMINIO`) REFERENCES `condominios` (`COD_CONDOMINIO`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table conflow.boletos
@@ -60,7 +61,16 @@ CREATE TABLE IF NOT EXISTS `condominios` (
   `VAL_TOTAL_MENSAL` float DEFAULT '0',
   `IDF_ATIVO` varchar(1) DEFAULT 'S',
   PRIMARY KEY (`COD_CONDOMINIO`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Data exporting was unselected.
+-- Dumping structure for table conflow.contato_telefone
+CREATE TABLE IF NOT EXISTS `contato_telefone` (
+  `COD_MORADOR` int(11) NOT NULL,
+  `VAL_TELEFONE` varchar(16) NOT NULL,
+  PRIMARY KEY (`COD_MORADOR`),
+  CONSTRAINT `contato_telefone_ibfk_1` FOREIGN KEY (`COD_MORADOR`) REFERENCES `moradores` (`COD_MORADOR`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table conflow.estacionamento
@@ -82,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `moradores` (
   `DAT_NASCIMENTO_MORADOR` date DEFAULT NULL,
   `IDF_ATIVO` varchar(1) DEFAULT 'S',
   PRIMARY KEY (`COD_MORADOR`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table conflow.morador_cnpj
@@ -109,12 +119,11 @@ CREATE TABLE IF NOT EXISTS `predios` (
   `ID_PREDIO` varchar(80) DEFAULT NULL,
   `QTD_APARTAMENTOS_PREDIO` int(11) NOT NULL,
   `VAL_MENSALIDADES_PREDIO` float NOT NULL,
-  `VAL_FRACAO_IDEAL_PREDIO` float DEFAULT NULL,
   `COD_BLOCO` int(11) NOT NULL,
   PRIMARY KEY (`COD_PREDIO`),
   KEY `COD_BLOCO` (`COD_BLOCO`),
   CONSTRAINT `predios_ibfk_1` FOREIGN KEY (`COD_BLOCO`) REFERENCES `blocos` (`COD_BLOCO`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
