@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro_PrediosUC));
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.identificadorTbox = new System.Windows.Forms.TextBox();
@@ -35,12 +36,6 @@
             this.qtdApartamentosNud = new System.Windows.Forms.NumericUpDown();
             this.valorMensalidadeNud = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.LerBtn = new System.Windows.Forms.Button();
-            this.dgView = new System.Windows.Forms.DataGridView();
-            this.ID_PREDIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QTD_APARTAMENTOS_PREDIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VAL_MENSALIDADES_PREDIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VAL_FRACAO_IDEAL_PREDIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CriarBtn = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -48,13 +43,15 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.blocoList = new System.Windows.Forms.ListBox();
             this.localizacaoGB = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.qtdApartamentosNud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.valorMensalidadeNud)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.localizacaoGB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -65,7 +62,7 @@
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(655, 50);
+            this.label6.Size = new System.Drawing.Size(355, 50);
             this.label6.TabIndex = 42;
             this.label6.Text = "Cadastro de Prédio";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -74,7 +71,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label1.Location = new System.Drawing.Point(21, 67);
+            this.label1.Location = new System.Drawing.Point(14, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 20);
             this.label1.TabIndex = 43;
@@ -83,16 +80,16 @@
             // identificadorTbox
             // 
             this.identificadorTbox.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.identificadorTbox.Location = new System.Drawing.Point(112, 66);
+            this.identificadorTbox.Location = new System.Drawing.Point(105, 92);
             this.identificadorTbox.Name = "identificadorTbox";
-            this.identificadorTbox.Size = new System.Drawing.Size(152, 26);
+            this.identificadorTbox.Size = new System.Drawing.Size(215, 26);
             this.identificadorTbox.TabIndex = 44;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label2.Location = new System.Drawing.Point(21, 116);
+            this.label2.Location = new System.Drawing.Point(14, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 20);
             this.label2.TabIndex = 45;
@@ -101,7 +98,7 @@
             // qtdApartamentosNud
             // 
             this.qtdApartamentosNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.qtdApartamentosNud.Location = new System.Drawing.Point(149, 114);
+            this.qtdApartamentosNud.Location = new System.Drawing.Point(142, 134);
             this.qtdApartamentosNud.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -115,9 +112,9 @@
             // 
             this.valorMensalidadeNud.DecimalPlaces = 2;
             this.valorMensalidadeNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.valorMensalidadeNud.Location = new System.Drawing.Point(180, 158);
+            this.valorMensalidadeNud.Location = new System.Drawing.Point(173, 176);
             this.valorMensalidadeNud.Maximum = new decimal(new int[] {
-            9999,
+            999999999,
             0,
             0,
             0});
@@ -130,61 +127,16 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label3.Location = new System.Drawing.Point(21, 161);
+            this.label3.Location = new System.Drawing.Point(14, 179);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 20);
             this.label3.TabIndex = 47;
             this.label3.Text = "Valor mensalidade (R$):";
             // 
-            // LerBtn
-            // 
-            this.LerBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LerBtn.Location = new System.Drawing.Point(429, 226);
-            this.LerBtn.Name = "LerBtn";
-            this.LerBtn.Size = new System.Drawing.Size(125, 29);
-            this.LerBtn.TabIndex = 49;
-            this.LerBtn.Text = "Atualizar";
-            this.LerBtn.UseVisualStyleBackColor = true;
-            this.LerBtn.Click += new System.EventHandler(this.LerBtn_Click);
-            // 
-            // dgView
-            // 
-            this.dgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_PREDIO,
-            this.QTD_APARTAMENTOS_PREDIO,
-            this.VAL_MENSALIDADES_PREDIO,
-            this.VAL_FRACAO_IDEAL_PREDIO});
-            this.dgView.Location = new System.Drawing.Point(340, 64);
-            this.dgView.Name = "dgView";
-            this.dgView.Size = new System.Drawing.Size(295, 154);
-            this.dgView.TabIndex = 50;
-            this.dgView.TabStop = false;
-            // 
-            // ID_PREDIO
-            // 
-            this.ID_PREDIO.HeaderText = "Identificador";
-            this.ID_PREDIO.Name = "ID_PREDIO";
-            // 
-            // QTD_APARTAMENTOS_PREDIO
-            // 
-            this.QTD_APARTAMENTOS_PREDIO.HeaderText = "Qtd. apartamentos";
-            this.QTD_APARTAMENTOS_PREDIO.Name = "QTD_APARTAMENTOS_PREDIO";
-            // 
-            // VAL_MENSALIDADES_PREDIO
-            // 
-            this.VAL_MENSALIDADES_PREDIO.HeaderText = "Valor mensalidades:";
-            this.VAL_MENSALIDADES_PREDIO.Name = "VAL_MENSALIDADES_PREDIO";
-            // 
-            // VAL_FRACAO_IDEAL_PREDIO
-            // 
-            this.VAL_FRACAO_IDEAL_PREDIO.HeaderText = "Valor fração ideal:";
-            this.VAL_FRACAO_IDEAL_PREDIO.Name = "VAL_FRACAO_IDEAL_PREDIO";
-            // 
             // CriarBtn
             // 
             this.CriarBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CriarBtn.Location = new System.Drawing.Point(132, 459);
+            this.CriarBtn.Location = new System.Drawing.Point(132, 456);
             this.CriarBtn.Name = "CriarBtn";
             this.CriarBtn.Size = new System.Drawing.Size(97, 29);
             this.CriarBtn.TabIndex = 51;
@@ -247,21 +199,43 @@
             // 
             this.localizacaoGB.Controls.Add(this.tabControl);
             this.localizacaoGB.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.localizacaoGB.Location = new System.Drawing.Point(14, 237);
+            this.localizacaoGB.Location = new System.Drawing.Point(14, 233);
             this.localizacaoGB.Name = "localizacaoGB";
             this.localizacaoGB.Size = new System.Drawing.Size(326, 212);
             this.localizacaoGB.TabIndex = 55;
             this.localizacaoGB.TabStop = false;
             this.localizacaoGB.Text = "Localização";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(51, 55);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(268, 20);
+            this.label7.TabIndex = 60;
+            this.label7.Text = "É obrigatório preencher todos os campos";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(21, 53);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.TabIndex = 59;
+            this.pictureBox2.TabStop = false;
+            // 
             // Cadastro_PrediosUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.localizacaoGB);
             this.Controls.Add(this.CriarBtn);
-            this.Controls.Add(this.LerBtn);
-            this.Controls.Add(this.dgView);
             this.Controls.Add(this.valorMensalidadeNud);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.qtdApartamentosNud);
@@ -270,15 +244,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Name = "Cadastro_PrediosUC";
-            this.Size = new System.Drawing.Size(655, 502);
-            this.Load += new System.EventHandler(this.Cadastro_PrediosUC_Load);
+            this.Size = new System.Drawing.Size(355, 502);
             ((System.ComponentModel.ISupportInitialize)(this.qtdApartamentosNud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.valorMensalidadeNud)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.localizacaoGB.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,18 +266,14 @@
         private System.Windows.Forms.NumericUpDown qtdApartamentosNud;
         private System.Windows.Forms.NumericUpDown valorMensalidadeNud;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button LerBtn;
-        private System.Windows.Forms.DataGridView dgView;
         private System.Windows.Forms.Button CriarBtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PREDIO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QTD_APARTAMENTOS_PREDIO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VAL_MENSALIDADES_PREDIO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VAL_FRACAO_IDEAL_PREDIO;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ListBox condominioList;
         private System.Windows.Forms.ListBox blocoList;
         private System.Windows.Forms.GroupBox localizacaoGB;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

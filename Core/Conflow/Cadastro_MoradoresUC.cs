@@ -24,7 +24,7 @@ namespace Conflow
             MudarTipoPessoa();
         }
 
-        public String str = @"server=127.0.0.1;database=conflow;userid=root;password=123456;"; // YEEEE BOOOI
+        public String str = @"server=127.0.0.1;database=conflow;userid=root;password=123456;";
         public MySqlConnection conn = null;
 
 
@@ -61,100 +61,6 @@ namespace Conflow
                     conn.Clone();
                 }
             }
-        }
-
-        private void AtualizarDgView()
-        {
-            try
-            {
-                conn = new MySqlConnection(str);
-                conn.Open();
-
-                String textoCmd =   "SELECT MOR.NOME_MORADOR" +
-                                        ",MOR.RG_MORADOR" +
-                                        ",MOR.DAT_NASCIMENTO_MORADOR" +
-                                        ",CPF.CPF_MORADOR" +
-                                        ",CNPJ.CNPJ_MORADOR" +
-                                    "  FROM MORADORES MOR" +
-                                    "  LEFT JOIN MORADOR_CPF CPF ON MOR.COD_MORADOR = CPF.COD_MORADOR" +
-                                    "  LEFT JOIN MORADOR_CNPJ CNPJ ON MOR.COD_MORADOR = CNPJ.COD_MORADOR" +
-                                    "  WHERE MOR.IDF_ATIVO = \'S\'" +
-                                    "GROUP BY MOR.COD_MORADOR;";
-
-                MySqlCommand comandoSql = new MySqlCommand(textoCmd, conn);
-                comandoSql.Prepare();
-
-                dgView.Rows.Clear();
-
-                using (MySqlDataReader leitor = comandoSql.ExecuteReader())
-                {
-                    while (leitor.Read())
-                    {
-                        int index = dgView.Rows.Add();
-                        DataGridViewRow linhaTabela = dgView.Rows[index];
-                        linhaTabela.Cells["NOME_MORADOR"].Value = leitor["NOME_MORADOR"];
-                        linhaTabela.Cells["RG_MORADOR"].Value = leitor["RG_MORADOR"];
-                        linhaTabela.Cells["CNPJ_MORADOR"].Value = leitor["CNPJ_MORADOR"];
-                        linhaTabela.Cells["CPF_MORADOR"].Value = leitor["CPF_MORADOR"];
-
-                        DateTime dataNascimento = Convert.ToDateTime(leitor["DAT_NASCIMENTO_MORADOR"]);
-
-                        linhaTabela.Cells["DAT_NASCIMENTO_MORADOR"].Value = dataNascimento.Date.ToShortDateString();
-                        
-                    }
-                }
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Erro: Não foi possível acessar o banco de dados para recuperar os dados. \n\nDescrição: " + e.Message.ToString());
-            }
-            finally
-            {
-                if (conn != null)
-                {
-                    conn.Clone();
-                }
-            }
-        }
-
-        public void AtualizarTabControl()
-        {
-            try
-            {
-                conn = new MySqlConnection(str);
-                conn.Open();
-
-                String textoCmd = "SELECT COD_CONDOMINIO, ID_CONDOMINIO FROM CONDOMINIOS WHERE IDF_ATIVO = \'S\';";
-
-                MySqlCommand comandoSql = new MySqlCommand(textoCmd, conn);
-                comandoSql.Prepare();
-
-                CondominioLB.Items.Clear();
-
-                using (MySqlDataReader leitor = comandoSql.ExecuteReader())
-                {
-                    while (leitor.Read())
-                    {
-                        CondominioLB.Items.Add(leitor["COD_CONDOMINIO"] + " - " + leitor["ID_CONDOMINIO"]);
-
-                    }
-                }
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Erro: Não foi possível acessar o banco de dados para recuperar os dados. \n\nDescrição: " + e.Message.ToString());
-            }
-            finally
-            {
-                if (conn != null)
-                {
-                    conn.Clone();
-                }
-            }
-            
-
         }
 
         private void CriarBtn_Click(object sender, EventArgs e)
@@ -232,25 +138,14 @@ namespace Conflow
                 }
 
                 */
-
-                AtualizarDgView();
+                
             }
             else
             {
                 MessageBox.Show("Erro: Um ou mais campos não foram preenchidos.");
             }
         }
-
-        private void Cadastro_MoradoresUC_Load(object sender, EventArgs e)
-        {
-            AtualizarDgView();
-        }
-
-        private void LerBtn_Click(object sender, EventArgs e)
-        {
-            AtualizarDgView();
-        }
-
+        
         //
 
 

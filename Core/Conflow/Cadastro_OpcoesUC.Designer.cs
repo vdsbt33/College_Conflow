@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro_OpcoesUC));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.CadastrarOPPanel = new System.Windows.Forms.Panel();
             this.Cadastrar_MoradorBtn = new System.Windows.Forms.Button();
             this.Cadastrar_PredioBtn = new System.Windows.Forms.Button();
             this.Cadastrar_BlocoBtn = new System.Windows.Forms.Button();
             this.Cadastrar_CondominioBtn = new System.Windows.Forms.Button();
+            this.CadastrarOPPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,17 +50,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(493, 42);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // CadastrarOPPanel
-            // 
-            this.CadastrarOPPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CadastrarOPPanel.AutoScroll = true;
-            this.CadastrarOPPanel.Location = new System.Drawing.Point(3, 51);
-            this.CadastrarOPPanel.Name = "CadastrarOPPanel";
-            this.CadastrarOPPanel.Size = new System.Drawing.Size(493, 276);
-            this.CadastrarOPPanel.TabIndex = 1;
             // 
             // Cadastrar_MoradorBtn
             // 
@@ -125,6 +114,17 @@
             this.Cadastrar_CondominioBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Cadastrar_CondominioBtn.UseVisualStyleBackColor = true;
             this.Cadastrar_CondominioBtn.Click += new System.EventHandler(this.Cadastrar_CondominioBtn_Click);
+            // 
+            // CadastrarOPPanel
+            // 
+            this.CadastrarOPPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CadastrarOPPanel.AutoScroll = true;
+            this.CadastrarOPPanel.Location = new System.Drawing.Point(3, 51);
+            this.CadastrarOPPanel.Name = "CadastrarOPPanel";
+            this.CadastrarOPPanel.Size = new System.Drawing.Size(493, 276);
+            this.CadastrarOPPanel.TabIndex = 1;
             // 
             // Cadastro_OpcoesUC
             // 
