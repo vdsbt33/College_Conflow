@@ -175,7 +175,6 @@ namespace Conflow
                              "    '" + cpfCnpjDesmascarado + "'" +
                              ");                         ";
                 }
-                MessageBox.Show(cpfCnpjDesmascarado);
 
                 if (!ExecutarComandoSql(cmdTxt, "", "Não foi possível adicionar o CPF/CNPJ do morador."))
                 {
@@ -183,7 +182,7 @@ namespace Conflow
                                 "WHERE COD_MORADOR = (SELECT COD_MORADOR                            " +
                                 "FROM MORADOR                                                       " +
                                 "WHERE NOME_MORADOR = '" + nomeTbox.Text + "' AND ULTIMA_MODIFICACAO = '" + timestamp_criacao + "');  ";
-                    ExecutarComandoSql(cmdTxt, "", "Não foi possível excluir o MORADOR. Retirar isso");
+                    ExecutarComandoSql(cmdTxt, "");
                 }
 
 
