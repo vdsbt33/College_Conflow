@@ -17,9 +17,10 @@ namespace Conflow
             InitializeComponent();
         }
 
-        public MaskedTextBox getCPF()
+        public String getCPF()
         {
-            return cpfTbox;
+            cpfTbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            return cpfTbox.Text;
         }
     }
 }

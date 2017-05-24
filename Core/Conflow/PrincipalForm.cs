@@ -68,49 +68,7 @@ namespace Conflow
                 }
             }
         }
-
-        // Cria o Form de acordo com o nome dele
-        public void CriarForm(string nomeForm)
-        {
-            /*
-                NomesForms.Add("AvisosForm");
-                NomesForms.Add("ConectarForm");
-                NomesForms.Add("PesquisarForm");
-                NomesForms.Add("CadastrarForm");
-                NomesForms.Add("ConfigurarForm");
-                NomesForms.Add("AjudaForm");
-                NomesForms.Add("SairForm");
-             * */
-            //
-            if (nomeForm == "AvisosForm")
-            {
-                
-            }
-            else if (nomeForm == "ConectarForm")
-            {
-
-            }
-            else if (nomeForm == "PesquisarForm")
-            {
-
-            }
-            else if (nomeForm == "CadastrarForm")
-            {
-
-            }
-            else if (nomeForm == "ConfigurarForm")
-            {
-
-            }
-            else if (nomeForm == "AjudaForm")
-            {
-
-            }
-            else if (nomeForm == "SairForm")
-            {
         
-            }
-        }
 
         private void CadastrarBtn_Click(object sender, EventArgs e)
         {
@@ -132,5 +90,10 @@ namespace Conflow
                 Application.Exit();
             }
         }
+
+
+        
+
+        
     }
 }

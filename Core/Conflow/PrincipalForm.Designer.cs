@@ -43,6 +43,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.cursorToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TopPictureBox = new System.Windows.Forms.PictureBox();
+            this.iconsImageList = new System.Windows.Forms.ImageList(this.components);
             this.flowLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -62,36 +63,42 @@
             this.flowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel.Location = new System.Drawing.Point(12, 117);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(163, 328);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(116, 304);
             this.flowLayoutPanel.TabIndex = 0;
             // 
             // AvisosBtn
             // 
             this.AvisosBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.AvisosBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AvisosBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AvisosBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AvisosBtn.Image = ((System.Drawing.Image)(resources.GetObject("AvisosBtn.Image")));
-            this.AvisosBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AvisosBtn.ImageKey = "icon_Avisos.png";
+            this.AvisosBtn.ImageList = this.iconsImageList;
             this.AvisosBtn.Location = new System.Drawing.Point(3, 3);
             this.AvisosBtn.Name = "AvisosBtn";
-            this.AvisosBtn.Size = new System.Drawing.Size(157, 35);
+            this.AvisosBtn.Size = new System.Drawing.Size(110, 60);
             this.AvisosBtn.TabIndex = 0;
             this.AvisosBtn.Text = "&Avisos";
-            this.AvisosBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AvisosBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.AvisosBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cursorToolTip.SetToolTip(this.AvisosBtn, "Exibe os avisos definidos pelo administrador do sistema.");
             this.AvisosBtn.UseVisualStyleBackColor = true;
             // 
             // ConectarBtn
             // 
             this.ConectarBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ConectarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ConectarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ConectarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConectarBtn.Image = ((System.Drawing.Image)(resources.GetObject("ConectarBtn.Image")));
-            this.ConectarBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConectarBtn.Location = new System.Drawing.Point(3, 44);
+            this.ConectarBtn.ImageKey = "icon_Conectar.png";
+            this.ConectarBtn.ImageList = this.iconsImageList;
+            this.ConectarBtn.Location = new System.Drawing.Point(3, 69);
             this.ConectarBtn.Name = "ConectarBtn";
-            this.ConectarBtn.Size = new System.Drawing.Size(157, 35);
+            this.ConectarBtn.Size = new System.Drawing.Size(110, 60);
             this.ConectarBtn.TabIndex = 1;
             this.ConectarBtn.Text = "&Conectar";
-            this.ConectarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ConectarBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ConectarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cursorToolTip.SetToolTip(this.ConectarBtn, "Conecta-se a uma conta usando o nome de usuário e senha.\r\nCaso já esteja conectad" +
         "o, é possível desconectar-se dela.");
             this.ConectarBtn.UseVisualStyleBackColor = true;
@@ -99,15 +106,18 @@
             // PesquisarBtn
             // 
             this.PesquisarBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PesquisarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PesquisarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.PesquisarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PesquisarBtn.Image = ((System.Drawing.Image)(resources.GetObject("PesquisarBtn.Image")));
-            this.PesquisarBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PesquisarBtn.Location = new System.Drawing.Point(3, 85);
+            this.PesquisarBtn.ImageKey = "icon_Pesquisar.png";
+            this.PesquisarBtn.ImageList = this.iconsImageList;
+            this.PesquisarBtn.Location = new System.Drawing.Point(3, 135);
             this.PesquisarBtn.Name = "PesquisarBtn";
-            this.PesquisarBtn.Size = new System.Drawing.Size(157, 35);
+            this.PesquisarBtn.Size = new System.Drawing.Size(110, 60);
             this.PesquisarBtn.TabIndex = 2;
             this.PesquisarBtn.Text = "&Pesquisar";
-            this.PesquisarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.PesquisarBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PesquisarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cursorToolTip.SetToolTip(this.PesquisarBtn, "Encontra um morador usando os critérios de busca.\r\nAlém de visualizar os dados, é" +
         " possível fazer mudanças.");
             this.PesquisarBtn.UseVisualStyleBackColor = true;
@@ -115,15 +125,18 @@
             // CadastrarBtn
             // 
             this.CadastrarBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.CadastrarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CadastrarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CadastrarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CadastrarBtn.Image = ((System.Drawing.Image)(resources.GetObject("CadastrarBtn.Image")));
-            this.CadastrarBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CadastrarBtn.Location = new System.Drawing.Point(3, 126);
+            this.CadastrarBtn.ImageKey = "icon_Cadastrar.png";
+            this.CadastrarBtn.ImageList = this.iconsImageList;
+            this.CadastrarBtn.Location = new System.Drawing.Point(3, 201);
             this.CadastrarBtn.Name = "CadastrarBtn";
-            this.CadastrarBtn.Size = new System.Drawing.Size(157, 35);
+            this.CadastrarBtn.Size = new System.Drawing.Size(110, 60);
             this.CadastrarBtn.TabIndex = 3;
             this.CadastrarBtn.Text = "Ca&dastrar";
-            this.CadastrarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.CadastrarBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.CadastrarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cursorToolTip.SetToolTip(this.CadastrarBtn, "Cadastra novos moradores no sistema com os dados inseridos.\r\n");
             this.CadastrarBtn.UseVisualStyleBackColor = true;
             this.CadastrarBtn.Click += new System.EventHandler(this.CadastrarBtn_Click);
@@ -131,45 +144,54 @@
             // ConfigurarBtn
             // 
             this.ConfigurarBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ConfigurarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ConfigurarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ConfigurarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfigurarBtn.Image = ((System.Drawing.Image)(resources.GetObject("ConfigurarBtn.Image")));
-            this.ConfigurarBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConfigurarBtn.Location = new System.Drawing.Point(3, 167);
+            this.ConfigurarBtn.ImageKey = "icon_Configurar.png";
+            this.ConfigurarBtn.ImageList = this.iconsImageList;
+            this.ConfigurarBtn.Location = new System.Drawing.Point(119, 3);
             this.ConfigurarBtn.Name = "ConfigurarBtn";
-            this.ConfigurarBtn.Size = new System.Drawing.Size(157, 35);
+            this.ConfigurarBtn.Size = new System.Drawing.Size(110, 60);
             this.ConfigurarBtn.TabIndex = 4;
             this.ConfigurarBtn.Text = "Con&figurar";
-            this.ConfigurarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ConfigurarBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ConfigurarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cursorToolTip.SetToolTip(this.ConfigurarBtn, "Alterar opções como idioma.");
             this.ConfigurarBtn.UseVisualStyleBackColor = true;
             // 
             // AjudaBtn
             // 
             this.AjudaBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.AjudaBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AjudaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AjudaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AjudaBtn.Image = ((System.Drawing.Image)(resources.GetObject("AjudaBtn.Image")));
-            this.AjudaBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AjudaBtn.Location = new System.Drawing.Point(3, 208);
+            this.AjudaBtn.ImageKey = "icon_Ajuda.png";
+            this.AjudaBtn.ImageList = this.iconsImageList;
+            this.AjudaBtn.Location = new System.Drawing.Point(119, 69);
             this.AjudaBtn.Name = "AjudaBtn";
-            this.AjudaBtn.Size = new System.Drawing.Size(157, 35);
+            this.AjudaBtn.Size = new System.Drawing.Size(110, 60);
             this.AjudaBtn.TabIndex = 5;
             this.AjudaBtn.Text = "A&juda";
-            this.AjudaBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AjudaBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.AjudaBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cursorToolTip.SetToolTip(this.AjudaBtn, "Alterar opções como idioma.");
             this.AjudaBtn.UseVisualStyleBackColor = true;
             // 
             // SairBtn
             // 
             this.SairBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SairBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SairBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SairBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SairBtn.Image = ((System.Drawing.Image)(resources.GetObject("SairBtn.Image")));
-            this.SairBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SairBtn.Location = new System.Drawing.Point(3, 249);
+            this.SairBtn.ImageKey = "icon_Sair.png";
+            this.SairBtn.ImageList = this.iconsImageList;
+            this.SairBtn.Location = new System.Drawing.Point(119, 135);
             this.SairBtn.Name = "SairBtn";
-            this.SairBtn.Size = new System.Drawing.Size(157, 35);
+            this.SairBtn.Size = new System.Drawing.Size(110, 60);
             this.SairBtn.TabIndex = 6;
             this.SairBtn.Text = "&Sair";
-            this.SairBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SairBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.SairBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cursorToolTip.SetToolTip(this.SairBtn, "Alterar opções como idioma.");
             this.SairBtn.UseVisualStyleBackColor = true;
             this.SairBtn.Click += new System.EventHandler(this.SairBtn_Click);
@@ -180,9 +202,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FormPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FormPanel.Location = new System.Drawing.Point(183, 117);
+            this.FormPanel.Location = new System.Drawing.Point(134, 117);
             this.FormPanel.Name = "FormPanel";
-            this.FormPanel.Size = new System.Drawing.Size(445, 328);
+            this.FormPanel.Size = new System.Drawing.Size(428, 304);
             this.FormPanel.TabIndex = 2;
             // 
             // SoftwareTitleLabel
@@ -191,7 +213,7 @@
             this.SoftwareTitleLabel.AutoSize = true;
             this.SoftwareTitleLabel.BackColor = System.Drawing.Color.Transparent;
             this.SoftwareTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoftwareTitleLabel.Location = new System.Drawing.Point(243, 66);
+            this.SoftwareTitleLabel.Location = new System.Drawing.Point(210, 66);
             this.SoftwareTitleLabel.Name = "SoftwareTitleLabel";
             this.SoftwareTitleLabel.Size = new System.Drawing.Size(160, 42);
             this.SoftwareTitleLabel.TabIndex = 3;
@@ -200,9 +222,9 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 458);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 434);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(640, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(574, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
@@ -220,15 +242,28 @@
             this.TopPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("TopPictureBox.Image")));
             this.TopPictureBox.Location = new System.Drawing.Point(92, 9);
             this.TopPictureBox.Name = "TopPictureBox";
-            this.TopPictureBox.Size = new System.Drawing.Size(452, 99);
+            this.TopPictureBox.Size = new System.Drawing.Size(386, 99);
             this.TopPictureBox.TabIndex = 1;
             this.TopPictureBox.TabStop = false;
+            // 
+            // iconsImageList
+            // 
+            this.iconsImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("iconsImageList.ImageStream")));
+            this.iconsImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.iconsImageList.Images.SetKeyName(0, "icon_Avisos.png");
+            this.iconsImageList.Images.SetKeyName(1, "icon_Conectar.png");
+            this.iconsImageList.Images.SetKeyName(2, "icon_Pesquisar.png");
+            this.iconsImageList.Images.SetKeyName(3, "icon_Cadastrar.png");
+            this.iconsImageList.Images.SetKeyName(4, "icon_Configurar.png");
+            this.iconsImageList.Images.SetKeyName(5, "icon_Ajuda.png");
+            this.iconsImageList.Images.SetKeyName(6, "icon_Sair.png");
+            this.iconsImageList.Images.SetKeyName(7, "icon_Imprimir.png");
             // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 480);
+            this.ClientSize = new System.Drawing.Size(574, 456);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.SoftwareTitleLabel);
             this.Controls.Add(this.FormPanel);
@@ -262,6 +297,7 @@
         private System.Windows.Forms.Button ConfigurarBtn;
         private System.Windows.Forms.Button AjudaBtn;
         private System.Windows.Forms.Button SairBtn;
+        private System.Windows.Forms.ImageList iconsImageList;
     }
 }
 

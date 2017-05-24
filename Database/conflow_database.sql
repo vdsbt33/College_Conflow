@@ -16,31 +16,31 @@
 CREATE DATABASE IF NOT EXISTS `conflow` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `conflow`;
 
--- Dumping structure for table conflow.apartamentos
-CREATE TABLE IF NOT EXISTS `apartamentos` (
+-- Dumping structure for table conflow.apartamento
+CREATE TABLE IF NOT EXISTS `apartamento` (
   `COD_APARTAMENTO` int(11) NOT NULL AUTO_INCREMENT,
-  `DON_APARTAMENTO` int(11) DEFAULT NULL,
   `VAL_FRACAO_IDEAL` float DEFAULT '0',
+  `COD_BLOCO` int(11) DEFAULT NULL,
   PRIMARY KEY (`COD_APARTAMENTO`),
-  KEY `DON_APARTAMENTO` (`DON_APARTAMENTO`),
-  CONSTRAINT `apartamentos_ibfk_1` FOREIGN KEY (`DON_APARTAMENTO`) REFERENCES `moradores` (`COD_MORADOR`)
+  KEY `COD_BLOCO` (`COD_BLOCO`),
+  CONSTRAINT `apartamento_ibfk_1` FOREIGN KEY (`COD_BLOCO`) REFERENCES `bloco` (`COD_BLOCO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
--- Dumping structure for table conflow.blocos
-CREATE TABLE IF NOT EXISTS `blocos` (
+-- Dumping structure for table conflow.bloco
+CREATE TABLE IF NOT EXISTS `bloco` (
   `COD_BLOCO` int(11) NOT NULL AUTO_INCREMENT,
   `ID_BLOCO` varchar(80) DEFAULT NULL,
   `QTD_PREDIOS_BLOCO` int(11) NOT NULL,
   `COD_CONDOMINIO` int(11) NOT NULL,
   PRIMARY KEY (`COD_BLOCO`),
   KEY `COD_CONDOMINIO` (`COD_CONDOMINIO`),
-  CONSTRAINT `blocos_ibfk_1` FOREIGN KEY (`COD_CONDOMINIO`) REFERENCES `condominios` (`COD_CONDOMINIO`)
+  CONSTRAINT `blocos_ibfk_1` FOREIGN KEY (`COD_CONDOMINIO`) REFERENCES `condominio` (`COD_CONDOMINIO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
--- Dumping structure for table conflow.boletos
-CREATE TABLE IF NOT EXISTS `boletos` (
+-- Dumping structure for table conflow.boleto
+CREATE TABLE IF NOT EXISTS `boleto` (
   `COD_BOLETO` int(11) NOT NULL AUTO_INCREMENT,
   `VAL_BOLETO` float NOT NULL,
   `VAL_MULTA_BOLETO` float DEFAULT '0',
@@ -49,27 +49,18 @@ CREATE TABLE IF NOT EXISTS `boletos` (
   `COD_MORADOR` int(11) NOT NULL,
   PRIMARY KEY (`COD_BOLETO`),
   KEY `COD_MORADOR` (`COD_MORADOR`),
-  CONSTRAINT `boletos_ibfk_1` FOREIGN KEY (`COD_MORADOR`) REFERENCES `moradores` (`COD_MORADOR`)
+  CONSTRAINT `boletos_ibfk_1` FOREIGN KEY (`COD_MORADOR`) REFERENCES `morador` (`COD_MORADOR`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
--- Dumping structure for table conflow.condominios
-CREATE TABLE IF NOT EXISTS `condominios` (
+-- Dumping structure for table conflow.condominio
+CREATE TABLE IF NOT EXISTS `condominio` (
   `COD_CONDOMINIO` int(11) NOT NULL AUTO_INCREMENT,
   `ID_CONDOMINIO` varchar(80) DEFAULT NULL,
   `QTD_BLOCOS_CONDOMINIO` int(11) NOT NULL DEFAULT '1',
   `VAL_TOTAL_MENSAL` float DEFAULT '0',
   `IDF_ATIVO` varchar(1) DEFAULT 'S',
   PRIMARY KEY (`COD_CONDOMINIO`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Data exporting was unselected.
--- Dumping structure for table conflow.contato_telefone
-CREATE TABLE IF NOT EXISTS `contato_telefone` (
-  `COD_MORADOR` int(11) NOT NULL,
-  `VAL_TELEFONE` varchar(16) NOT NULL,
-  PRIMARY KEY (`COD_MORADOR`),
-  CONSTRAINT `contato_telefone_ibfk_1` FOREIGN KEY (`COD_MORADOR`) REFERENCES `moradores` (`COD_MORADOR`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
@@ -80,19 +71,20 @@ CREATE TABLE IF NOT EXISTS `estacionamento` (
   `COD_DONO` int(11) NOT NULL,
   PRIMARY KEY (`COD_ESTACIONAMENTO`),
   KEY `COD_DONO` (`COD_DONO`),
-  CONSTRAINT `estacionamento_ibfk_1` FOREIGN KEY (`COD_DONO`) REFERENCES `moradores` (`COD_MORADOR`)
+  CONSTRAINT `estacionamento_ibfk_1` FOREIGN KEY (`COD_DONO`) REFERENCES `morador` (`COD_MORADOR`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
--- Dumping structure for table conflow.moradores
-CREATE TABLE IF NOT EXISTS `moradores` (
+-- Dumping structure for table conflow.morador
+CREATE TABLE IF NOT EXISTS `morador` (
   `COD_MORADOR` int(11) NOT NULL AUTO_INCREMENT,
   `NOME_MORADOR` varchar(80) NOT NULL,
   `RG_MORADOR` varchar(10) DEFAULT NULL,
   `DAT_NASCIMENTO_MORADOR` date DEFAULT NULL,
   `IDF_ATIVO` varchar(1) DEFAULT 'S',
+  `ULTIMA_MODIFICACAO` datetime DEFAULT NULL,
   PRIMARY KEY (`COD_MORADOR`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table conflow.morador_cnpj
@@ -100,7 +92,16 @@ CREATE TABLE IF NOT EXISTS `morador_cnpj` (
   `COD_MORADOR` int(11) NOT NULL,
   `CNPJ_MORADOR` varchar(14) DEFAULT NULL,
   PRIMARY KEY (`COD_MORADOR`),
-  CONSTRAINT `morador_cnpj_ibfk_1` FOREIGN KEY (`COD_MORADOR`) REFERENCES `moradores` (`COD_MORADOR`)
+  CONSTRAINT `morador_cnpj_ibfk_1` FOREIGN KEY (`COD_MORADOR`) REFERENCES `morador` (`COD_MORADOR`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Data exporting was unselected.
+-- Dumping structure for table conflow.morador_contato
+CREATE TABLE IF NOT EXISTS `morador_contato` (
+  `COD_MORADOR` int(11) NOT NULL,
+  `VAL_CONTATO` varchar(80) NOT NULL,
+  PRIMARY KEY (`COD_MORADOR`),
+  CONSTRAINT `morador_contato_ibfk_1` FOREIGN KEY (`COD_MORADOR`) REFERENCES `morador` (`COD_MORADOR`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
@@ -109,12 +110,12 @@ CREATE TABLE IF NOT EXISTS `morador_cpf` (
   `COD_MORADOR` int(11) NOT NULL,
   `CPF_MORADOR` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`COD_MORADOR`),
-  CONSTRAINT `morador_cpf_ibfk_1` FOREIGN KEY (`COD_MORADOR`) REFERENCES `moradores` (`COD_MORADOR`)
+  CONSTRAINT `morador_cpf_ibfk_1` FOREIGN KEY (`COD_MORADOR`) REFERENCES `morador` (`COD_MORADOR`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
--- Dumping structure for table conflow.predios
-CREATE TABLE IF NOT EXISTS `predios` (
+-- Dumping structure for table conflow.predio
+CREATE TABLE IF NOT EXISTS `predio` (
   `COD_PREDIO` int(11) NOT NULL AUTO_INCREMENT,
   `ID_PREDIO` varchar(80) DEFAULT NULL,
   `QTD_APARTAMENTOS_PREDIO` int(11) NOT NULL,
@@ -122,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `predios` (
   `COD_BLOCO` int(11) NOT NULL,
   PRIMARY KEY (`COD_PREDIO`),
   KEY `COD_BLOCO` (`COD_BLOCO`),
-  CONSTRAINT `predios_ibfk_1` FOREIGN KEY (`COD_BLOCO`) REFERENCES `blocos` (`COD_BLOCO`)
+  CONSTRAINT `predios_ibfk_1` FOREIGN KEY (`COD_BLOCO`) REFERENCES `bloco` (`COD_BLOCO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.

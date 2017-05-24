@@ -75,7 +75,7 @@
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(-5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(375, 50);
+            this.label6.Size = new System.Drawing.Size(694, 50);
             this.label6.TabIndex = 41;
             this.label6.Text = "Cadastro de Morador";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -214,7 +214,7 @@
             // CriarBtn
             // 
             this.CriarBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CriarBtn.Location = new System.Drawing.Point(137, 636);
+            this.CriarBtn.Location = new System.Drawing.Point(134, 415);
             this.CriarBtn.Name = "CriarBtn";
             this.CriarBtn.Size = new System.Drawing.Size(97, 29);
             this.CriarBtn.TabIndex = 8;
@@ -237,7 +237,7 @@
             // 
             this.localizacaoGB.Controls.Add(this.tabControl);
             this.localizacaoGB.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.localizacaoGB.Location = new System.Drawing.Point(14, 418);
+            this.localizacaoGB.Location = new System.Drawing.Point(349, 90);
             this.localizacaoGB.Name = "localizacaoGB";
             this.localizacaoGB.Size = new System.Drawing.Size(326, 212);
             this.localizacaoGB.TabIndex = 56;
@@ -382,7 +382,7 @@
             this.Controls.Add(this.nomeTbox);
             this.Controls.Add(this.CriarBtn);
             this.Name = "Cadastro_MoradoresUC";
-            this.Size = new System.Drawing.Size(370, 677);
+            this.Size = new System.Drawing.Size(689, 458);
             ((System.ComponentModel.ISupportInitialize)(this.numeroestacionamentoNud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.localizacaoGB.ResumeLayout(false);
