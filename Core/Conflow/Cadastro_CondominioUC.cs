@@ -78,7 +78,7 @@ namespace Conflow
                 }
                 return true;
             }
-            catch (Exception e)
+            catch
             {
                 return false;
             }
@@ -95,20 +95,20 @@ namespace Conflow
         {
             String cmdTxt = "INSERT INTO CONDOMINIO(                            " +
 	                        "    ID_CONDOMINIO,                                 " +
-                            "    QTD_PREDIOS_CONDOMINIO,                        " +
+                            "    QTD_BLOCOS_CONDOMINIO,                         " +
                             "    CUSTO_MENSAL_CONDOMINIO,                       " +
-                            "    ESTADO_END_CONDOMINIO,                         " +
-                            "    BAIRRO_END_CONDOMINIO,                         " +
-                            "    RUA_END_CONDOMINIO,                            " +
-                            "    NUM_END_CONDOMINIO                             " +
+                            "    END_ESTADO_CONDOMINIO,                         " +
+                            "    END_BAIRRO_CONDOMINIO,                         " +
+                            "    END_RUA_CONDOMINIO,                            " +
+                            "    END_NUMERO_CONDOMINIO                          " +
                             ") VALUES (                                         " +
 	                        "    '" + nomeDoCondominioTbox.Text + "',           " +
                             "    '" + Convert.ToInt32(qtdPrediosNud.Value) + "'," +
-                            "    '" + Convert.ToSingle(custoMensalNud.Value) + "'," +
+                            "    '" + Convert.ToSingle(custoMensalNud.Value) +  "'," +
                             "    '" + estadoCBox.Text + "',                     " +
                             "    '" + bairroTbox.Text + "',                     " +
                             "    '" + ruaTBox.Text + "',                        " +
-                            "    '" + Convert.ToInt32(localNumeroNud.Value) + "'" +
+                            "    '" + Convert.ToInt32(localNumeroNud.Value) +   "'" +
                             ");                                                 ";
 
             ExecutarComandoSql(cmdTxt, "Novo condomínio cadastrado com sucesso!", "Não foi possível cadastrar o condomínio.");

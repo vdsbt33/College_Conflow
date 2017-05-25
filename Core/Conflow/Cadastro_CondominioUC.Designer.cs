@@ -107,9 +107,9 @@
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.label2.Location = new System.Drawing.Point(14, 140);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 20);
+            this.label2.Size = new System.Drawing.Size(83, 20);
             this.label2.TabIndex = 47;
-            this.label2.Text = "Qtd. prédios:";
+            this.label2.Text = "Qtd. blocos:";
             // 
             // enderecoGB
             // 
