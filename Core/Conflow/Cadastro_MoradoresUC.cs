@@ -167,10 +167,10 @@ namespace Conflow
                 }
                 else
                 {
-                    cmdTxt = "INSERT INTO MORADOR_CNPJ(   " +
-                             "    COD_MORADOR,           " +
-                             "    CNPJ_MORADOR            " +
-                             ") VALUES(                  " +
+                    cmdTxt = "INSERT INTO MORADOR_CNPJ(     " +
+                             "    COD_MORADOR,              " +
+                             "    CNPJ_MORADOR              " +
+                             ") VALUES(                     " +
                              "    (SELECT COD_MORADOR FROM MORADOR WHERE NOME_MORADOR = '" + nomeTbox.Text + "' AND ULTIMA_MODIFICACAO = '" + timestamp_criacao + "')," +
                              "    '" + cpfCnpjDesmascarado + "'" +
                              ");                         ";
@@ -254,7 +254,14 @@ namespace Conflow
             }
             return valor;
         }
-        
+
+        // Coloca os Condominios, Blocos, Prédios e Apartamentos
+        public void AtualizarLocalizacoes()
+        {
+
+
+        }
+
     }
 }
 

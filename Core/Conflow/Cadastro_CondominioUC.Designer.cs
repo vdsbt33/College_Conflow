@@ -44,7 +44,7 @@
             this.estadoCBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.custosGB = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.custoMensalNud = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -53,7 +53,7 @@
             this.enderecoGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.localNumeroNud)).BeginInit();
             this.custosGB.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.custoMensalNud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,7 +201,7 @@
             // 
             // custosGB
             // 
-            this.custosGB.Controls.Add(this.numericUpDown1);
+            this.custosGB.Controls.Add(this.custoMensalNud);
             this.custosGB.Controls.Add(this.label8);
             this.custosGB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.custosGB.Location = new System.Drawing.Point(14, 408);
@@ -211,18 +211,18 @@
             this.custosGB.TabStop = false;
             this.custosGB.Text = "Custos";
             // 
-            // numericUpDown1
+            // custoMensalNud
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(168, 31);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.custoMensalNud.DecimalPlaces = 2;
+            this.custoMensalNud.Location = new System.Drawing.Point(168, 31);
+            this.custoMensalNud.Maximum = new decimal(new int[] {
             999999999,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(136, 26);
-            this.numericUpDown1.TabIndex = 1;
+            this.custoMensalNud.Name = "custoMensalNud";
+            this.custoMensalNud.Size = new System.Drawing.Size(136, 26);
+            this.custoMensalNud.TabIndex = 1;
             // 
             // label8
             // 
@@ -264,6 +264,7 @@
             this.CriarBtn.TabIndex = 61;
             this.CriarBtn.Text = "Cadastrar";
             this.CriarBtn.UseVisualStyleBackColor = true;
+            this.CriarBtn.Click += new System.EventHandler(this.CriarBtn_Click);
             // 
             // Cadastro_CondominioUC
             // 
@@ -287,7 +288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.localNumeroNud)).EndInit();
             this.custosGB.ResumeLayout(false);
             this.custosGB.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.custoMensalNud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -311,7 +312,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown localNumeroNud;
         private System.Windows.Forms.GroupBox custosGB;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown custoMensalNud;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox2;
