@@ -39,6 +39,8 @@ namespace Conflow
         {
             CadastrarOPPanel.Controls.Clear();
             CadastrarOPPanel.Controls.Add(blocosUC);
+
+            blocosUC.AtualizarLocalizacao();
         }
 
         private void Cadastrar_CondominioBtn_Click(object sender, EventArgs e)

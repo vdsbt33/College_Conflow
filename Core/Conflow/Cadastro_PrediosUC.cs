@@ -60,7 +60,7 @@ namespace Conflow
             if (identificadorTbox.Text.Length > 0 && qtdApartamentosNud.Value > 0 && valorMensalidadeNud.Value > 0)
             {
                 
-                String cmdTxt = "INSERT INTO PREDIOS ( ID_PREDIO, QTD_APARTAMENTOS_PREDIO, VAL_MENSALIDADES_PREDIO, VAL_FRACAO_IDEAL_PREDIO ) VALUES ( \"" + identificadorTbox.Text + "\", " + (int) qtdApartamentosNud.Value + ", " + valorMensalidadeNud.Value + ", " + 0.00f + " );";
+                String cmdTxt = "INSERT INTO PREDIOS ( ID_PREDIO, QTD_APARTAMENTOS_PREDIO, VAL_MENSALIDADES_PREDIO, VAL_QUOTACONDOMINIAL_PREDIO, VAL_FRACAO_IDEAL_PREDIO ) VALUES ( \"" + identificadorTbox.Text + "\", " + (int) qtdApartamentosNud.Value + ", " + valorMensalidadeNud.Value + ", " + valorQuotaCondominialNud.Value + ", " + 0.00f + " );";
 
                 ExecutarComandoSql(cmdTxt, "Novo prédio adicionado com sucesso!", "Não foi possível adicionar o prédio.");
                 

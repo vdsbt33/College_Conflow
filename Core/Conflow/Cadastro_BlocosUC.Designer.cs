@@ -56,7 +56,7 @@
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(356, 50);
+            this.label6.Size = new System.Drawing.Size(355, 50);
             this.label6.TabIndex = 43;
             this.label6.Text = "Cadastro de Bloco";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -190,7 +190,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Name = "Cadastro_BlocosUC";
-            this.Size = new System.Drawing.Size(356, 442);
+            this.Size = new System.Drawing.Size(355, 442);
             ((System.ComponentModel.ISupportInitialize)(this.qtdPrediosNud)).EndInit();
             this.localizacaoGB.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);

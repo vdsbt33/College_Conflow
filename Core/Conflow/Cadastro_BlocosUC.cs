@@ -18,9 +18,10 @@ namespace Conflow
             InitializeComponent();
         }
 
-        public String str = @"server=127.0.0.1;database=conflow;userid=root;password=123456;"; // YEEEE BOOOI
+        public String str = @"server=127.0.0.1;database=conflow;userid=root;password=123456;";
         public MySqlConnection conn = null;
 
+        public List<Int32> dadosCodsCondominio = new List<Int32>();
 
         private void ExecutarComandoSql(String textoCmd, String msgSucesso, String msgExcessao)
         {
@@ -60,8 +61,8 @@ namespace Conflow
         {
             if (identificadorTbox.Text.Length > 0 && qtdPrediosNud.Value > 0)
             {
-                
-                String cmdTxt = "INSERT INTO BLOCOS( ID_BLOCO, QTD_PREDIOS_BLOCO, COD_CONDOMINIO ) VALUES ( \"" + identificadorTbox.Text + "\", " + qtdPrediosNud +", "+ condominioList.SelectedIndex +" );";
+                int cod_condominio = dadosCodsCondominio[condominioList.SelectedIndex];
+                String cmdTxt = "INSERT INTO BLOCO( ID_BLOCO, QTD_PREDIOS_BLOCO, COD_CONDOMINIO ) VALUES ( \"" + identificadorTbox.Text + "\", " + qtdPrediosNud.Value +", "+ cod_condominio + " );";
 
                 ExecutarComandoSql(cmdTxt, "Novo bloco adicionado com sucesso!", "Não foi possível adicionar o bloco.");
                 
@@ -72,5 +73,33 @@ namespace Conflow
             }
         }
         
+
+
+        // Atualiza as listas do grupo Localização
+        public void AtualizarLocalizacao()
+        {
+            dadosCodsCondominio.Clear();
+
+            conn = new MySqlConnection(str);
+            conn.Open();
+
+            // Condominios
+            condominioList.Items.Clear();
+
+            String cmdSelect = "SELECT COD_CONDOMINIO, ID_CONDOMINIO FROM CONDOMINIO";
+            MySqlCommand cmd = new MySqlCommand(cmdSelect, conn);
+            cmd.Prepare();
+            using (MySqlDataReader leitor = cmd.ExecuteReader())
+            {
+                while (leitor.Read())
+                {
+                    condominioList.Items.Add(String.Format("{0}", leitor["ID_CONDOMINIO"]));
+                    dadosCodsCondominio.Add(Convert.ToInt32(leitor["COD_CONDOMINIO"]));
+                }
+            }
+
+            conn.Close();
+        }
+
     }
 }

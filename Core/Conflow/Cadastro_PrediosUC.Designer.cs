@@ -45,6 +45,8 @@
             this.localizacaoGB = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.valorQuotaCondominialNud = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.qtdApartamentosNud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.valorMensalidadeNud)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -52,6 +54,7 @@
             this.tabPage2.SuspendLayout();
             this.localizacaoGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.valorQuotaCondominialNud)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -80,7 +83,7 @@
             // identificadorTbox
             // 
             this.identificadorTbox.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.identificadorTbox.Location = new System.Drawing.Point(105, 92);
+            this.identificadorTbox.Location = new System.Drawing.Point(105, 91);
             this.identificadorTbox.Name = "identificadorTbox";
             this.identificadorTbox.Size = new System.Drawing.Size(215, 26);
             this.identificadorTbox.TabIndex = 44;
@@ -112,7 +115,7 @@
             // 
             this.valorMensalidadeNud.DecimalPlaces = 2;
             this.valorMensalidadeNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.valorMensalidadeNud.Location = new System.Drawing.Point(173, 176);
+            this.valorMensalidadeNud.Location = new System.Drawing.Point(173, 177);
             this.valorMensalidadeNud.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -136,7 +139,7 @@
             // CriarBtn
             // 
             this.CriarBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CriarBtn.Location = new System.Drawing.Point(132, 456);
+            this.CriarBtn.Location = new System.Drawing.Point(132, 489);
             this.CriarBtn.Name = "CriarBtn";
             this.CriarBtn.Size = new System.Drawing.Size(97, 29);
             this.CriarBtn.TabIndex = 51;
@@ -199,7 +202,7 @@
             // 
             this.localizacaoGB.Controls.Add(this.tabControl);
             this.localizacaoGB.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.localizacaoGB.Location = new System.Drawing.Point(14, 233);
+            this.localizacaoGB.Location = new System.Drawing.Point(14, 264);
             this.localizacaoGB.Name = "localizacaoGB";
             this.localizacaoGB.Size = new System.Drawing.Size(326, 212);
             this.localizacaoGB.TabIndex = 55;
@@ -228,10 +231,42 @@
             this.pictureBox2.TabIndex = 59;
             this.pictureBox2.TabStop = false;
             // 
+            // valorQuotaCondominialNud
+            // 
+            this.valorQuotaCondominialNud.DecimalPlaces = 2;
+            this.valorQuotaCondominialNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.valorQuotaCondominialNud.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.valorQuotaCondominialNud.Location = new System.Drawing.Point(144, 219);
+            this.valorQuotaCondominialNud.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.valorQuotaCondominialNud.Name = "valorQuotaCondominialNud";
+            this.valorQuotaCondominialNud.Size = new System.Drawing.Size(115, 26);
+            this.valorQuotaCondominialNud.TabIndex = 62;
+            this.valorQuotaCondominialNud.ThousandsSeparator = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.label4.Location = new System.Drawing.Point(14, 222);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 20);
+            this.label4.TabIndex = 61;
+            this.label4.Text = "Quota condominial:";
+            // 
             // Cadastro_PrediosUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.valorQuotaCondominialNud);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.localizacaoGB);
@@ -244,7 +279,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Name = "Cadastro_PrediosUC";
-            this.Size = new System.Drawing.Size(355, 502);
+            this.Size = new System.Drawing.Size(355, 541);
             ((System.ComponentModel.ISupportInitialize)(this.qtdApartamentosNud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.valorMensalidadeNud)).EndInit();
             this.tabControl.ResumeLayout(false);
@@ -252,6 +287,7 @@
             this.tabPage2.ResumeLayout(false);
             this.localizacaoGB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.valorQuotaCondominialNud)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +311,7 @@
         private System.Windows.Forms.GroupBox localizacaoGB;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.NumericUpDown valorQuotaCondominialNud;
+        private System.Windows.Forms.Label label4;
     }
 }
