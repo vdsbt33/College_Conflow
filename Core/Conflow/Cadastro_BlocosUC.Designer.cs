@@ -32,8 +32,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.identificadorTbox = new System.Windows.Forms.TextBox();
-            this.qtdPrediosNud = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
             this.localizacaoGB = new System.Windows.Forms.GroupBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -41,7 +39,6 @@
             this.CriarBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.qtdPrediosNud)).BeginInit();
             this.localizacaoGB.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -79,34 +76,11 @@
             this.identificadorTbox.Size = new System.Drawing.Size(152, 26);
             this.identificadorTbox.TabIndex = 45;
             // 
-            // qtdPrediosNud
-            // 
-            this.qtdPrediosNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.qtdPrediosNud.Location = new System.Drawing.Point(108, 132);
-            this.qtdPrediosNud.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.qtdPrediosNud.Name = "qtdPrediosNud";
-            this.qtdPrediosNud.Size = new System.Drawing.Size(115, 26);
-            this.qtdPrediosNud.TabIndex = 48;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label2.Location = new System.Drawing.Point(14, 134);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 20);
-            this.label2.TabIndex = 47;
-            this.label2.Text = "Qtd. prédios:";
-            // 
             // localizacaoGB
             // 
             this.localizacaoGB.Controls.Add(this.tabControl);
             this.localizacaoGB.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.localizacaoGB.Location = new System.Drawing.Point(14, 172);
+            this.localizacaoGB.Location = new System.Drawing.Point(14, 129);
             this.localizacaoGB.Name = "localizacaoGB";
             this.localizacaoGB.Size = new System.Drawing.Size(326, 212);
             this.localizacaoGB.TabIndex = 58;
@@ -146,7 +120,7 @@
             // CriarBtn
             // 
             this.CriarBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CriarBtn.Location = new System.Drawing.Point(133, 398);
+            this.CriarBtn.Location = new System.Drawing.Point(133, 355);
             this.CriarBtn.Name = "CriarBtn";
             this.CriarBtn.Size = new System.Drawing.Size(97, 29);
             this.CriarBtn.TabIndex = 59;
@@ -184,14 +158,11 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.CriarBtn);
             this.Controls.Add(this.localizacaoGB);
-            this.Controls.Add(this.qtdPrediosNud);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.identificadorTbox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Name = "Cadastro_BlocosUC";
-            this.Size = new System.Drawing.Size(355, 442);
-            ((System.ComponentModel.ISupportInitialize)(this.qtdPrediosNud)).EndInit();
+            this.Size = new System.Drawing.Size(355, 400);
             this.localizacaoGB.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -206,8 +177,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox identificadorTbox;
-        private System.Windows.Forms.NumericUpDown qtdPrediosNud;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox localizacaoGB;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;

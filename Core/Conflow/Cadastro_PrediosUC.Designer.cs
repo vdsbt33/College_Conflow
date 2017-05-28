@@ -32,8 +32,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.identificadorTbox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.qtdApartamentosNud = new System.Windows.Forms.NumericUpDown();
             this.valorMensalidadeNud = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.CriarBtn = new System.Windows.Forms.Button();
@@ -47,7 +45,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.valorQuotaCondominialNud = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.qtdApartamentosNud)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.qtdApartamentosNud = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.valorMensalidadeNud)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -55,6 +54,7 @@
             this.localizacaoGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.valorQuotaCondominialNud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qtdApartamentosNud)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -87,29 +87,6 @@
             this.identificadorTbox.Name = "identificadorTbox";
             this.identificadorTbox.Size = new System.Drawing.Size(215, 26);
             this.identificadorTbox.TabIndex = 44;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label2.Location = new System.Drawing.Point(14, 136);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 20);
-            this.label2.TabIndex = 45;
-            this.label2.Text = "Qtd. apartamentos:";
-            // 
-            // qtdApartamentosNud
-            // 
-            this.qtdApartamentosNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.qtdApartamentosNud.Location = new System.Drawing.Point(142, 134);
-            this.qtdApartamentosNud.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.qtdApartamentosNud.Name = "qtdApartamentosNud";
-            this.qtdApartamentosNud.Size = new System.Drawing.Size(115, 26);
-            this.qtdApartamentosNud.TabIndex = 46;
             // 
             // valorMensalidadeNud
             // 
@@ -177,6 +154,7 @@
             this.condominioList.Name = "condominioList";
             this.condominioList.Size = new System.Drawing.Size(282, 104);
             this.condominioList.TabIndex = 0;
+            this.condominioList.SelectedIndexChanged += new System.EventHandler(this.condominioList_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -261,6 +239,39 @@
             this.label4.TabIndex = 61;
             this.label4.Text = "Quota condominial:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.label2.Location = new System.Drawing.Point(14, 136);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 20);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Qtd. apartamentos:";
+            // 
+            // qtdApartamentosNud
+            // 
+            this.qtdApartamentosNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.qtdApartamentosNud.Location = new System.Drawing.Point(142, 134);
+            this.qtdApartamentosNud.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.qtdApartamentosNud.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.qtdApartamentosNud.Name = "qtdApartamentosNud";
+            this.qtdApartamentosNud.Size = new System.Drawing.Size(115, 26);
+            this.qtdApartamentosNud.TabIndex = 46;
+            this.qtdApartamentosNud.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
             // Cadastro_PrediosUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,7 +291,6 @@
             this.Controls.Add(this.label6);
             this.Name = "Cadastro_PrediosUC";
             this.Size = new System.Drawing.Size(355, 541);
-            ((System.ComponentModel.ISupportInitialize)(this.qtdApartamentosNud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.valorMensalidadeNud)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -288,6 +298,7 @@
             this.localizacaoGB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.valorQuotaCondominialNud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qtdApartamentosNud)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,8 +309,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox identificadorTbox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown qtdApartamentosNud;
         private System.Windows.Forms.NumericUpDown valorMensalidadeNud;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button CriarBtn;
@@ -313,5 +322,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.NumericUpDown valorQuotaCondominialNud;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown qtdApartamentosNud;
     }
 }

@@ -59,10 +59,10 @@ namespace Conflow
         
         private void CriarBtn_Click(object sender, EventArgs e)
         {
-            if (identificadorTbox.Text.Length > 0 && qtdPrediosNud.Value > 0)
+            if (identificadorTbox.Text.Length > 0)
             {
                 int cod_condominio = dadosCodsCondominio[condominioList.SelectedIndex];
-                String cmdTxt = "INSERT INTO BLOCO( ID_BLOCO, QTD_PREDIOS_BLOCO, COD_CONDOMINIO ) VALUES ( \"" + identificadorTbox.Text + "\", " + qtdPrediosNud.Value +", "+ cod_condominio + " );";
+                String cmdTxt = "INSERT INTO BLOCO( ID_BLOCO, COD_CONDOMINIO ) VALUES ( \"" + identificadorTbox.Text + "\", "+ cod_condominio + " );";
 
                 ExecutarComandoSql(cmdTxt, "Novo bloco adicionado com sucesso!", "Não foi possível adicionar o bloco.");
                 

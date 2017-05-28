@@ -47,13 +47,13 @@
             this.localizacaoGB = new System.Windows.Forms.GroupBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabCondominio = new System.Windows.Forms.TabPage();
-            this.condominioLB = new System.Windows.Forms.ListBox();
+            this.condominioList = new System.Windows.Forms.ListBox();
             this.tabBloco = new System.Windows.Forms.TabPage();
-            this.blocoLB = new System.Windows.Forms.ListBox();
+            this.blocoList = new System.Windows.Forms.ListBox();
             this.tabPredio = new System.Windows.Forms.TabPage();
-            this.predioLB = new System.Windows.Forms.ListBox();
+            this.predioList = new System.Windows.Forms.ListBox();
             this.tabApartamento = new System.Windows.Forms.TabPage();
-            this.apartamentoLB = new System.Windows.Forms.ListBox();
+            this.apartamentoList = new System.Windows.Forms.ListBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numeroestacionamentoNud)).BeginInit();
@@ -259,7 +259,7 @@
             // 
             // tabCondominio
             // 
-            this.tabCondominio.Controls.Add(this.condominioLB);
+            this.tabCondominio.Controls.Add(this.condominioList);
             this.tabCondominio.Location = new System.Drawing.Point(4, 29);
             this.tabCondominio.Name = "tabCondominio";
             this.tabCondominio.Padding = new System.Windows.Forms.Padding(3);
@@ -268,18 +268,19 @@
             this.tabCondominio.Text = "Condomínio";
             this.tabCondominio.UseVisualStyleBackColor = true;
             // 
-            // condominioLB
+            // condominioList
             // 
-            this.condominioLB.FormattingEnabled = true;
-            this.condominioLB.ItemHeight = 20;
-            this.condominioLB.Location = new System.Drawing.Point(6, 6);
-            this.condominioLB.Name = "condominioLB";
-            this.condominioLB.Size = new System.Drawing.Size(282, 104);
-            this.condominioLB.TabIndex = 0;
+            this.condominioList.FormattingEnabled = true;
+            this.condominioList.ItemHeight = 20;
+            this.condominioList.Location = new System.Drawing.Point(6, 6);
+            this.condominioList.Name = "condominioList";
+            this.condominioList.Size = new System.Drawing.Size(282, 104);
+            this.condominioList.TabIndex = 0;
+            this.condominioList.SelectedIndexChanged += new System.EventHandler(this.condominioList_SelectedIndexChanged);
             // 
             // tabBloco
             // 
-            this.tabBloco.Controls.Add(this.blocoLB);
+            this.tabBloco.Controls.Add(this.blocoList);
             this.tabBloco.Location = new System.Drawing.Point(4, 29);
             this.tabBloco.Name = "tabBloco";
             this.tabBloco.Padding = new System.Windows.Forms.Padding(3);
@@ -288,18 +289,18 @@
             this.tabBloco.Text = "Bloco";
             this.tabBloco.UseVisualStyleBackColor = true;
             // 
-            // blocoLB
+            // blocoList
             // 
-            this.blocoLB.FormattingEnabled = true;
-            this.blocoLB.ItemHeight = 20;
-            this.blocoLB.Location = new System.Drawing.Point(6, 6);
-            this.blocoLB.Name = "blocoLB";
-            this.blocoLB.Size = new System.Drawing.Size(282, 104);
-            this.blocoLB.TabIndex = 1;
+            this.blocoList.FormattingEnabled = true;
+            this.blocoList.ItemHeight = 20;
+            this.blocoList.Location = new System.Drawing.Point(6, 6);
+            this.blocoList.Name = "blocoList";
+            this.blocoList.Size = new System.Drawing.Size(282, 104);
+            this.blocoList.TabIndex = 1;
             // 
             // tabPredio
             // 
-            this.tabPredio.Controls.Add(this.predioLB);
+            this.tabPredio.Controls.Add(this.predioList);
             this.tabPredio.Location = new System.Drawing.Point(4, 29);
             this.tabPredio.Name = "tabPredio";
             this.tabPredio.Padding = new System.Windows.Forms.Padding(3);
@@ -308,18 +309,18 @@
             this.tabPredio.Text = "Prédio";
             this.tabPredio.UseVisualStyleBackColor = true;
             // 
-            // predioLB
+            // predioList
             // 
-            this.predioLB.FormattingEnabled = true;
-            this.predioLB.ItemHeight = 20;
-            this.predioLB.Location = new System.Drawing.Point(6, 6);
-            this.predioLB.Name = "predioLB";
-            this.predioLB.Size = new System.Drawing.Size(282, 104);
-            this.predioLB.TabIndex = 57;
+            this.predioList.FormattingEnabled = true;
+            this.predioList.ItemHeight = 20;
+            this.predioList.Location = new System.Drawing.Point(6, 6);
+            this.predioList.Name = "predioList";
+            this.predioList.Size = new System.Drawing.Size(282, 104);
+            this.predioList.TabIndex = 57;
             // 
             // tabApartamento
             // 
-            this.tabApartamento.Controls.Add(this.apartamentoLB);
+            this.tabApartamento.Controls.Add(this.apartamentoList);
             this.tabApartamento.Location = new System.Drawing.Point(4, 29);
             this.tabApartamento.Name = "tabApartamento";
             this.tabApartamento.Padding = new System.Windows.Forms.Padding(3);
@@ -328,14 +329,14 @@
             this.tabApartamento.Text = "Apartamento";
             this.tabApartamento.UseVisualStyleBackColor = true;
             // 
-            // apartamentoLB
+            // apartamentoList
             // 
-            this.apartamentoLB.FormattingEnabled = true;
-            this.apartamentoLB.ItemHeight = 20;
-            this.apartamentoLB.Location = new System.Drawing.Point(6, 6);
-            this.apartamentoLB.Name = "apartamentoLB";
-            this.apartamentoLB.Size = new System.Drawing.Size(282, 104);
-            this.apartamentoLB.TabIndex = 2;
+            this.apartamentoList.FormattingEnabled = true;
+            this.apartamentoList.ItemHeight = 20;
+            this.apartamentoList.Location = new System.Drawing.Point(6, 6);
+            this.apartamentoList.Name = "apartamentoList";
+            this.apartamentoList.Size = new System.Drawing.Size(282, 104);
+            this.apartamentoList.TabIndex = 2;
             // 
             // pictureBox2
             // 
@@ -417,13 +418,13 @@
         private System.Windows.Forms.GroupBox localizacaoGB;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabCondominio;
-        private System.Windows.Forms.ListBox condominioLB;
+        private System.Windows.Forms.ListBox condominioList;
         private System.Windows.Forms.TabPage tabBloco;
-        private System.Windows.Forms.ListBox blocoLB;
+        private System.Windows.Forms.ListBox blocoList;
         private System.Windows.Forms.TabPage tabPredio;
         private System.Windows.Forms.TabPage tabApartamento;
-        private System.Windows.Forms.ListBox predioLB;
-        private System.Windows.Forms.ListBox apartamentoLB;
+        private System.Windows.Forms.ListBox predioList;
+        private System.Windows.Forms.ListBox apartamentoList;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label7;
     }

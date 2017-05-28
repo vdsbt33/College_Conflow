@@ -27,12 +27,16 @@ namespace Conflow
 
             CadastrarOPPanel.Controls.Clear();
             CadastrarOPPanel.Controls.Add(moradoresUC);
+
+            moradoresUC.AtualizarLocalizacao();
         }
 
         private void Cadastrar_PredioBtn_Click(object sender, EventArgs e)
         {
             CadastrarOPPanel.Controls.Clear();
             CadastrarOPPanel.Controls.Add(prediosUC);
+
+            prediosUC.AtualizarLocalizacao();
         }
 
         private void Cadastrar_BlocoBtn_Click(object sender, EventArgs e)

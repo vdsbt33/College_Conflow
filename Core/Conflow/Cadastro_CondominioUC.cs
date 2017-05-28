@@ -93,26 +93,35 @@ namespace Conflow
 
         private void CriarBtn_Click(object sender, EventArgs e)
         {
-            String cmdTxt = "INSERT INTO CONDOMINIO(                            " +
-	                        "    ID_CONDOMINIO,                                 " +
-                            "    QTD_BLOCOS_CONDOMINIO,                         " +
-                            "    CUSTO_MENSAL_CONDOMINIO,                       " +
-                            "    END_ESTADO_CONDOMINIO,                         " +
-                            "    END_BAIRRO_CONDOMINIO,                         " +
-                            "    END_RUA_CONDOMINIO,                            " +
-                            "    END_NUMERO_CONDOMINIO                          " +
-                            ") VALUES (                                         " +
-	                        "    '" + nomeDoCondominioTbox.Text + "',           " +
-                            "    '" + Convert.ToInt32(qtdPrediosNud.Value) + "'," +
-                            "    '" + Convert.ToSingle(custoMensalNud.Value) +  "'," +
-                            "    '" + estadoCBox.Text + "',                     " +
-                            "    '" + bairroTbox.Text + "',                     " +
-                            "    '" + ruaTBox.Text + "',                        " +
-                            "    '" + Convert.ToInt32(localNumeroNud.Value) +   "'" +
-                            ");                                                 ";
+            if (nomeDoCondominioTbox.Text.Length > 0 && telefoneTbox.Text.Length > 0 && estadoCBox.SelectedIndex != -1 && bairroTbox.Text.Length > 0 && ruaTBox.Text.Length > 0)
+            {
+                telefoneTbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
 
-            ExecutarComandoSql(cmdTxt, "Novo condomínio cadastrado com sucesso!", "Não foi possível cadastrar o condomínio.");
+                String cmdTxt = "INSERT INTO CONDOMINIO(                            " +
+                                "    ID_CONDOMINIO,                                 " +
+                                "    DESPESA_MENSAL_CONDOMINIO,                     " +
+                                "    TEL_CONTATO_CONDOMINIO,                        " +
+                                "    END_ESTADO_CONDOMINIO,                         " +
+                                "    END_BAIRRO_CONDOMINIO,                         " +
+                                "    END_RUA_CONDOMINIO,                            " +
+                                "    END_NUMERO_CONDOMINIO                          " +
+                                ") VALUES (                                         " +
+                                "    '" + nomeDoCondominioTbox.Text + "', " +
+                                "    '" + Convert.ToSingle(custoMensalNud.Value) + "', " +
+                                "    '" + telefoneTbox.Text + "', " +
+                                "    '" + estadoCBox.Text + "', " +
+                                "    '" + bairroTbox.Text + "', " +
+                                "    '" + ruaTBox.Text + "', " +
+                                "    '" + Convert.ToInt32(localNumeroNud.Value) + "'" +
+                                ");                                                 ";
 
+                ExecutarComandoSql(cmdTxt, "Novo condomínio cadastrado com sucesso!", "Não foi possível cadastrar o condomínio.");
+            }
+            else
+            {
+                MessageBox.Show("Erro: Um ou mais campos não foram preenchidos.");
+            }
+            
         }
     }
 }

@@ -32,8 +32,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.nomeDoCondominioTbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.qtdPrediosNud = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
             this.enderecoGB = new System.Windows.Forms.GroupBox();
             this.localNumeroNud = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,7 +47,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.CriarBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.qtdPrediosNud)).BeginInit();
+            this.label10 = new System.Windows.Forms.Label();
+            this.telefoneTbox = new System.Windows.Forms.MaskedTextBox();
             this.enderecoGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.localNumeroNud)).BeginInit();
             this.custosGB.SuspendLayout();
@@ -88,29 +87,6 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "Nome:";
             // 
-            // qtdPrediosNud
-            // 
-            this.qtdPrediosNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.qtdPrediosNud.Location = new System.Drawing.Point(108, 138);
-            this.qtdPrediosNud.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.qtdPrediosNud.Name = "qtdPrediosNud";
-            this.qtdPrediosNud.Size = new System.Drawing.Size(115, 26);
-            this.qtdPrediosNud.TabIndex = 48;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label2.Location = new System.Drawing.Point(14, 140);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
-            this.label2.TabIndex = 47;
-            this.label2.Text = "Qtd. blocos:";
-            // 
             // enderecoGB
             // 
             this.enderecoGB.Controls.Add(this.localNumeroNud);
@@ -122,7 +98,7 @@
             this.enderecoGB.Controls.Add(this.estadoCBox);
             this.enderecoGB.Controls.Add(this.label3);
             this.enderecoGB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enderecoGB.Location = new System.Drawing.Point(14, 184);
+            this.enderecoGB.Location = new System.Drawing.Point(14, 170);
             this.enderecoGB.Name = "enderecoGB";
             this.enderecoGB.Size = new System.Drawing.Size(326, 201);
             this.enderecoGB.TabIndex = 56;
@@ -204,7 +180,7 @@
             this.custosGB.Controls.Add(this.custoMensalNud);
             this.custosGB.Controls.Add(this.label8);
             this.custosGB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custosGB.Location = new System.Drawing.Point(14, 408);
+            this.custosGB.Location = new System.Drawing.Point(14, 394);
             this.custosGB.Name = "custosGB";
             this.custosGB.Size = new System.Drawing.Size(321, 73);
             this.custosGB.TabIndex = 57;
@@ -214,7 +190,7 @@
             // custoMensalNud
             // 
             this.custoMensalNud.DecimalPlaces = 2;
-            this.custoMensalNud.Location = new System.Drawing.Point(168, 31);
+            this.custoMensalNud.Location = new System.Drawing.Point(160, 31);
             this.custoMensalNud.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -229,9 +205,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(12, 33);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(150, 20);
+            this.label8.Size = new System.Drawing.Size(142, 20);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Custo mensal total (R$):";
+            this.label8.Text = "Despesa mensal (R$):";
             // 
             // label9
             // 
@@ -258,7 +234,7 @@
             // CriarBtn
             // 
             this.CriarBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CriarBtn.Location = new System.Drawing.Point(131, 492);
+            this.CriarBtn.Location = new System.Drawing.Point(131, 478);
             this.CriarBtn.Name = "CriarBtn";
             this.CriarBtn.Size = new System.Drawing.Size(97, 29);
             this.CriarBtn.TabIndex = 61;
@@ -266,23 +242,41 @@
             this.CriarBtn.UseVisualStyleBackColor = true;
             this.CriarBtn.Click += new System.EventHandler(this.CriarBtn_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.label10.Location = new System.Drawing.Point(14, 135);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 20);
+            this.label10.TabIndex = 62;
+            this.label10.Text = "Telefone:";
+            // 
+            // telefoneTbox
+            // 
+            this.telefoneTbox.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.telefoneTbox.Location = new System.Drawing.Point(85, 134);
+            this.telefoneTbox.Mask = "(00) 0000-0000";
+            this.telefoneTbox.Name = "telefoneTbox";
+            this.telefoneTbox.Size = new System.Drawing.Size(93, 26);
+            this.telefoneTbox.TabIndex = 63;
+            // 
             // Cadastro_CondominioUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.telefoneTbox);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.CriarBtn);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.custosGB);
             this.Controls.Add(this.enderecoGB);
-            this.Controls.Add(this.qtdPrediosNud);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.nomeDoCondominioTbox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Name = "Cadastro_CondominioUC";
-            this.Size = new System.Drawing.Size(356, 535);
-            ((System.ComponentModel.ISupportInitialize)(this.qtdPrediosNud)).EndInit();
+            this.Size = new System.Drawing.Size(356, 517);
             this.enderecoGB.ResumeLayout(false);
             this.enderecoGB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.localNumeroNud)).EndInit();
@@ -300,8 +294,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox nomeDoCondominioTbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown qtdPrediosNud;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox enderecoGB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox estadoCBox;
@@ -317,5 +309,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button CriarBtn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.MaskedTextBox telefoneTbox;
     }
 }

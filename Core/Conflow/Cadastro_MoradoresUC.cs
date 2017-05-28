@@ -17,6 +17,9 @@ namespace Conflow
         private UCPessoa_Fisica ucPFisica = null;
         private UCPessoa_Juridica ucPJuridica = null;
 
+        public List<Int32> dadosCodsCondominio = new List<Int32>();
+        public List<Int32> dadosCodsBloco = new List<int>();
+
         public Cadastro_MoradoresUC()
         {
             InitializeComponent();
@@ -255,11 +258,64 @@ namespace Conflow
             return valor;
         }
 
-        // Coloca os Condominios, Blocos, Prédios e Apartamentos
-        public void AtualizarLocalizacoes()
+        // Atualiza as listas do grupo Localização
+        public void AtualizarLocalizacao()
         {
+            dadosCodsCondominio.Clear();
 
+            conn = new MySqlConnection(str);
+            conn.Open();
 
+            // Condominios
+            condominioList.Items.Clear();
+
+            String cmdSelect = "SELECT COD_CONDOMINIO, ID_CONDOMINIO FROM CONDOMINIO";
+            MySqlCommand cmd = new MySqlCommand(cmdSelect, conn);
+            cmd.Prepare();
+            using (MySqlDataReader leitor = cmd.ExecuteReader())
+            {
+                while (leitor.Read())
+                {
+                    condominioList.Items.Add(String.Format("{0}", leitor["ID_CONDOMINIO"]));
+                    dadosCodsCondominio.Add(Convert.ToInt32(leitor["COD_CONDOMINIO"]));
+                }
+            }
+
+            AtualizarBlocos();
+        }
+
+        public void AtualizarBlocos()
+        {
+            // Blocos
+            blocoList.Items.Clear();
+
+            String cmdSelect = "SELECT BLO.COD_BLOCO, BLO.ID_BLOCO, BLO.COD_CONDOMINIO 'BLO_CODCON', CON.COD_CONDOMINIO FROM BLOCO BLO, CONDOMINIO CON WHERE BLO.COD_CONDOMINIO = CON.COD_CONDOMINIO;";
+            MySqlCommand cmd = new MySqlCommand(cmdSelect, conn);
+            cmd.Prepare();
+            using (MySqlDataReader leitor = cmd.ExecuteReader())
+            {
+                while (leitor.Read())
+                {
+                    try
+                    {
+                        if (dadosCodsCondominio[condominioList.SelectedIndex] == (int)leitor["BLO_CODCON"])
+                        {
+                            blocoList.Items.Add(String.Format("{0}", leitor["ID_BLOCO"]));
+                            dadosCodsBloco.Add(Convert.ToInt32(leitor["COD_BLOCO"]));
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+            }
+        }
+
+        private void condominioList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AtualizarBlocos();
         }
 
     }

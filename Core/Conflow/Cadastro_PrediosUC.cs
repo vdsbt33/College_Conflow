@@ -20,7 +20,10 @@ namespace Conflow
 
         public String str = @"server=127.0.0.1;database=conflow;userid=root;password=123456;";
         public MySqlConnection conn = null;
-        
+
+        public List<Int32> dadosCodsCondominio = new List<Int32>();
+        public List<Int32> dadosCodsBloco = new List<int>();
+
         private void ExecutarComandoSql(String textoCmd, String msgSucesso, String msgExcessao)
         {
             try
@@ -57,18 +60,84 @@ namespace Conflow
 
         private void CriarBtn_Click(object sender, EventArgs e)
         {
-            if (identificadorTbox.Text.Length > 0 && qtdApartamentosNud.Value > 0 && valorMensalidadeNud.Value > 0)
+            if (identificadorTbox.Text.Length > 0 && valorMensalidadeNud.Value > 0 && blocoList.SelectedIndex != -1)
             {
                 
-                String cmdTxt = "INSERT INTO PREDIOS ( ID_PREDIO, QTD_APARTAMENTOS_PREDIO, VAL_MENSALIDADES_PREDIO, VAL_QUOTACONDOMINIAL_PREDIO, VAL_FRACAO_IDEAL_PREDIO ) VALUES ( \"" + identificadorTbox.Text + "\", " + (int) qtdApartamentosNud.Value + ", " + valorMensalidadeNud.Value + ", " + valorQuotaCondominialNud.Value + ", " + 0.00f + " );";
+                String cmdTxt = "INSERT INTO PREDIO ( ID_PREDIO, VAL_MENSALIDADES_PREDIO, VAL_QUOTACONDOMINIAL_PREDIO, VAL_FRACAO_IDEAL_PREDIO ) VALUES ( \"" + identificadorTbox.Text + "\", " + valorMensalidadeNud.Value + ", " + valorQuotaCondominialNud.Value + ", " + 0.00f + " );";
 
                 ExecutarComandoSql(cmdTxt, "Novo prédio adicionado com sucesso!", "Não foi possível adicionar o prédio.");
+
+                // Inserindo apartamentos no prédio
+                for (int contador = 0; contador < (int) qtdApartamentosNud.Value; contador++)
+                {
+                    cmdTxt = "INSERT INTO PREDIO ( ID_PREDIO, VAL_MENSALIDADES_PREDIO, VAL_QUOTACONDOMINIAL_PREDIO, VAL_FRACAO_IDEAL_PREDIO ) VALUES ( \"" + identificadorTbox.Text + "\", " + valorMensalidadeNud.Value + ", " + valorQuotaCondominialNud.Value + ", " + 0.00f + " );";
+                }
                 
             }
             else
             {
                 MessageBox.Show("Erro: Um ou mais campos não foram preenchidos.");
             }
+        }
+
+        // Atualiza as listas do grupo Localização
+        public void AtualizarLocalizacao()
+        {
+            dadosCodsCondominio.Clear();
+
+            conn = new MySqlConnection(str);
+            conn.Open();
+
+            // Condominios
+            condominioList.Items.Clear();
+
+            String cmdSelect = "SELECT COD_CONDOMINIO, ID_CONDOMINIO FROM CONDOMINIO";
+            MySqlCommand cmd = new MySqlCommand(cmdSelect, conn);
+            cmd.Prepare();
+            using (MySqlDataReader leitor = cmd.ExecuteReader())
+            {
+                while (leitor.Read())
+                {
+                    condominioList.Items.Add(String.Format("{0}", leitor["ID_CONDOMINIO"]));
+                    dadosCodsCondominio.Add(Convert.ToInt32(leitor["COD_CONDOMINIO"]));
+                }
+            }
+
+            AtualizarBlocos();
+        }
+
+        public void AtualizarBlocos()
+        {
+            // Blocos
+            blocoList.Items.Clear();
+
+            String cmdSelect = "SELECT BLO.COD_BLOCO, BLO.ID_BLOCO, BLO.COD_CONDOMINIO 'BLO_CODCON', CON.COD_CONDOMINIO FROM BLOCO BLO, CONDOMINIO CON WHERE BLO.COD_CONDOMINIO = CON.COD_CONDOMINIO;";
+            MySqlCommand cmd = new MySqlCommand(cmdSelect, conn);
+            cmd.Prepare();
+            using (MySqlDataReader leitor = cmd.ExecuteReader())
+            {
+                while (leitor.Read())
+                {
+                    try
+                    {
+                        if (dadosCodsCondominio[condominioList.SelectedIndex] == (int)leitor["BLO_CODCON"])
+                        {
+                            blocoList.Items.Add(String.Format("{0}", leitor["ID_BLOCO"]));
+                            dadosCodsBloco.Add(Convert.ToInt32(leitor["COD_BLOCO"]));
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+            }
+        }
+
+        private void condominioList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AtualizarBlocos();
         }
     }
 }

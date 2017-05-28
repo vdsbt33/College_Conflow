@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               10.1.23-MariaDB - mariadb.org binary distribution
+-- Server version:               10.2.6-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win64
 -- HeidiSQL Version:             9.4.0.5125
 -- --------------------------------------------------------
@@ -19,11 +19,14 @@ USE `conflow`;
 -- Dumping structure for table conflow.apartamento
 CREATE TABLE IF NOT EXISTS `apartamento` (
   `COD_APARTAMENTO` int(11) NOT NULL AUTO_INCREMENT,
-  `VAL_FRACAO_IDEAL` float DEFAULT '0',
-  `COD_BLOCO` int(11) DEFAULT NULL,
+  `COD_DONO_APARTAMENTO` int(11) DEFAULT NULL,
+  `COD_PREDIO` int(11) NOT NULL,
+  `ULTIMA_MODIFICACAO` datetime DEFAULT NULL,
   PRIMARY KEY (`COD_APARTAMENTO`),
-  KEY `COD_BLOCO` (`COD_BLOCO`),
-  CONSTRAINT `apartamento_ibfk_1` FOREIGN KEY (`COD_BLOCO`) REFERENCES `bloco` (`COD_BLOCO`)
+  KEY `COD_DONO_APARTAMENTO` (`COD_DONO_APARTAMENTO`),
+  KEY `COD_PREDIO` (`COD_PREDIO`),
+  CONSTRAINT `apartamento_ibfk_1` FOREIGN KEY (`COD_DONO_APARTAMENTO`) REFERENCES `morador` (`COD_MORADOR`),
+  CONSTRAINT `apartamento_ibfk_2` FOREIGN KEY (`COD_PREDIO`) REFERENCES `predio` (`COD_PREDIO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
@@ -31,12 +34,11 @@ CREATE TABLE IF NOT EXISTS `apartamento` (
 CREATE TABLE IF NOT EXISTS `bloco` (
   `COD_BLOCO` int(11) NOT NULL AUTO_INCREMENT,
   `ID_BLOCO` varchar(80) DEFAULT NULL,
-  `QTD_PREDIOS_BLOCO` int(11) NOT NULL,
   `COD_CONDOMINIO` int(11) NOT NULL,
   PRIMARY KEY (`COD_BLOCO`),
   KEY `COD_CONDOMINIO` (`COD_CONDOMINIO`),
   CONSTRAINT `blocos_ibfk_1` FOREIGN KEY (`COD_CONDOMINIO`) REFERENCES `condominio` (`COD_CONDOMINIO`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table conflow.boleto
@@ -56,15 +58,15 @@ CREATE TABLE IF NOT EXISTS `boleto` (
 CREATE TABLE IF NOT EXISTS `condominio` (
   `COD_CONDOMINIO` int(11) NOT NULL AUTO_INCREMENT,
   `ID_CONDOMINIO` varchar(80) DEFAULT NULL,
-  `QTD_BLOCOS_CONDOMINIO` int(11) NOT NULL DEFAULT '1',
-  `CUSTO_MENSAL_CONDOMINIO` float DEFAULT '0',
+  `DESPESA_MENSAL_CONDOMINIO` float DEFAULT NULL,
+  `TEL_CONTATO_CONDOMINIO` varchar(10) DEFAULT '',
   `END_ESTADO_CONDOMINIO` varchar(80) DEFAULT NULL,
   `END_BAIRRO_CONDOMINIO` varchar(80) DEFAULT NULL,
   `END_RUA_CONDOMINIO` varchar(80) DEFAULT NULL,
   `END_NUMERO_CONDOMINIO` int(11) DEFAULT NULL,
   `IDF_ATIVO` varchar(1) DEFAULT 'S',
   PRIMARY KEY (`COD_CONDOMINIO`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table conflow.estacionamento
@@ -121,9 +123,8 @@ CREATE TABLE IF NOT EXISTS `morador_cpf` (
 CREATE TABLE IF NOT EXISTS `predio` (
   `COD_PREDIO` int(11) NOT NULL AUTO_INCREMENT,
   `ID_PREDIO` varchar(80) DEFAULT NULL,
-  `QTD_APARTAMENTOS_PREDIO` int(11) NOT NULL,
   `VAL_MENSALIDADES_PREDIO` float NOT NULL,
-  `VAL_QUOTACONDOMINIAL_PREDIO` float NOT NULL DEFAULT '0',
+  `VAL_QUOTACONDOMINIAL_PREDIO` float NOT NULL DEFAULT 0,
   `COD_BLOCO` int(11) NOT NULL,
   PRIMARY KEY (`COD_PREDIO`),
   KEY `COD_BLOCO` (`COD_BLOCO`),
