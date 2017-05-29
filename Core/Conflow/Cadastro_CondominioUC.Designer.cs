@@ -49,11 +49,14 @@
             this.CriarBtn = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.telefoneTbox = new System.Windows.Forms.MaskedTextBox();
+            this.valorQuotaCondominialNud = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
             this.enderecoGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.localNumeroNud)).BeginInit();
             this.custosGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.custoMensalNud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.valorQuotaCondominialNud)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -160,10 +163,40 @@
             // 
             // estadoCBox
             // 
+            this.estadoCBox.DropDownHeight = 168;
             this.estadoCBox.FormattingEnabled = true;
-            this.estadoCBox.Location = new System.Drawing.Point(72, 35);
+            this.estadoCBox.IntegralHeight = false;
+            this.estadoCBox.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
+            this.estadoCBox.Location = new System.Drawing.Point(47, 35);
             this.estadoCBox.Name = "estadoCBox";
-            this.estadoCBox.Size = new System.Drawing.Size(169, 28);
+            this.estadoCBox.Size = new System.Drawing.Size(77, 28);
             this.estadoCBox.TabIndex = 1;
             // 
             // label3
@@ -171,18 +204,20 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(11, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 20);
+            this.label3.Size = new System.Drawing.Size(30, 20);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Estado:";
+            this.label3.Text = "UF:";
             // 
             // custosGB
             // 
+            this.custosGB.Controls.Add(this.valorQuotaCondominialNud);
             this.custosGB.Controls.Add(this.custoMensalNud);
+            this.custosGB.Controls.Add(this.label2);
             this.custosGB.Controls.Add(this.label8);
             this.custosGB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.custosGB.Location = new System.Drawing.Point(14, 394);
             this.custosGB.Name = "custosGB";
-            this.custosGB.Size = new System.Drawing.Size(321, 73);
+            this.custosGB.Size = new System.Drawing.Size(321, 111);
             this.custosGB.TabIndex = 57;
             this.custosGB.TabStop = false;
             this.custosGB.Text = "Custos";
@@ -234,7 +269,7 @@
             // CriarBtn
             // 
             this.CriarBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CriarBtn.Location = new System.Drawing.Point(131, 478);
+            this.CriarBtn.Location = new System.Drawing.Point(131, 511);
             this.CriarBtn.Name = "CriarBtn";
             this.CriarBtn.Size = new System.Drawing.Size(97, 29);
             this.CriarBtn.TabIndex = 61;
@@ -261,6 +296,36 @@
             this.telefoneTbox.Size = new System.Drawing.Size(93, 26);
             this.telefoneTbox.TabIndex = 63;
             // 
+            // valorQuotaCondominialNud
+            // 
+            this.valorQuotaCondominialNud.DecimalPlaces = 2;
+            this.valorQuotaCondominialNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.valorQuotaCondominialNud.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.valorQuotaCondominialNud.Location = new System.Drawing.Point(142, 69);
+            this.valorQuotaCondominialNud.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.valorQuotaCondominialNud.Name = "valorQuotaCondominialNud";
+            this.valorQuotaCondominialNud.Size = new System.Drawing.Size(115, 26);
+            this.valorQuotaCondominialNud.TabIndex = 64;
+            this.valorQuotaCondominialNud.ThousandsSeparator = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.label2.Location = new System.Drawing.Point(12, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(124, 20);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "Quota condominial:";
+            // 
             // Cadastro_CondominioUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,7 +341,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Name = "Cadastro_CondominioUC";
-            this.Size = new System.Drawing.Size(356, 517);
+            this.Size = new System.Drawing.Size(356, 552);
             this.enderecoGB.ResumeLayout(false);
             this.enderecoGB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.localNumeroNud)).EndInit();
@@ -284,6 +349,7 @@
             this.custosGB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.custoMensalNud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.valorQuotaCondominialNud)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,5 +377,7 @@
         private System.Windows.Forms.Button CriarBtn;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox telefoneTbox;
+        private System.Windows.Forms.NumericUpDown valorQuotaCondominialNud;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -19,6 +19,9 @@ namespace Conflow
 
         public List<Int32> dadosCodsCondominio = new List<Int32>();
         public List<Int32> dadosCodsBloco = new List<int>();
+        public List<Int32> dadosCodsPredio = new List<int>();
+
+        AtalhosSQL ComandosSQL = new AtalhosSQL();
 
         public Cadastro_MoradoresUC()
         {
@@ -26,87 +29,7 @@ namespace Conflow
             pessoaFisicaRb.Checked = true;
             MudarTipoPessoa();
         }
-
-        // Retorna a data e hora atual no formato do SQL
-        private String current_timestamp
-        {
-            get
-            {
-                return String.Format("{0}-{1}-{2} {3}:{4}:{5}", DateTime.Now.Year.ToString(), ConverterDataHora(DateTime.Now.Month.ToString()), ConverterDataHora(DateTime.Now.Day.ToString()), ConverterDataHora(DateTime.Now.Hour.ToString()), ConverterDataHora(DateTime.Now.Minute.ToString()), ConverterDataHora(DateTime.Now.Second.ToString()));
-            }
-        }
-        public String str = @"server=127.0.0.1;database=conflow;userid=root;password=123456;";
-        public MySqlConnection conn = null;
-
-        // Executa um comando SQL e retorna se houve um erro ou não. True sucesso. False erro.
-        // Possui mensagem de erro
-        private bool ExecutarComandoSql(String textoCmd, String msgSucesso, String msgExcessao)
-        {
-            try
-            {
-                conn = new MySqlConnection(str);
-                conn.Open();
-                MySqlCommand comandoSql = new MySqlCommand(textoCmd, conn);
-                comandoSql.Prepare();
-                comandoSql.ExecuteNonQuery();
-
-                if (msgSucesso.Length > 0)
-                {
-                    MessageBox.Show(msgSucesso);
-                }
-                return true;
-            }
-            catch (Exception e)
-            {
-                if (msgExcessao.Length > 0)
-                {
-                    MessageBox.Show(msgExcessao + "\n\nDescrição: " + e.Message);
-                }
-                else
-                {
-                    MessageBox.Show("Erro: Um erro ocorreu e não foi possível realizar a tarefa.");
-                }
-                return false;
-            }
-            finally
-            {
-                if (conn != null)
-                {
-                    conn.Clone();
-                }
-            }
-        }
-
-        // Executa um comando SQL e retorna se houve um erro ou não. True sucesso. False erro.
-        // NÃO possui mensagem de erro
-        private bool ExecutarComandoSql(String textoCmd, String msgSucesso)
-        {
-            try
-            {
-                conn = new MySqlConnection(str);
-                conn.Open();
-                MySqlCommand comandoSql = new MySqlCommand(textoCmd, conn);
-                comandoSql.Prepare();
-                comandoSql.ExecuteNonQuery();
-
-                if (msgSucesso.Length > 0)
-                {
-                    MessageBox.Show(msgSucesso);
-                }
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-            finally
-            {
-                if (conn != null)
-                {
-                    conn.Clone();
-                }
-            }
-        }
+        
 
         private void CriarBtn_Click(object sender, EventArgs e)
         {
@@ -137,13 +60,13 @@ namespace Conflow
                 }
 
                 String dataNascimento = datanascimentoDtp.Value.Date.Year.ToString();
-                dataNascimento += ConverterDataHora(datanascimentoDtp.Value.Date.Month.ToString());
-                dataNascimento += ConverterDataHora(datanascimentoDtp.Value.Date.Day.ToString());
+                dataNascimento += ComandosSQL.ConverterDataHora(datanascimentoDtp.Value.Date.Month.ToString());
+                dataNascimento += ComandosSQL.ConverterDataHora(datanascimentoDtp.Value.Date.Day.ToString());
 
 
                 // Criando Morador
                 String cmdTxt = "";
-                String timestamp_criacao = current_timestamp;
+                String timestamp_criacao = ComandosSQL.current_timestamp;
                    cmdTxt = "INSERT INTO MORADOR(               " +
                             "    NOME_MORADOR,                  " +
                             "    RG_MORADOR,                    " +
@@ -156,7 +79,7 @@ namespace Conflow
                             "    '" + timestamp_criacao + "'    " +
                             ");                                 ";
 
-                ExecutarComandoSql(cmdTxt, "Novo morador adicionado com sucesso!", "Não foi possível adicionar o morador.");
+                ComandosSQL.ExecutarComandoSql(cmdTxt, "Novo morador adicionado com sucesso!", "Não foi possível adicionar o morador.");
                 // Criando CPF / CNPJ do Morador
                 if (pessoaFisicaRb.Checked)
                 {
@@ -179,13 +102,13 @@ namespace Conflow
                              ");                         ";
                 }
 
-                if (!ExecutarComandoSql(cmdTxt, "", "Não foi possível adicionar o CPF/CNPJ do morador."))
+                if (!ComandosSQL.ExecutarComandoSql(cmdTxt, "", "Não foi possível adicionar o CPF/CNPJ do morador."))
                 {
                     cmdTxt =    "DELETE FROM MORADOR                                                " +
                                 "WHERE COD_MORADOR = (SELECT COD_MORADOR                            " +
                                 "FROM MORADOR                                                       " +
                                 "WHERE NOME_MORADOR = '" + nomeTbox.Text + "' AND ULTIMA_MODIFICACAO = '" + timestamp_criacao + "');  ";
-                    ExecutarComandoSql(cmdTxt, "");
+                    ComandosSQL.ExecutarComandoSql(cmdTxt, "");
                 }
 
 
@@ -247,30 +170,19 @@ namespace Conflow
         }
 
         
-
-        // Faz com que valores menores que 10 retornem com um zero antes. Ex: 07, 08, 09, 10.
-        private String ConverterDataHora(String valor)
-        {
-            if (Convert.ToInt32(valor) < 10)
-            {
-                return "0" + valor;
-            }
-            return valor;
-        }
-
         // Atualiza as listas do grupo Localização
         public void AtualizarLocalizacao()
         {
             dadosCodsCondominio.Clear();
 
-            conn = new MySqlConnection(str);
-            conn.Open();
+            ComandosSQL.conn = new MySqlConnection(ComandosSQL.str);
+            ComandosSQL.conn.Open();
 
             // Condominios
             condominioList.Items.Clear();
 
             String cmdSelect = "SELECT COD_CONDOMINIO, ID_CONDOMINIO FROM CONDOMINIO";
-            MySqlCommand cmd = new MySqlCommand(cmdSelect, conn);
+            MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
             cmd.Prepare();
             using (MySqlDataReader leitor = cmd.ExecuteReader())
             {
@@ -282,6 +194,7 @@ namespace Conflow
             }
 
             AtualizarBlocos();
+            AtualizarPredios();
         }
 
         public void AtualizarBlocos()
@@ -289,8 +202,8 @@ namespace Conflow
             // Blocos
             blocoList.Items.Clear();
 
-            String cmdSelect = "SELECT BLO.COD_BLOCO, BLO.ID_BLOCO, BLO.COD_CONDOMINIO 'BLO_CODCON', CON.COD_CONDOMINIO FROM BLOCO BLO, CONDOMINIO CON WHERE BLO.COD_CONDOMINIO = CON.COD_CONDOMINIO;";
-            MySqlCommand cmd = new MySqlCommand(cmdSelect, conn);
+            String cmdSelect = "SELECT BLO.ID_BLOCO, BLO.COD_CONDOMINIO 'BLO-COD_CONDOMINIO' FROM BLOCO BLO, CONDOMINIO CON WHERE BLO.COD_CONDOMINIO = CON.COD_CONDOMINIO;";
+            MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
             cmd.Prepare();
             using (MySqlDataReader leitor = cmd.ExecuteReader())
             {
@@ -298,7 +211,7 @@ namespace Conflow
                 {
                     try
                     {
-                        if (dadosCodsCondominio[condominioList.SelectedIndex] == (int)leitor["BLO_CODCON"])
+                        if (dadosCodsCondominio[condominioList.SelectedIndex] == (int)leitor["BLO-COD_CONDOMINIO"])
                         {
                             blocoList.Items.Add(String.Format("{0}", leitor["ID_BLOCO"]));
                             dadosCodsBloco.Add(Convert.ToInt32(leitor["COD_BLOCO"]));
@@ -313,9 +226,43 @@ namespace Conflow
             }
         }
 
+        public void AtualizarPredios()
+        {
+            // Blocos
+            blocoList.Items.Clear();
+
+            String cmdSelect = "SELECT PRE.ID_PREDIO, PRE.COD_BLOCO 'PRE-COD_BLOCO' FROM PREDIO PRE, BLOCO BLO WHERE PRE.COD_BLOCO = BLO.COD_BLOCO;";
+            MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
+            cmd.Prepare();
+            using (MySqlDataReader leitor = cmd.ExecuteReader())
+            {
+                while (leitor.Read())
+                {
+                    try
+                    {
+                        if (dadosCodsBloco[blocoList.SelectedIndex] == (int)leitor["PRE-COD_BLOCO"])
+                        {
+                            predioList.Items.Add(String.Format("{0}", leitor["ID_PREDIO"]));
+                            dadosCodsPredio.Add(Convert.ToInt32(leitor["COD_PREDIO"]));
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+            }
+        }
+
         private void condominioList_SelectedIndexChanged(object sender, EventArgs e)
         {
             AtualizarBlocos();
+        }
+
+        private void predioList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AtualizarPredios();
         }
 
     }

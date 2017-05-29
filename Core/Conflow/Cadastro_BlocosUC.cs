@@ -18,53 +18,25 @@ namespace Conflow
             InitializeComponent();
         }
 
-        public String str = @"server=127.0.0.1;database=conflow;userid=root;password=123456;";
-        public MySqlConnection conn = null;
+        AtalhosSQL ComandosSQL = new AtalhosSQL();
 
         public List<Int32> dadosCodsCondominio = new List<Int32>();
-
-        private void ExecutarComandoSql(String textoCmd, String msgSucesso, String msgExcessao)
-        {
-            try
-            {
-                conn = new MySqlConnection(str);
-                conn.Open();
-                MySqlCommand comandoSql = new MySqlCommand(textoCmd, conn);
-                comandoSql.Prepare();
-                comandoSql.ExecuteNonQuery();
-                if (msgSucesso.Length > 0)
-                {
-                    MessageBox.Show(msgSucesso);
-                }
-            }
-            catch (Exception e)
-            {
-                if (msgExcessao.Length > 0)
-                {
-                    MessageBox.Show(msgExcessao + "\n\nDescrição: " + e.Message);
-                }
-                else
-                {
-                    MessageBox.Show("Erro: Um erro ocorreu e não foi possível realizar a tarefa.");
-                }
-            }
-            finally
-            {
-                if (conn != null)
-                {
-                    conn.Clone();
-                }
-            }
-        }
+        
         
         private void CriarBtn_Click(object sender, EventArgs e)
         {
             if (identificadorTbox.Text.Length > 0)
             {
                 int cod_condominio = dadosCodsCondominio[condominioList.SelectedIndex];
-                String cmdTxt = "INSERT INTO BLOCO( ID_BLOCO, COD_CONDOMINIO ) VALUES ( \"" + identificadorTbox.Text + "\", "+ cod_condominio + " );";
+                String cmdTxt = "INSERT INTO BLOCO(" +
+                                "    ID_BLOCO" +
+                                "  , COD_CONDOMINIO" +
+                                ") VALUES(" +
+                                String.Format(" '{0}' ", identificadorTbox.Text) +
+                                String.Format(", {0}  ", dadosCodsCondominio[condominioList.SelectedIndex]) +
+                                ");";
 
-                ExecutarComandoSql(cmdTxt, "Novo bloco adicionado com sucesso!", "Não foi possível adicionar o bloco.");
+                ComandosSQL.ExecutarComandoSql(cmdTxt, "Novo bloco adicionado com sucesso!", "Não foi possível adicionar o bloco.");
                 
             }
             else
@@ -78,16 +50,17 @@ namespace Conflow
         // Atualiza as listas do grupo Localização
         public void AtualizarLocalizacao()
         {
+
             dadosCodsCondominio.Clear();
 
-            conn = new MySqlConnection(str);
-            conn.Open();
+            ComandosSQL.conn = new MySqlConnection(ComandosSQL.str);
+            ComandosSQL.conn.Open();
 
             // Condominios
             condominioList.Items.Clear();
 
             String cmdSelect = "SELECT COD_CONDOMINIO, ID_CONDOMINIO FROM CONDOMINIO";
-            MySqlCommand cmd = new MySqlCommand(cmdSelect, conn);
+            MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
             cmd.Prepare();
             using (MySqlDataReader leitor = cmd.ExecuteReader())
             {
@@ -98,7 +71,7 @@ namespace Conflow
                 }
             }
 
-            conn.Close();
+            ComandosSQL.conn.Close();
         }
 
     }

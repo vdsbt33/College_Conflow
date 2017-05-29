@@ -77,7 +77,7 @@
     <Compile Include="Cadastro_PrediosUC.Designer.cs">
       <DependentUpon>Cadastro_PrediosUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComandosSQL.cs" />
+    <Compile Include="AtalhosSQL.cs" />
     <Compile Include="PrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>

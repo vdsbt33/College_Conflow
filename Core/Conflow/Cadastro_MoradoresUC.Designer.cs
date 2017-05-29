@@ -317,6 +317,7 @@
             this.predioList.Name = "predioList";
             this.predioList.Size = new System.Drawing.Size(282, 104);
             this.predioList.TabIndex = 57;
+            this.predioList.SelectedIndexChanged += new System.EventHandler(this.predioList_SelectedIndexChanged);
             // 
             // tabApartamento
             // 

@@ -17,60 +17,45 @@ namespace Conflow
         {
             InitializeComponent();
         }
-
-        public String str = @"server=127.0.0.1;database=conflow;userid=root;password=123456;";
-        public MySqlConnection conn = null;
+        
+        AtalhosSQL ComandosSQL = new AtalhosSQL();
 
         public List<Int32> dadosCodsCondominio = new List<Int32>();
         public List<Int32> dadosCodsBloco = new List<int>();
-
-        private void ExecutarComandoSql(String textoCmd, String msgSucesso, String msgExcessao)
-        {
-            try
-            {
-                conn = new MySqlConnection(str);
-                conn.Open();
-                MySqlCommand comandoSql = new MySqlCommand(textoCmd, conn);
-                comandoSql.Prepare();
-                comandoSql.ExecuteNonQuery();
-                if (msgSucesso.Length > 0)
-                {
-                    MessageBox.Show(msgSucesso);
-                }
-            }
-            catch (Exception e)
-            {
-                if (msgExcessao.Length > 0)
-                {
-                    MessageBox.Show(msgExcessao + "\n\nDescrição: " + e.Message);
-                }
-                else
-                {
-                    MessageBox.Show("Erro: Um erro ocorreu e não foi possível realizar a tarefa.");
-                }
-            }
-            finally
-            {
-                if (conn != null)
-                {
-                    conn.Clone();
-                }
-            }
-        }
-
+        
         private void CriarBtn_Click(object sender, EventArgs e)
         {
+            String timestamp_criacao = ComandosSQL.current_timestamp;
+
+            MessageBox.Show("Qtd bloco list: " + blocoList.Items.Count + "dadosCodsBloco: " + dadosCodsBloco.Count);
+
             if (identificadorTbox.Text.Length > 0 && valorMensalidadeNud.Value > 0 && blocoList.SelectedIndex != -1)
             {
                 
-                String cmdTxt = "INSERT INTO PREDIO ( ID_PREDIO, VAL_MENSALIDADES_PREDIO, VAL_QUOTACONDOMINIAL_PREDIO, VAL_FRACAO_IDEAL_PREDIO ) VALUES ( \"" + identificadorTbox.Text + "\", " + valorMensalidadeNud.Value + ", " + valorQuotaCondominialNud.Value + ", " + 0.00f + " );";
+                String cmdTxt = "INSERT INTO PREDIO(                " +
+                                "    ID_PREDIO,                     " +
+                                "    VAL_MENSALIDADES_PREDIO,       " +
+                                "    COD_BLOCO,                     " +
+                                "    ULTIMA_MODIFICACAO             " +
+                                ") VALUES(                          " +
+                                "    '" + identificadorTbox.Text + "', " +
+                                "    " + Convert.ToSingle(valorMensalidadeNud.Value)         + ", " +
+                                "    " + dadosCodsBloco[blocoList.SelectedIndex]             + ", " +
+                                "    '" + timestamp_criacao                                  + "' " +
+                                ");                                 ";
 
-                ExecutarComandoSql(cmdTxt, "Novo prédio adicionado com sucesso!", "Não foi possível adicionar o prédio.");
+                ComandosSQL.ExecutarComandoSql(cmdTxt, "Novo prédio adicionado com sucesso!", "Não foi possível adicionar o prédio.");
 
                 // Inserindo apartamentos no prédio
+                cmdTxt = "INSERT INTO APARTAMENTO(          " +
+                                "    COD_PREDIO             " +
+                                ") VALUES (                 " +
+                                "    (SELECT COD_PREDIO FROM PREDIO WHERE ID_PREDIO = '" + identificadorTbox.Text + "' AND ULTIMA_MODIFICACAO = '" + timestamp_criacao + "' )" +
+                                ");                         ";
+                
                 for (int contador = 0; contador < (int) qtdApartamentosNud.Value; contador++)
                 {
-                    cmdTxt = "INSERT INTO PREDIO ( ID_PREDIO, VAL_MENSALIDADES_PREDIO, VAL_QUOTACONDOMINIAL_PREDIO, VAL_FRACAO_IDEAL_PREDIO ) VALUES ( \"" + identificadorTbox.Text + "\", " + valorMensalidadeNud.Value + ", " + valorQuotaCondominialNud.Value + ", " + 0.00f + " );";
+                    ComandosSQL.ExecutarComandoSql(cmdTxt);
                 }
                 
             }
@@ -85,14 +70,15 @@ namespace Conflow
         {
             dadosCodsCondominio.Clear();
 
-            conn = new MySqlConnection(str);
-            conn.Open();
+            ComandosSQL.conn = new MySqlConnection(ComandosSQL.str);
+            ComandosSQL.conn.Open();
 
             // Condominios
             condominioList.Items.Clear();
+            
 
             String cmdSelect = "SELECT COD_CONDOMINIO, ID_CONDOMINIO FROM CONDOMINIO";
-            MySqlCommand cmd = new MySqlCommand(cmdSelect, conn);
+            MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
             cmd.Prepare();
             using (MySqlDataReader leitor = cmd.ExecuteReader())
             {
@@ -103,6 +89,8 @@ namespace Conflow
                 }
             }
 
+            dadosCodsBloco.Clear();
+            blocoList.Items.Clear();
             AtualizarBlocos();
         }
 
@@ -110,9 +98,10 @@ namespace Conflow
         {
             // Blocos
             blocoList.Items.Clear();
+            dadosCodsBloco.Clear();
 
-            String cmdSelect = "SELECT BLO.COD_BLOCO, BLO.ID_BLOCO, BLO.COD_CONDOMINIO 'BLO_CODCON', CON.COD_CONDOMINIO FROM BLOCO BLO, CONDOMINIO CON WHERE BLO.COD_CONDOMINIO = CON.COD_CONDOMINIO;";
-            MySqlCommand cmd = new MySqlCommand(cmdSelect, conn);
+            String cmdSelect = "SELECT BLO.COD_BLOCO 'BLO_COD_BLOCO', BLO.ID_BLOCO, BLO.COD_CONDOMINIO 'BLO-COD_CONDOMINIO' FROM BLOCO BLO, CONDOMINIO CON WHERE BLO.COD_CONDOMINIO = CON.COD_CONDOMINIO;";
+            MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
             cmd.Prepare();
             using (MySqlDataReader leitor = cmd.ExecuteReader())
             {
@@ -120,10 +109,12 @@ namespace Conflow
                 {
                     try
                     {
-                        if (dadosCodsCondominio[condominioList.SelectedIndex] == (int)leitor["BLO_CODCON"])
+                        if (condominioList.SelectedIndex != -1 && dadosCodsCondominio[condominioList.SelectedIndex] == (int)leitor["BLO-COD_CONDOMINIO"])
                         {
+                            MessageBox.Show("condominioList i: " + condominioList.SelectedIndex.ToString()  + " / blocoList i: " + blocoList.SelectedIndex.ToString());
                             blocoList.Items.Add(String.Format("{0}", leitor["ID_BLOCO"]));
-                            dadosCodsBloco.Add(Convert.ToInt32(leitor["COD_BLOCO"]));
+                            dadosCodsBloco.Add(Convert.ToInt32(leitor["BLO_COD_BLOCO"]));
+                            MessageBox.Show(dadosCodsBloco[dadosCodsBloco.Last()].ToString());
                         }
                     }
                     catch
