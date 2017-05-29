@@ -45,6 +45,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.qtdApartamentosNud = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.valorMensalidadeNud)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -52,6 +54,7 @@
             this.localizacaoGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qtdApartamentosNud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -113,7 +116,7 @@
             // CriarBtn
             // 
             this.CriarBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CriarBtn.Location = new System.Drawing.Point(132, 440);
+            this.CriarBtn.Location = new System.Drawing.Point(132, 472);
             this.CriarBtn.Name = "CriarBtn";
             this.CriarBtn.Size = new System.Drawing.Size(97, 29);
             this.CriarBtn.TabIndex = 51;
@@ -126,7 +129,7 @@
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.tabControl.Location = new System.Drawing.Point(11, 33);
+            this.tabControl.Location = new System.Drawing.Point(11, 63);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(302, 166);
@@ -175,11 +178,13 @@
             // 
             // localizacaoGB
             // 
+            this.localizacaoGB.Controls.Add(this.label4);
             this.localizacaoGB.Controls.Add(this.tabControl);
+            this.localizacaoGB.Controls.Add(this.pictureBox1);
             this.localizacaoGB.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.localizacaoGB.Location = new System.Drawing.Point(14, 215);
+            this.localizacaoGB.Location = new System.Drawing.Point(14, 219);
             this.localizacaoGB.Name = "localizacaoGB";
-            this.localizacaoGB.Size = new System.Drawing.Size(326, 212);
+            this.localizacaoGB.Size = new System.Drawing.Size(326, 240);
             this.localizacaoGB.TabIndex = 55;
             this.localizacaoGB.TabStop = false;
             this.localizacaoGB.Text = "Localização";
@@ -239,6 +244,28 @@
             0,
             0});
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(41, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(203, 20);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "Escolha o Condomínio e Bloco";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 61;
+            this.pictureBox1.TabStop = false;
+            // 
             // Cadastro_PrediosUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,14 +282,16 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Name = "Cadastro_PrediosUC";
-            this.Size = new System.Drawing.Size(355, 485);
+            this.Size = new System.Drawing.Size(355, 512);
             ((System.ComponentModel.ISupportInitialize)(this.valorMensalidadeNud)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.localizacaoGB.ResumeLayout(false);
+            this.localizacaoGB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qtdApartamentosNud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,5 +315,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown qtdApartamentosNud;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

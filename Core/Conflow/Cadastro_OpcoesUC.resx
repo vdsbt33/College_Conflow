@@ -118,35 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Cadastrar_MoradorBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAAGYktHRAAAAO8AAFv9LOIAAAAHdElNRQfhBRYTCAaThNeg
-        AAAAHWlUWHRDb21tZW50AAAAAABDcmVhdGVkIHdpdGggR0lNUGQuZQcAAACDSURBVEhL7ZRRCsAwCEN7
-        /5P0lm6OWTpHF2PZx1gLfil5NQRL+cOTfUlUaR+kVoF1foCGQOEezkIocQNFISlxBrIAGunH932LdL3U
-        FtGYmn8UhBWnIFnxBnnz2KHETffRmbY+BWqikVOtM87CIewYjIqO5jrYBTQt7IE+WQtwc8As2gBvbae8
-        eCFt2AAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="Cadastrar_PredioBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAAGYktHRAAAAO8AAFv9LOIAAAAHdElNRQfhBRYTCQ/zQ15F
-        AAAAHWlUWHRDb21tZW50AAAAAABDcmVhdGVkIHdpdGggR0lNUGQuZQcAAABQSURBVEhLY2AYTuA/0DPU
-        xBhh83/Fiv9UwVCHDqAF6EGFy2e41BH0wdC3gNLIJhhEoxYQDKKhn4po7oPRVEQwFdE8iGgeyUPfAprH
-        ATUtAADJRHjzitCcwQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="Cadastrar_BlocoBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAAGYktHRACoAKgA/0N9jH0AAAAHdElNRQfhBRYTCi6UBx3Y
-        AAAAHWlUWHRDb21tZW50AAAAAABDcmVhdGVkIHdpdGggR0lNUGQuZQcAAACPSURBVEhLzZVBDoAgDAT5
-        /0v4ZZVESG2obm2xmHDxwLBDs5Sy2UfneazLFIFqJXhdh8kHWJWMhGgCWEnT1zbtGlMBLi1IApeWNECY
-        Fi1BmJZ8QO8bXgvyn5x3furXBMsBSKE9JRCNO8ou7JK1+pQdcgNa7mAJQNPCYS5FyKvyHwAdU0TLVJEB
-        gJj5PqbI7gf0SdkMu4EXkwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="Cadastrar_CondominioBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -155,6 +126,65 @@
         Akpa2zFtJKloKlqK5ssAMAEez0vtNkyadwFKwXdT+6h9Q1Cy6ADAEGbTNs665/XoVns5tkgAD0KUeR/2
         LPHmJwKtoxjQiGYLwImAb5xEkGv3xdoBwZIfkXPMidv7DyFpKffT8SoeHWvq4tKjsc/g7eSZhTGwqfH+
         AXLw1MljZLfbAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="passo1PBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAGYktHRAD/AP8A/6C9p5MAAAAHdElNRQfhBR0NIAtx0QzM
+        AAAAHWlUWHRDb21tZW50AAAAAABDcmVhdGVkIHdpdGggR0lNUGQuZQcAAACrSURBVFhHzdZLCgAhDANQ
+        738Sb+ngQpiFaD9JquDKgo9k09ZePL2PsW65748pR+0wZagTZr5Jq7thpClZMTKUF0StL4KhgaIYWnVZ
+        EDQpBAYGQmEg1aExaRQLFKqPiXGD2Bh3dSqQKSkl5gpSYo7riQpi2pHYGBNiDbEwLsQcZkDcCEYqYQQS
+        k0YgKoIgsqlAEVEMBeGtiIbwpEJHWDAyxAkjR+wwZYiXPv4AD4rKn4YeFIgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="Cadastrar_BlocoBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACw4AAAsOAUC+4UEAAAAGYktHRACoAKgA/0N9jH0AAAAHdElNRQfhBRYTCi6UBx3Y
+        AAAAHWlUWHRDb21tZW50AAAAAABDcmVhdGVkIHdpdGggR0lNUGQuZQcAAACPSURBVEhLzZVBDoAgDAT5
+        /0v4ZZVESG2obm2xmHDxwLBDs5Sy2UfneazLFIFqJXhdh8kHWJWMhGgCWEnT1zbtGlMBLi1IApeWNECY
+        Fi1BmJZ8QO8bXgvyn5x3furXBMsBSKE9JRCNO8ou7JK1+pQdcgNa7mAJQNPCYS5FyKvyHwAdU0TLVJEB
+        gJj5PqbI7gf0SdkMu4EXkwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="passo2PBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAGYktHRAD/AP8A/6C9p5MAAAAHdElNRQfhBR0NIAtx0QzM
+        AAAAHWlUWHRDb21tZW50AAAAAABDcmVhdGVkIHdpdGggR0lNUGQuZQcAAACrSURBVFhHzdZLCgAhDANQ
+        738Sb+ngQpiFaD9JquDKgo9k09ZePL2PsW65748pR+0wZagTZr5Jq7thpClZMTKUF0StL4KhgaIYWnVZ
+        EDQpBAYGQmEg1aExaRQLFKqPiXGD2Bh3dSqQKSkl5gpSYo7riQpi2pHYGBNiDbEwLsQcZkDcCEYqYQQS
+        k0YgKoIgsqlAEVEMBeGtiIbwpEJHWDAyxAkjR+wwZYiXPv4AD4rKn4YeFIgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="Cadastrar_PredioBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAAGYktHRAAAAO8AAFv9LOIAAAAHdElNRQfhBRYTCQ/zQ15F
+        AAAAHWlUWHRDb21tZW50AAAAAABDcmVhdGVkIHdpdGggR0lNUGQuZQcAAABQSURBVEhLY2AYTuA/0DPU
+        xBhh83/Fiv9UwVCHDqAF6EGFy2e41BH0wdC3gNLIJhhEoxYQDKKhn4po7oPRVEQwFdE8iGgeyUPfAprH
+        ATUtAADJRHjzitCcwQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="passo3PBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAGYktHRAD/AP8A/6C9p5MAAAAHdElNRQfhBR0NIAtx0QzM
+        AAAAHWlUWHRDb21tZW50AAAAAABDcmVhdGVkIHdpdGggR0lNUGQuZQcAAACrSURBVFhHzdZLCgAhDANQ
+        738Sb+ngQpiFaD9JquDKgo9k09ZePL2PsW65748pR+0wZagTZr5Jq7thpClZMTKUF0StL4KhgaIYWnVZ
+        EDQpBAYGQmEg1aExaRQLFKqPiXGD2Bh3dSqQKSkl5gpSYo7riQpi2pHYGBNiDbEwLsQcZkDcCEYqYQQS
+        k0YgKoIgsqlAEVEMBeGtiIbwpEJHWDAyxAkjR+wwZYiXPv4AD4rKn4YeFIgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="Cadastrar_MoradorBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAAGYktHRAAAAO8AAFv9LOIAAAAHdElNRQfhBRYTCAaThNeg
+        AAAAHWlUWHRDb21tZW50AAAAAABDcmVhdGVkIHdpdGggR0lNUGQuZQcAAACDSURBVEhL7ZRRCsAwCEN7
+        /5P0lm6OWTpHF2PZx1gLfil5NQRL+cOTfUlUaR+kVoF1foCGQOEezkIocQNFISlxBrIAGunH932LdL3U
+        FtGYmn8UhBWnIFnxBnnz2KHETffRmbY+BWqikVOtM87CIewYjIqO5jrYBTQt7IE+WQtwc8As2gBvbae8
+        eCFt2AAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

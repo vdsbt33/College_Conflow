@@ -39,10 +39,13 @@
             this.CriarBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.localizacaoGB.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -78,11 +81,13 @@
             // 
             // localizacaoGB
             // 
+            this.localizacaoGB.Controls.Add(this.label4);
             this.localizacaoGB.Controls.Add(this.tabControl);
+            this.localizacaoGB.Controls.Add(this.pictureBox1);
             this.localizacaoGB.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.localizacaoGB.Location = new System.Drawing.Point(14, 129);
             this.localizacaoGB.Name = "localizacaoGB";
-            this.localizacaoGB.Size = new System.Drawing.Size(326, 212);
+            this.localizacaoGB.Size = new System.Drawing.Size(326, 240);
             this.localizacaoGB.TabIndex = 58;
             this.localizacaoGB.TabStop = false;
             this.localizacaoGB.Text = "Localização";
@@ -91,7 +96,7 @@
             // 
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.tabControl.Location = new System.Drawing.Point(11, 33);
+            this.tabControl.Location = new System.Drawing.Point(11, 61);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(302, 166);
@@ -120,7 +125,7 @@
             // CriarBtn
             // 
             this.CriarBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CriarBtn.Location = new System.Drawing.Point(133, 355);
+            this.CriarBtn.Location = new System.Drawing.Point(133, 378);
             this.CriarBtn.Name = "CriarBtn";
             this.CriarBtn.Size = new System.Drawing.Size(97, 29);
             this.CriarBtn.TabIndex = 59;
@@ -150,6 +155,28 @@
             this.pictureBox2.TabIndex = 61;
             this.pictureBox2.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(41, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(152, 20);
+            this.label4.TabIndex = 64;
+            this.label4.Text = "Escolha o Condomínio";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 63;
+            this.pictureBox1.TabStop = false;
+            // 
             // Cadastro_BlocosUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,11 +189,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Name = "Cadastro_BlocosUC";
-            this.Size = new System.Drawing.Size(355, 400);
+            this.Size = new System.Drawing.Size(355, 415);
             this.localizacaoGB.ResumeLayout(false);
+            this.localizacaoGB.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +213,7 @@
         private System.Windows.Forms.Button CriarBtn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

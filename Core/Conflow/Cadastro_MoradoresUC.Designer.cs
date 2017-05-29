@@ -45,6 +45,7 @@
             this.CriarBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.localizacaoGB = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabCondominio = new System.Windows.Forms.TabPage();
             this.condominioList = new System.Windows.Forms.ListBox();
@@ -54,6 +55,7 @@
             this.predioList = new System.Windows.Forms.ListBox();
             this.tabApartamento = new System.Windows.Forms.TabPage();
             this.apartamentoList = new System.Windows.Forms.ListBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numeroestacionamentoNud)).BeginInit();
@@ -64,6 +66,7 @@
             this.tabBloco.SuspendLayout();
             this.tabPredio.SuspendLayout();
             this.tabApartamento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -235,14 +238,26 @@
             // 
             // localizacaoGB
             // 
+            this.localizacaoGB.Controls.Add(this.label8);
             this.localizacaoGB.Controls.Add(this.tabControl);
+            this.localizacaoGB.Controls.Add(this.pictureBox3);
             this.localizacaoGB.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.localizacaoGB.Location = new System.Drawing.Point(349, 90);
             this.localizacaoGB.Name = "localizacaoGB";
-            this.localizacaoGB.Size = new System.Drawing.Size(326, 212);
+            this.localizacaoGB.Size = new System.Drawing.Size(326, 256);
             this.localizacaoGB.TabIndex = 56;
             this.localizacaoGB.TabStop = false;
             this.localizacaoGB.Text = "Localização";
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(41, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(262, 43);
+            this.label8.TabIndex = 66;
+            this.label8.Text = "Escolha Condomínio, Bloco, Prédio e Apartamento";
             // 
             // tabControl
             // 
@@ -251,7 +266,7 @@
             this.tabControl.Controls.Add(this.tabPredio);
             this.tabControl.Controls.Add(this.tabApartamento);
             this.tabControl.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.tabControl.Location = new System.Drawing.Point(11, 33);
+            this.tabControl.Location = new System.Drawing.Point(11, 78);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(302, 166);
@@ -297,6 +312,7 @@
             this.blocoList.Name = "blocoList";
             this.blocoList.Size = new System.Drawing.Size(282, 104);
             this.blocoList.TabIndex = 1;
+            this.blocoList.SelectedIndexChanged += new System.EventHandler(this.blocoList_SelectedIndexChanged);
             // 
             // tabPredio
             // 
@@ -338,6 +354,17 @@
             this.apartamentoList.Name = "apartamentoList";
             this.apartamentoList.Size = new System.Drawing.Size(282, 104);
             this.apartamentoList.TabIndex = 2;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(11, 36);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.TabIndex = 65;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -393,6 +420,7 @@
             this.tabBloco.ResumeLayout(false);
             this.tabPredio.ResumeLayout(false);
             this.tabApartamento.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -428,5 +456,7 @@
         private System.Windows.Forms.ListBox apartamentoList;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

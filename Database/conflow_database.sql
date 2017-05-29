@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `morador` (
   `IDF_ATIVO` varchar(1) DEFAULT 'S',
   `ULTIMA_MODIFICACAO` datetime DEFAULT NULL,
   PRIMARY KEY (`COD_MORADOR`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table conflow.morador_cnpj

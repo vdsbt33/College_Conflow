@@ -26,8 +26,7 @@ namespace Conflow
         private void CriarBtn_Click(object sender, EventArgs e)
         {
             String timestamp_criacao = ComandosSQL.current_timestamp;
-
-            MessageBox.Show("Qtd bloco list: " + blocoList.Items.Count + "dadosCodsBloco: " + dadosCodsBloco.Count);
+            
 
             if (identificadorTbox.Text.Length > 0 && valorMensalidadeNud.Value > 0 && blocoList.SelectedIndex != -1)
             {
@@ -88,6 +87,7 @@ namespace Conflow
                     dadosCodsCondominio.Add(Convert.ToInt32(leitor["COD_CONDOMINIO"]));
                 }
             }
+            
 
             dadosCodsBloco.Clear();
             blocoList.Items.Clear();
@@ -111,10 +111,8 @@ namespace Conflow
                     {
                         if (condominioList.SelectedIndex != -1 && dadosCodsCondominio[condominioList.SelectedIndex] == (int)leitor["BLO-COD_CONDOMINIO"])
                         {
-                            MessageBox.Show("condominioList i: " + condominioList.SelectedIndex.ToString()  + " / blocoList i: " + blocoList.SelectedIndex.ToString());
                             blocoList.Items.Add(String.Format("{0}", leitor["ID_BLOCO"]));
                             dadosCodsBloco.Add(Convert.ToInt32(leitor["BLO_COD_BLOCO"]));
-                            MessageBox.Show(dadosCodsBloco[dadosCodsBloco.Last()].ToString());
                         }
                     }
                     catch

@@ -20,6 +20,7 @@ namespace Conflow
         public List<Int32> dadosCodsCondominio = new List<Int32>();
         public List<Int32> dadosCodsBloco = new List<int>();
         public List<Int32> dadosCodsPredio = new List<int>();
+        public List<Int32> dadosCodsApartamento = new List<int>();
 
         AtalhosSQL ComandosSQL = new AtalhosSQL();
 
@@ -111,7 +112,12 @@ namespace Conflow
                     ComandosSQL.ExecutarComandoSql(cmdTxt, "");
                 }
 
-
+                // Tornando o Morador adicionado dono do Apartamento
+                // Precisa arrumar esse comando. Está causando erro;
+                cmdTxt = "UPDATE APARTAMENTO" +
+                            "SET COD_DONO_APARTAMENTO = (SELECT COD_MORADOR FROM MORADOR WHERE NOME_MORADOR = '" + nomeTbox.Text + "' AND ULTIMA_MODIFICACAO = '" + timestamp_criacao + "')" +
+                            "WHERE COD_APARTAMENTO = " + dadosCodsApartamento[apartamentoList.SelectedIndex] + ";";
+                ComandosSQL.ExecutarComandoSql(cmdTxt, "", "Deu merda");
 
             }
             else
@@ -171,15 +177,23 @@ namespace Conflow
 
         
         // Atualiza as listas do grupo Localização
-        public void AtualizarLocalizacao()
+        public void AtualizarTodos()
         {
+            AtualizarCondominios();
+            AtualizarBlocos();
+            AtualizarPredios();
+        }
+
+        public void AtualizarCondominios()
+        {
+            // Condominios
+            condominioList.Items.Clear();
             dadosCodsCondominio.Clear();
 
             ComandosSQL.conn = new MySqlConnection(ComandosSQL.str);
             ComandosSQL.conn.Open();
 
-            // Condominios
-            condominioList.Items.Clear();
+
 
             String cmdSelect = "SELECT COD_CONDOMINIO, ID_CONDOMINIO FROM CONDOMINIO";
             MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
@@ -192,17 +206,15 @@ namespace Conflow
                     dadosCodsCondominio.Add(Convert.ToInt32(leitor["COD_CONDOMINIO"]));
                 }
             }
-
-            AtualizarBlocos();
-            AtualizarPredios();
         }
 
         public void AtualizarBlocos()
         {
             // Blocos
             blocoList.Items.Clear();
+            dadosCodsBloco.Clear();
 
-            String cmdSelect = "SELECT BLO.ID_BLOCO, BLO.COD_CONDOMINIO 'BLO-COD_CONDOMINIO' FROM BLOCO BLO, CONDOMINIO CON WHERE BLO.COD_CONDOMINIO = CON.COD_CONDOMINIO;";
+            String cmdSelect = "SELECT BLO.COD_BLOCO 'BLO_COD_BLOCO', BLO.ID_BLOCO, BLO.COD_CONDOMINIO 'BLO-COD_CONDOMINIO' FROM BLOCO BLO, CONDOMINIO CON WHERE BLO.COD_CONDOMINIO = CON.COD_CONDOMINIO;";
             MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
             cmd.Prepare();
             using (MySqlDataReader leitor = cmd.ExecuteReader())
@@ -211,10 +223,10 @@ namespace Conflow
                 {
                     try
                     {
-                        if (dadosCodsCondominio[condominioList.SelectedIndex] == (int)leitor["BLO-COD_CONDOMINIO"])
+                        if (condominioList.SelectedIndex != -1 && dadosCodsCondominio[condominioList.SelectedIndex] == (int)leitor["BLO-COD_CONDOMINIO"])
                         {
                             blocoList.Items.Add(String.Format("{0}", leitor["ID_BLOCO"]));
-                            dadosCodsBloco.Add(Convert.ToInt32(leitor["COD_BLOCO"]));
+                            dadosCodsBloco.Add(Convert.ToInt32(leitor["BLO_COD_BLOCO"]));
                         }
                     }
                     catch
@@ -228,10 +240,12 @@ namespace Conflow
 
         public void AtualizarPredios()
         {
-            // Blocos
-            blocoList.Items.Clear();
+            
+            // Prédios
+            predioList.Items.Clear();
+            dadosCodsPredio.Clear();
 
-            String cmdSelect = "SELECT PRE.ID_PREDIO, PRE.COD_BLOCO 'PRE-COD_BLOCO' FROM PREDIO PRE, BLOCO BLO WHERE PRE.COD_BLOCO = BLO.COD_BLOCO;";
+            String cmdSelect = "SELECT PRE.COD_PREDIO, PRE.ID_PREDIO, PRE.COD_BLOCO 'PRE-COD_BLOCO' FROM PREDIO PRE, BLOCO BLO WHERE PRE.COD_BLOCO = BLO.COD_BLOCO;";
             MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
             cmd.Prepare();
             using (MySqlDataReader leitor = cmd.ExecuteReader())
@@ -240,7 +254,7 @@ namespace Conflow
                 {
                     try
                     {
-                        if (dadosCodsBloco[blocoList.SelectedIndex] == (int)leitor["PRE-COD_BLOCO"])
+                        if (blocoList.SelectedIndex != -1 && dadosCodsBloco[blocoList.SelectedIndex] == (int)leitor["PRE-COD_BLOCO"])
                         {
                             predioList.Items.Add(String.Format("{0}", leitor["ID_PREDIO"]));
                             dadosCodsPredio.Add(Convert.ToInt32(leitor["COD_PREDIO"]));
@@ -255,16 +269,59 @@ namespace Conflow
             }
         }
 
+        public void AtualizarApartamentos()
+        {
+
+            // Prédios
+            apartamentoList.Items.Clear();
+            dadosCodsApartamento.Clear();
+
+            String cmdSelect =  "SELECT APA.COD_APARTAMENTO, APA.COD_PREDIO 'APA-COD_PREDIO' " +
+                                "FROM APARTAMENTO APA " +
+                                "JOIN PREDIO PRE ON APA.COD_PREDIO = PRE.COD_PREDIO " +
+                                "WHERE APA.COD_DONO_APARTAMENTO IS NULL; ";
+            MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
+            cmd.Prepare();
+            
+            using (MySqlDataReader leitor = cmd.ExecuteReader())
+            {
+                while (leitor.Read())
+                {
+                    try
+                    {
+                        if (predioList.SelectedIndex != -1 && dadosCodsPredio[predioList.SelectedIndex] == (int)leitor["APA-COD_PREDIO"])
+                        {
+                            apartamentoList.Items.Add(String.Format("Apartamento {0}", apartamentoList.Items.Count + 1));
+                            dadosCodsApartamento.Add(Convert.ToInt32(leitor["COD_APARTAMENTO"]));
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+            }
+        }
+
         private void condominioList_SelectedIndexChanged(object sender, EventArgs e)
         {
             AtualizarBlocos();
+            AtualizarPredios();
+            AtualizarApartamentos();
         }
 
-        private void predioList_SelectedIndexChanged(object sender, EventArgs e)
+        private void blocoList_SelectedIndexChanged(object sender, EventArgs e)
         {
             AtualizarPredios();
         }
 
+        private void predioList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AtualizarApartamentos();
+        }
+
+        
     }
 }
 
