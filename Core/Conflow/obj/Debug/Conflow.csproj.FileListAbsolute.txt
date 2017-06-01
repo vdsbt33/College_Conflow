@@ -50,3 +50,5 @@ D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\bin\Debug\Conflow
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\bin\Debug\Conflow.pdb
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\bin\Debug\MySql.Data.dll
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\bin\Debug\MySql.Data.xml
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_OpcoesUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_MoradoresUC.resources

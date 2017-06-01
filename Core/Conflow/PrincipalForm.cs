@@ -25,6 +25,7 @@ namespace Conflow
 
         // User controls
         Cadastro_OpcoesUC cadastroOpcoesUC;
+        Pesquisa_OpcoesUC pesquisaOpcoesUC;
 
 
         // Lista de nome de formulários
@@ -92,9 +93,16 @@ namespace Conflow
             }
         }
 
+        private void PesquisarBtn_Click(object sender, EventArgs e)
+        {
+            if (pesquisaOpcoesUC == null)
+            {
+                pesquisaOpcoesUC = new Pesquisa_OpcoesUC();
+            }
 
-        
-
-        
+            FormPanel.Controls.Clear();
+            pesquisaOpcoesUC.Size = FormPanel.Size;
+            FormPanel.Controls.Add(pesquisaOpcoesUC);
+        }
     }
 }

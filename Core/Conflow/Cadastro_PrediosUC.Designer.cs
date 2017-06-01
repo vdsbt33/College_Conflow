@@ -32,29 +32,26 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.identificadorTbox = new System.Windows.Forms.TextBox();
-            this.valorMensalidadeNud = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
             this.CriarBtn = new System.Windows.Forms.Button();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.condominioList = new System.Windows.Forms.ListBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.blocoList = new System.Windows.Forms.ListBox();
-            this.localizacaoGB = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.qtdApartamentosNud = new System.Windows.Forms.NumericUpDown();
+            this.qtdAPAndarNud = new System.Windows.Forms.NumericUpDown();
+            this.localizacaoGB = new System.Windows.Forms.GroupBox();
+            this.blocoList = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.valorMensalidadeNud)).BeginInit();
-            this.tabControl.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.localizacaoGB.SuspendLayout();
+            this.COD_BLOCO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_BLOCO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtdAndaresNud = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qtdApartamentosNud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qtdAPAndarNud)).BeginInit();
+            this.localizacaoGB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.blocoList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qtdAndaresNud)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -88,106 +85,16 @@
             this.identificadorTbox.Size = new System.Drawing.Size(215, 26);
             this.identificadorTbox.TabIndex = 44;
             // 
-            // valorMensalidadeNud
-            // 
-            this.valorMensalidadeNud.DecimalPlaces = 2;
-            this.valorMensalidadeNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.valorMensalidadeNud.Location = new System.Drawing.Point(173, 177);
-            this.valorMensalidadeNud.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.valorMensalidadeNud.Name = "valorMensalidadeNud";
-            this.valorMensalidadeNud.Size = new System.Drawing.Size(115, 26);
-            this.valorMensalidadeNud.TabIndex = 48;
-            this.valorMensalidadeNud.ThousandsSeparator = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label3.Location = new System.Drawing.Point(14, 179);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 20);
-            this.label3.TabIndex = 47;
-            this.label3.Text = "Valor mensalidade (R$):";
-            // 
             // CriarBtn
             // 
             this.CriarBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CriarBtn.Location = new System.Drawing.Point(132, 472);
+            this.CriarBtn.Location = new System.Drawing.Point(132, 507);
             this.CriarBtn.Name = "CriarBtn";
             this.CriarBtn.Size = new System.Drawing.Size(97, 29);
             this.CriarBtn.TabIndex = 51;
             this.CriarBtn.Text = "Cadastrar";
             this.CriarBtn.UseVisualStyleBackColor = true;
             this.CriarBtn.Click += new System.EventHandler(this.CriarBtn_Click);
-            // 
-            // tabControl
-            // 
-            this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.tabControl.Location = new System.Drawing.Point(11, 63);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(302, 166);
-            this.tabControl.TabIndex = 54;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.condominioList);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(294, 133);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Condomínio";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // condominioList
-            // 
-            this.condominioList.FormattingEnabled = true;
-            this.condominioList.ItemHeight = 20;
-            this.condominioList.Location = new System.Drawing.Point(6, 6);
-            this.condominioList.Name = "condominioList";
-            this.condominioList.Size = new System.Drawing.Size(282, 104);
-            this.condominioList.TabIndex = 0;
-            this.condominioList.SelectedIndexChanged += new System.EventHandler(this.condominioList_SelectedIndexChanged);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.blocoList);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(294, 133);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Bloco";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // blocoList
-            // 
-            this.blocoList.FormattingEnabled = true;
-            this.blocoList.ItemHeight = 20;
-            this.blocoList.Location = new System.Drawing.Point(6, 6);
-            this.blocoList.Name = "blocoList";
-            this.blocoList.Size = new System.Drawing.Size(282, 104);
-            this.blocoList.TabIndex = 1;
-            // 
-            // localizacaoGB
-            // 
-            this.localizacaoGB.Controls.Add(this.label4);
-            this.localizacaoGB.Controls.Add(this.tabControl);
-            this.localizacaoGB.Controls.Add(this.pictureBox1);
-            this.localizacaoGB.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.localizacaoGB.Location = new System.Drawing.Point(14, 219);
-            this.localizacaoGB.Name = "localizacaoGB";
-            this.localizacaoGB.Size = new System.Drawing.Size(326, 240);
-            this.localizacaoGB.TabIndex = 55;
-            this.localizacaoGB.TabStop = false;
-            this.localizacaoGB.Text = "Localização";
             // 
             // label7
             // 
@@ -217,81 +124,169 @@
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.label2.Location = new System.Drawing.Point(14, 136);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 20);
+            this.label2.Size = new System.Drawing.Size(183, 20);
             this.label2.TabIndex = 45;
-            this.label2.Text = "Qtd. apartamentos:";
+            this.label2.Text = "Qtd. apartamentos por andar:";
             // 
-            // qtdApartamentosNud
+            // qtdAPAndarNud
             // 
-            this.qtdApartamentosNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.qtdApartamentosNud.Location = new System.Drawing.Point(142, 134);
-            this.qtdApartamentosNud.Maximum = new decimal(new int[] {
+            this.qtdAPAndarNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.qtdAPAndarNud.Location = new System.Drawing.Point(203, 136);
+            this.qtdAPAndarNud.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
-            this.qtdApartamentosNud.Minimum = new decimal(new int[] {
-            2,
+            this.qtdAPAndarNud.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
-            this.qtdApartamentosNud.Name = "qtdApartamentosNud";
-            this.qtdApartamentosNud.Size = new System.Drawing.Size(115, 26);
-            this.qtdApartamentosNud.TabIndex = 46;
-            this.qtdApartamentosNud.Value = new decimal(new int[] {
-            2,
+            this.qtdAPAndarNud.Name = "qtdAPAndarNud";
+            this.qtdAPAndarNud.Size = new System.Drawing.Size(115, 26);
+            this.qtdAPAndarNud.TabIndex = 46;
+            this.qtdAPAndarNud.Value = new decimal(new int[] {
+            1,
             0,
             0,
             0});
+            // 
+            // localizacaoGB
+            // 
+            this.localizacaoGB.Controls.Add(this.blocoList);
+            this.localizacaoGB.Controls.Add(this.label4);
+            this.localizacaoGB.Controls.Add(this.pictureBox1);
+            this.localizacaoGB.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.localizacaoGB.Location = new System.Drawing.Point(14, 212);
+            this.localizacaoGB.Name = "localizacaoGB";
+            this.localizacaoGB.Size = new System.Drawing.Size(326, 273);
+            this.localizacaoGB.TabIndex = 61;
+            this.localizacaoGB.TabStop = false;
+            this.localizacaoGB.Text = "Localização";
+            // 
+            // blocoList
+            // 
+            this.blocoList.AllowUserToAddRows = false;
+            this.blocoList.AllowUserToDeleteRows = false;
+            this.blocoList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.blocoList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.blocoList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.blocoList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.blocoList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.blocoList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.COD_BLOCO,
+            this.ID_BLOCO,
+            this.ID_CONDOMINIO});
+            this.blocoList.Location = new System.Drawing.Point(11, 87);
+            this.blocoList.MultiSelect = false;
+            this.blocoList.Name = "blocoList";
+            this.blocoList.ReadOnly = true;
+            this.blocoList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.blocoList.ShowCellToolTips = false;
+            this.blocoList.Size = new System.Drawing.Size(304, 175);
+            this.blocoList.TabIndex = 2;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(41, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(203, 20);
-            this.label4.TabIndex = 62;
-            this.label4.Text = "Escolha o Condomínio e Bloco";
+            this.label4.Size = new System.Drawing.Size(267, 45);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Selecione o Bloco ao qual esse prédio pertence";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.TabIndex = 61;
+            this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
+            // 
+            // COD_BLOCO
+            // 
+            this.COD_BLOCO.HeaderText = "Código";
+            this.COD_BLOCO.MinimumWidth = 80;
+            this.COD_BLOCO.Name = "COD_BLOCO";
+            this.COD_BLOCO.ReadOnly = true;
+            this.COD_BLOCO.Width = 80;
+            // 
+            // ID_BLOCO
+            // 
+            this.ID_BLOCO.HeaderText = "Identificador";
+            this.ID_BLOCO.MinimumWidth = 160;
+            this.ID_BLOCO.Name = "ID_BLOCO";
+            this.ID_BLOCO.ReadOnly = true;
+            this.ID_BLOCO.Width = 160;
+            // 
+            // ID_CONDOMINIO
+            // 
+            this.ID_CONDOMINIO.HeaderText = "Bloco que pertence";
+            this.ID_CONDOMINIO.MinimumWidth = 160;
+            this.ID_CONDOMINIO.Name = "ID_CONDOMINIO";
+            this.ID_CONDOMINIO.ReadOnly = true;
+            this.ID_CONDOMINIO.Width = 160;
+            // 
+            // qtdAndaresNud
+            // 
+            this.qtdAndaresNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.qtdAndaresNud.Location = new System.Drawing.Point(110, 176);
+            this.qtdAndaresNud.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.qtdAndaresNud.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.qtdAndaresNud.Name = "qtdAndaresNud";
+            this.qtdAndaresNud.Size = new System.Drawing.Size(115, 26);
+            this.qtdAndaresNud.TabIndex = 63;
+            this.qtdAndaresNud.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.label3.Location = new System.Drawing.Point(14, 178);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 20);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "Qtd. andares:";
             // 
             // Cadastro_PrediosUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.qtdAndaresNud);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.localizacaoGB);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.localizacaoGB);
             this.Controls.Add(this.CriarBtn);
-            this.Controls.Add(this.valorMensalidadeNud);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.qtdApartamentosNud);
+            this.Controls.Add(this.qtdAPAndarNud);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.identificadorTbox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Name = "Cadastro_PrediosUC";
-            this.Size = new System.Drawing.Size(355, 512);
-            ((System.ComponentModel.ISupportInitialize)(this.valorMensalidadeNud)).EndInit();
-            this.tabControl.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.localizacaoGB.ResumeLayout(false);
-            this.localizacaoGB.PerformLayout();
+            this.Size = new System.Drawing.Size(355, 549);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qtdApartamentosNud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qtdAPAndarNud)).EndInit();
+            this.localizacaoGB.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.blocoList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qtdAndaresNud)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,20 +297,19 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox identificadorTbox;
-        private System.Windows.Forms.NumericUpDown valorMensalidadeNud;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button CriarBtn;
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListBox condominioList;
-        private System.Windows.Forms.ListBox blocoList;
-        private System.Windows.Forms.GroupBox localizacaoGB;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown qtdApartamentosNud;
+        private System.Windows.Forms.NumericUpDown qtdAPAndarNud;
+        private System.Windows.Forms.GroupBox localizacaoGB;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView blocoList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COD_BLOCO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_BLOCO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CONDOMINIO;
+        private System.Windows.Forms.NumericUpDown qtdAndaresNud;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -21,112 +21,106 @@ namespace Conflow
         AtalhosSQL ComandosSQL = new AtalhosSQL();
 
         public List<Int32> dadosCodsCondominio = new List<Int32>();
-        public List<Int32> dadosCodsBloco = new List<int>();
         
         private void CriarBtn_Click(object sender, EventArgs e)
         {
             String timestamp_criacao = ComandosSQL.current_timestamp;
-            
 
-            if (identificadorTbox.Text.Length > 0 && valorMensalidadeNud.Value > 0 && blocoList.SelectedIndex != -1)
+
+            DataGridViewSelectedRowCollection linhaSelecionada = blocoList.SelectedRows;
+
+            if (identificadorTbox.Text.Length > 0)
             {
-                
+
                 String cmdTxt = "INSERT INTO PREDIO(                " +
                                 "    ID_PREDIO,                     " +
-                                "    VAL_MENSALIDADES_PREDIO,       " +
                                 "    COD_BLOCO,                     " +
                                 "    ULTIMA_MODIFICACAO             " +
                                 ") VALUES(                          " +
-                                "    '" + identificadorTbox.Text + "', " +
-                                "    " + Convert.ToSingle(valorMensalidadeNud.Value)         + ", " +
-                                "    " + dadosCodsBloco[blocoList.SelectedIndex]             + ", " +
-                                "    '" + timestamp_criacao                                  + "' " +
+                                "    @id                            " +
+                                "   ,@cod                           " +
+                                "   ,@ult_mod                       " +
                                 ");                                 ";
+
+                ComandosSQL.comandoSql.Parameters.AddWithValue("id", identificadorTbox.Text);
+                ComandosSQL.comandoSql.Parameters.AddWithValue("cod", linhaSelecionada[0].Cells["COD_BLOCO"].Value);
+                ComandosSQL.comandoSql.Parameters.AddWithValue("ult_mod", timestamp_criacao);
 
                 ComandosSQL.ExecutarComandoSql(cmdTxt, "Novo prédio adicionado com sucesso!", "Não foi possível adicionar o prédio.");
 
+
                 // Inserindo apartamentos no prédio
-                cmdTxt = "INSERT INTO APARTAMENTO(          " +
-                                "    COD_PREDIO             " +
-                                ") VALUES (                 " +
-                                "    (SELECT COD_PREDIO FROM PREDIO WHERE ID_PREDIO = '" + identificadorTbox.Text + "' AND ULTIMA_MODIFICACAO = '" + timestamp_criacao + "' )" +
-                                ");                         ";
-                
-                for (int contador = 0; contador < (int) qtdApartamentosNud.Value; contador++)
+                int num_apartamento = 0;
+                int num_andar = 0;
+                for (int contador = 0; num_apartamento != qtdAPAndarNud.Value && num_andar != qtdAndaresNud.Value; contador++)
                 {
+
+                    num_apartamento++;
+
+
+                    cmdTxt =    "INSERT INTO APARTAMENTO(          " +
+                                "    COD_PREDIO             " +
+                                "   ,NUM_APARTAMENTO        " +
+                                ") VALUES (                 " +
+                                "   (SELECT COD_PREDIO FROM PREDIO WHERE ID_PREDIO = '" + identificadorTbox.Text + "' AND ULTIMA_MODIFICACAO = '" + timestamp_criacao + "' )" +
+                                "   ,'" + (num_apartamento + (num_andar * 10)) + "' " +
+                                ");                         ";
+
+                    if (num_apartamento == qtdAPAndarNud.Value && num_andar < qtdAndaresNud.Value)
+                    {
+                        num_apartamento = 0;
+                        num_andar++;
+                    }
+
                     ComandosSQL.ExecutarComandoSql(cmdTxt);
                 }
-                
             }
             else
             {
                 MessageBox.Show("Erro: Um ou mais campos não foram preenchidos.");
             }
+            
         }
 
         // Atualiza as listas do grupo Localização
         public void AtualizarLocalizacao()
         {
             dadosCodsCondominio.Clear();
-
-            ComandosSQL.conn = new MySqlConnection(ComandosSQL.str);
-            ComandosSQL.conn.Open();
-
-            // Condominios
-            condominioList.Items.Clear();
-            
-
-            String cmdSelect = "SELECT COD_CONDOMINIO, ID_CONDOMINIO FROM CONDOMINIO";
-            MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
-            cmd.Prepare();
-            using (MySqlDataReader leitor = cmd.ExecuteReader())
+            try
             {
-                while (leitor.Read())
+                ComandosSQL.conn = new MySqlConnection(ComandosSQL.str);
+                ComandosSQL.conn.Open();
+
+                // Condominios
+                blocoList.Rows.Clear();
+
+                String cmdSelect =      "SELECT BLO.COD_BLOCO, BLO.ID_BLOCO, BLO.COD_CONDOMINIO 'CONDOMINIO', CON.ID_CONDOMINIO " +
+                                        "FROM BLOCO BLO " +
+                                        "LEFT JOIN CONDOMINIO CON ON CON.COD_CONDOMINIO = BLO.COD_CONDOMINIO; ";
+                MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
+                cmd.Prepare();
+                using (MySqlDataReader leitor = cmd.ExecuteReader())
                 {
-                    condominioList.Items.Add(String.Format("{0}", leitor["ID_CONDOMINIO"]));
-                    dadosCodsCondominio.Add(Convert.ToInt32(leitor["COD_CONDOMINIO"]));
+                    while (leitor.Read())
+                    {
+                        int index = blocoList.Rows.Add();
+                        DataGridViewRow linhaTabela = blocoList.Rows[index];
+                        linhaTabela.Cells["COD_BLOCO"].Value = leitor["COD_BLOCO"];
+                        linhaTabela.Cells["ID_BLOCO"].Value = leitor["ID_BLOCO"];
+                        linhaTabela.Cells["ID_CONDOMINIO"].Value = leitor["ID_CONDOMINIO"];
+                    }
                 }
+
             }
-            
-
-            dadosCodsBloco.Clear();
-            blocoList.Items.Clear();
-            AtualizarBlocos();
-        }
-
-        public void AtualizarBlocos()
-        {
-            // Blocos
-            blocoList.Items.Clear();
-            dadosCodsBloco.Clear();
-
-            String cmdSelect = "SELECT BLO.COD_BLOCO 'BLO_COD_BLOCO', BLO.ID_BLOCO, BLO.COD_CONDOMINIO 'BLO-COD_CONDOMINIO' FROM BLOCO BLO, CONDOMINIO CON WHERE BLO.COD_CONDOMINIO = CON.COD_CONDOMINIO;";
-            MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
-            cmd.Prepare();
-            using (MySqlDataReader leitor = cmd.ExecuteReader())
+            catch (Exception e)
             {
-                while (leitor.Read())
-                {
-                    try
-                    {
-                        if (condominioList.SelectedIndex != -1 && dadosCodsCondominio[condominioList.SelectedIndex] == (int)leitor["BLO-COD_CONDOMINIO"])
-                        {
-                            blocoList.Items.Add(String.Format("{0}", leitor["ID_BLOCO"]));
-                            dadosCodsBloco.Add(Convert.ToInt32(leitor["BLO_COD_BLOCO"]));
-                        }
-                    }
-                    catch
-                    {
-
-                    }
-
-                }
+                MessageBox.Show("Um erro ocorreu ao tentar ler o banco de dados. \nDescrição: " + e.Message);
             }
-        }
 
-        private void condominioList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            AtualizarBlocos();
+            ComandosSQL.conn.Close();
+
         }
+        
+
     }
 }

@@ -14,15 +14,17 @@ namespace Conflow
     {
         public String str = @"server=127.0.0.1;database=conflow;userid=root;password=123456;";
         public MySqlConnection conn = null;
+        public MySqlCommand comandoSql = new MySqlCommand();
 
         public AtalhosSQL()
         {
-            
+            comandoSql.Connection = conn;
         }
 
         public AtalhosSQL(String db)
         {
             str = db;
+            comandoSql.Connection = conn;
         }
         
 
@@ -34,7 +36,8 @@ namespace Conflow
             {
                 conn = new MySqlConnection(str);
                 conn.Open();
-                MySqlCommand comandoSql = new MySqlCommand(textoCmd, conn);
+                comandoSql.Connection = conn;
+                comandoSql.CommandText = textoCmd;
                 comandoSql.Prepare();
                 comandoSql.ExecuteNonQuery();
 
@@ -62,6 +65,8 @@ namespace Conflow
                 {
                     conn.Clone();
                 }
+
+                comandoSql.Parameters.Clear();
             }
         }
 
@@ -74,7 +79,8 @@ namespace Conflow
             {
                 conn = new MySqlConnection(str);
                 conn.Open();
-                MySqlCommand comandoSql = new MySqlCommand(textoCmd, conn);
+                comandoSql.Connection = conn;
+                comandoSql.CommandText = textoCmd;
                 comandoSql.Prepare();
                 comandoSql.ExecuteNonQuery();
 
@@ -94,6 +100,8 @@ namespace Conflow
                 {
                     conn.Clone();
                 }
+
+                comandoSql.Parameters.Clear();
             }
         }
 
@@ -105,7 +113,8 @@ namespace Conflow
             {
                 conn = new MySqlConnection(str);
                 conn.Open();
-                MySqlCommand comandoSql = new MySqlCommand(textoCmd, conn);
+                comandoSql.Connection = conn;
+                comandoSql.CommandText = textoCmd;
                 comandoSql.Prepare();
                 comandoSql.ExecuteNonQuery();
 
@@ -121,6 +130,8 @@ namespace Conflow
                 {
                     conn.Clone();
                 }
+
+                comandoSql.Parameters.Clear();
             }
         }
 

@@ -19,22 +19,26 @@ namespace Conflow
         }
 
         AtalhosSQL ComandosSQL = new AtalhosSQL();
-
-        public List<Int32> dadosCodsCondominio = new List<Int32>();
         
         
         private void CriarBtn_Click(object sender, EventArgs e)
         {
+
+            DataGridViewSelectedRowCollection linhaSelecionada = condominioList.SelectedRows;
+            
             if (identificadorTbox.Text.Length > 0)
             {
-                int cod_condominio = dadosCodsCondominio[condominioList.SelectedIndex];
+                
                 String cmdTxt = "INSERT INTO BLOCO(" +
                                 "    ID_BLOCO" +
                                 "  , COD_CONDOMINIO" +
                                 ") VALUES(" +
-                                String.Format(" '{0}' ", identificadorTbox.Text) +
-                                String.Format(", {0}  ", dadosCodsCondominio[condominioList.SelectedIndex]) +
+                                    "@id" +
+                                  ", @cod" +
                                 ");";
+
+                ComandosSQL.comandoSql.Parameters.AddWithValue("id", identificadorTbox.Text);
+                ComandosSQL.comandoSql.Parameters.AddWithValue("cod", linhaSelecionada[0].Cells["COD_CONDOMINIO"].Value);
 
                 ComandosSQL.ExecutarComandoSql(cmdTxt, "Novo bloco adicionado com sucesso!", "Não foi possível adicionar o bloco.");
                 
@@ -50,28 +54,38 @@ namespace Conflow
         // Atualiza as listas do grupo Localização
         public void AtualizarLocalizacao()
         {
+            
 
-            dadosCodsCondominio.Clear();
-
-            ComandosSQL.conn = new MySqlConnection(ComandosSQL.str);
-            ComandosSQL.conn.Open();
-
-            // Condominios
-            condominioList.Items.Clear();
-
-            String cmdSelect = "SELECT COD_CONDOMINIO, ID_CONDOMINIO FROM CONDOMINIO";
-            MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
-            cmd.Prepare();
-            using (MySqlDataReader leitor = cmd.ExecuteReader())
+            try
             {
-                while (leitor.Read())
+                ComandosSQL.conn = new MySqlConnection(ComandosSQL.str);
+                ComandosSQL.conn.Open();
+
+                // Condominios
+                condominioList.Rows.Clear();
+
+                String cmdSelect = "SELECT COD_CONDOMINIO, ID_CONDOMINIO FROM CONDOMINIO";
+                MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
+                cmd.Prepare();
+                using (MySqlDataReader leitor = cmd.ExecuteReader())
                 {
-                    condominioList.Items.Add(String.Format("{0}", leitor["ID_CONDOMINIO"]));
-                    dadosCodsCondominio.Add(Convert.ToInt32(leitor["COD_CONDOMINIO"]));
+                    while (leitor.Read())
+                    {
+                        int index = condominioList.Rows.Add();
+                        DataGridViewRow linhaTabela = condominioList.Rows[index];
+                        linhaTabela.Cells["COD_CONDOMINIO"].Value = leitor["COD_CONDOMINIO"];
+                        linhaTabela.Cells["ID_CONDOMINIO"].Value = leitor["ID_CONDOMINIO"];
+                    }
                 }
+                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Um erro ocorreu ao tentar ler o banco de dados. \nDescrição: " + e.Message);
             }
 
             ComandosSQL.conn.Close();
+
         }
 
     }

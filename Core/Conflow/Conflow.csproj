@@ -78,6 +78,18 @@
       <DependentUpon>Cadastro_PrediosUC.cs</DependentUpon>
     </Compile>
     <Compile Include="AtalhosSQL.cs" />
+    <Compile Include="Pesquisa_MoradoresUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pesquisa_MoradoresUC.Designer.cs">
+      <DependentUpon>Pesquisa_MoradoresUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisa_OpcoesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pesquisa_OpcoesUC.Designer.cs">
+      <DependentUpon>Pesquisa_OpcoesUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastro_PrediosUC.resx">
       <DependentUpon>Cadastro_PrediosUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisa_MoradoresUC.resx">
+      <DependentUpon>Pesquisa_MoradoresUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisa_OpcoesUC.resx">
+      <DependentUpon>Pesquisa_OpcoesUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrincipalForm.resx">
       <DependentUpon>PrincipalForm.cs</DependentUpon>

@@ -33,19 +33,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.identificadorTbox = new System.Windows.Forms.TextBox();
             this.localizacaoGB = new System.Windows.Forms.GroupBox();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.condominioList = new System.Windows.Forms.ListBox();
+            this.condominioList = new System.Windows.Forms.DataGridView();
+            this.COD_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CriarBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.localizacaoGB.SuspendLayout();
-            this.tabControl.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.condominioList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -57,7 +56,7 @@
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(355, 50);
-            this.label6.TabIndex = 43;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Cadastro de Bloco";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -68,7 +67,7 @@
             this.label1.Location = new System.Drawing.Point(14, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 20);
-            this.label1.TabIndex = 44;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Identificador:";
             // 
             // identificadorTbox
@@ -77,55 +76,83 @@
             this.identificadorTbox.Location = new System.Drawing.Point(105, 92);
             this.identificadorTbox.Name = "identificadorTbox";
             this.identificadorTbox.Size = new System.Drawing.Size(152, 26);
-            this.identificadorTbox.TabIndex = 45;
+            this.identificadorTbox.TabIndex = 1;
             // 
             // localizacaoGB
             // 
+            this.localizacaoGB.Controls.Add(this.condominioList);
             this.localizacaoGB.Controls.Add(this.label4);
-            this.localizacaoGB.Controls.Add(this.tabControl);
             this.localizacaoGB.Controls.Add(this.pictureBox1);
             this.localizacaoGB.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.localizacaoGB.Location = new System.Drawing.Point(14, 129);
             this.localizacaoGB.Name = "localizacaoGB";
-            this.localizacaoGB.Size = new System.Drawing.Size(326, 240);
-            this.localizacaoGB.TabIndex = 58;
+            this.localizacaoGB.Size = new System.Drawing.Size(326, 273);
+            this.localizacaoGB.TabIndex = 1;
             this.localizacaoGB.TabStop = false;
             this.localizacaoGB.Text = "Localização";
             // 
-            // tabControl
-            // 
-            this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.tabControl.Location = new System.Drawing.Point(11, 61);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(302, 166);
-            this.tabControl.TabIndex = 54;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.condominioList);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(294, 133);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Condomínio";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
             // condominioList
             // 
-            this.condominioList.FormattingEnabled = true;
-            this.condominioList.ItemHeight = 20;
-            this.condominioList.Location = new System.Drawing.Point(6, 6);
+            this.condominioList.AllowUserToAddRows = false;
+            this.condominioList.AllowUserToDeleteRows = false;
+            this.condominioList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.condominioList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.condominioList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.condominioList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.condominioList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.condominioList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.COD_CONDOMINIO,
+            this.ID_CONDOMINIO});
+            this.condominioList.Location = new System.Drawing.Point(11, 87);
+            this.condominioList.MultiSelect = false;
             this.condominioList.Name = "condominioList";
-            this.condominioList.Size = new System.Drawing.Size(282, 104);
-            this.condominioList.TabIndex = 0;
+            this.condominioList.ReadOnly = true;
+            this.condominioList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.condominioList.ShowCellToolTips = false;
+            this.condominioList.Size = new System.Drawing.Size(304, 175);
+            this.condominioList.TabIndex = 2;
+            // 
+            // COD_CONDOMINIO
+            // 
+            this.COD_CONDOMINIO.HeaderText = "Código";
+            this.COD_CONDOMINIO.MinimumWidth = 80;
+            this.COD_CONDOMINIO.Name = "COD_CONDOMINIO";
+            this.COD_CONDOMINIO.ReadOnly = true;
+            this.COD_CONDOMINIO.Width = 80;
+            // 
+            // ID_CONDOMINIO
+            // 
+            this.ID_CONDOMINIO.HeaderText = "Identificador";
+            this.ID_CONDOMINIO.MinimumWidth = 160;
+            this.ID_CONDOMINIO.Name = "ID_CONDOMINIO";
+            this.ID_CONDOMINIO.ReadOnly = true;
+            this.ID_CONDOMINIO.Width = 160;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(41, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(267, 45);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Selecione o Condomínio ao qual esse bloco pertence";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 63;
+            this.pictureBox1.TabStop = false;
             // 
             // CriarBtn
             // 
             this.CriarBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CriarBtn.Location = new System.Drawing.Point(133, 378);
+            this.CriarBtn.Location = new System.Drawing.Point(133, 411);
             this.CriarBtn.Name = "CriarBtn";
             this.CriarBtn.Size = new System.Drawing.Size(97, 29);
             this.CriarBtn.TabIndex = 59;
@@ -141,7 +168,7 @@
             this.label7.Location = new System.Drawing.Point(51, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(268, 20);
-            this.label7.TabIndex = 62;
+            this.label7.TabIndex = 0;
             this.label7.Text = "É obrigatório preencher todos os campos";
             // 
             // pictureBox2
@@ -155,28 +182,6 @@
             this.pictureBox2.TabIndex = 61;
             this.pictureBox2.TabStop = false;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(41, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 20);
-            this.label4.TabIndex = 64;
-            this.label4.Text = "Escolha o Condomínio";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.TabIndex = 63;
-            this.pictureBox1.TabStop = false;
-            // 
             // Cadastro_BlocosUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,13 +194,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Name = "Cadastro_BlocosUC";
-            this.Size = new System.Drawing.Size(355, 415);
+            this.Size = new System.Drawing.Size(355, 453);
             this.localizacaoGB.ResumeLayout(false);
-            this.localizacaoGB.PerformLayout();
-            this.tabControl.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.condominioList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,13 +210,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox identificadorTbox;
         private System.Windows.Forms.GroupBox localizacaoGB;
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.ListBox condominioList;
         private System.Windows.Forms.Button CriarBtn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView condominioList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COD_CONDOMINIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CONDOMINIO;
     }
 }

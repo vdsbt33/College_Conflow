@@ -30,18 +30,16 @@ namespace Conflow
                 String cmdTxt = "INSERT INTO CONDOMINIO(" +
                                 "    ID_CONDOMINIO" +
                                 "  , TEL_CONTATO_CONDOMINIO" +
-                                "  , DESPESA_MENSAL_CONDOMINIO" +
-                                "  , VAL_QUOTACONDOMINIAL_CONDOMINIO" +
                                 "  , END_UF_CONDOMINIO" +
+                                "  , END_CIDADE_CONDOMINIO" +
                                 "  , END_BAIRRO_CONDOMINIO" +
                                 "  , END_RUA_CONDOMINIO" +
-                                "  , END_NUMERO_CONDOMINIO" +
+                                "  , END_NUM_CONDOMINIO" +
                                 ") VALUES(" +
                                 String.Format(" '{0}' ", nomeDoCondominioTbox.Text) +
                                 String.Format(",'{0}' ", telefoneTbox.Text) +
-                                String.Format(", {0}  ", Convert.ToSingle(custoMensalNud.Value)) +
-                                String.Format(", {0}  ", Convert.ToSingle(valorQuotaCondominialNud.Value)) +
                                 String.Format(",'{0}' ", estadoCBox.Text) +
+                                String.Format(",'{0}' ", cidadeTBox.Text) +
                                 String.Format(",'{0}' ", bairroTbox.Text) +
                                 String.Format(",'{0}' ", ruaTBox.Text) +
                                 String.Format(",'{0}' ", localNumeroNud.Text) +
