@@ -33,6 +33,8 @@
             this.nomeDoCondominioTbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.enderecoGB = new System.Windows.Forms.GroupBox();
+            this.cidadeTBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.localNumeroNud = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.ruaTBox = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@
             this.CriarBtn = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.telefoneTbox = new System.Windows.Forms.MaskedTextBox();
-            this.cidadeTBox = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.enderecoGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.localNumeroNud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -69,7 +69,7 @@
             // nomeDoCondominioTbox
             // 
             this.nomeDoCondominioTbox.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.nomeDoCondominioTbox.Location = new System.Drawing.Point(74, 94);
+            this.nomeDoCondominioTbox.Location = new System.Drawing.Point(69, 91);
             this.nomeDoCondominioTbox.Name = "nomeDoCondominioTbox";
             this.nomeDoCondominioTbox.Size = new System.Drawing.Size(221, 26);
             this.nomeDoCondominioTbox.TabIndex = 46;
@@ -103,6 +103,22 @@
             this.enderecoGB.TabIndex = 56;
             this.enderecoGB.TabStop = false;
             this.enderecoGB.Text = "Endereço";
+            // 
+            // cidadeTBox
+            // 
+            this.cidadeTBox.Location = new System.Drawing.Point(65, 76);
+            this.cidadeTBox.Name = "cidadeTBox";
+            this.cidadeTBox.Size = new System.Drawing.Size(217, 26);
+            this.cidadeTBox.TabIndex = 9;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(11, 79);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 20);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Cidade:";
             // 
             // localNumeroNud
             // 
@@ -255,22 +271,6 @@
             this.telefoneTbox.Name = "telefoneTbox";
             this.telefoneTbox.Size = new System.Drawing.Size(93, 26);
             this.telefoneTbox.TabIndex = 63;
-            // 
-            // cidadeTBox
-            // 
-            this.cidadeTBox.Location = new System.Drawing.Point(65, 76);
-            this.cidadeTBox.Name = "cidadeTBox";
-            this.cidadeTBox.Size = new System.Drawing.Size(217, 26);
-            this.cidadeTBox.TabIndex = 9;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 79);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 20);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Cidade:";
             // 
             // Cadastro_CondominioUC
             // 

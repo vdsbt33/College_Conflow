@@ -45,10 +45,13 @@ namespace Conflow
                 {
                     MessageBox.Show(msgSucesso);
                 }
+
+                comandoSql.Parameters.Clear();
                 return true;
             }
             catch (Exception e)
             {
+                comandoSql.Parameters.Clear();
                 if (msgExcessao.Length > 0)
                 {
                     MessageBox.Show(msgExcessao + "\n\nDescrição: " + e.Message);
@@ -88,10 +91,13 @@ namespace Conflow
                 {
                     MessageBox.Show(msgSucesso);
                 }
+
+                comandoSql.Parameters.Clear();
                 return true;
             }
             catch
             {
+                comandoSql.Parameters.Clear();
                 return false;
             }
             finally
@@ -118,10 +124,12 @@ namespace Conflow
                 comandoSql.Prepare();
                 comandoSql.ExecuteNonQuery();
 
+                comandoSql.Parameters.Clear();
                 return true;
             }
             catch
             {
+                comandoSql.Parameters.Clear();
                 return false;
             }
             finally
