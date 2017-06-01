@@ -34,13 +34,13 @@
             this.identificadorTbox = new System.Windows.Forms.TextBox();
             this.localizacaoGB = new System.Windows.Forms.GroupBox();
             this.condominioList = new System.Windows.Forms.DataGridView();
-            this.COD_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CriarBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.COD_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.localizacaoGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.condominioList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -97,6 +97,7 @@
             this.condominioList.AllowUserToDeleteRows = false;
             this.condominioList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.condominioList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.condominioList.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.condominioList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.condominioList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.condominioList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -111,22 +112,6 @@
             this.condominioList.ShowCellToolTips = false;
             this.condominioList.Size = new System.Drawing.Size(304, 175);
             this.condominioList.TabIndex = 2;
-            // 
-            // COD_CONDOMINIO
-            // 
-            this.COD_CONDOMINIO.HeaderText = "Código";
-            this.COD_CONDOMINIO.MinimumWidth = 80;
-            this.COD_CONDOMINIO.Name = "COD_CONDOMINIO";
-            this.COD_CONDOMINIO.ReadOnly = true;
-            this.COD_CONDOMINIO.Width = 80;
-            // 
-            // ID_CONDOMINIO
-            // 
-            this.ID_CONDOMINIO.HeaderText = "Identificador";
-            this.ID_CONDOMINIO.MinimumWidth = 160;
-            this.ID_CONDOMINIO.Name = "ID_CONDOMINIO";
-            this.ID_CONDOMINIO.ReadOnly = true;
-            this.ID_CONDOMINIO.Width = 160;
             // 
             // label4
             // 
@@ -181,6 +166,24 @@
             this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.TabIndex = 61;
             this.pictureBox2.TabStop = false;
+            // 
+            // COD_CONDOMINIO
+            // 
+            this.COD_CONDOMINIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COD_CONDOMINIO.HeaderText = "Código";
+            this.COD_CONDOMINIO.MinimumWidth = 80;
+            this.COD_CONDOMINIO.Name = "COD_CONDOMINIO";
+            this.COD_CONDOMINIO.ReadOnly = true;
+            this.COD_CONDOMINIO.Visible = false;
+            this.COD_CONDOMINIO.Width = 80;
+            // 
+            // ID_CONDOMINIO
+            // 
+            this.ID_CONDOMINIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ID_CONDOMINIO.HeaderText = "Identificador";
+            this.ID_CONDOMINIO.MinimumWidth = 160;
+            this.ID_CONDOMINIO.Name = "ID_CONDOMINIO";
+            this.ID_CONDOMINIO.ReadOnly = true;
             // 
             // Cadastro_BlocosUC
             // 

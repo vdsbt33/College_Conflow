@@ -184,48 +184,118 @@ namespace Conflow
         // Atualiza as listas do grupo Localização
         public void AtualizarLocalizacao()
         {
-            dadosCodsCondominio.Clear();
             try
             {
                 ComandosSQL.conn = new MySqlConnection(ComandosSQL.str);
                 ComandosSQL.conn.Open();
 
-                // Condominios
-                apartamentoList.Rows.Clear();
+                // Predio
+                predioList.Rows.Clear();
 
-                String cmdSelect =  "SELECT AP.COD_APARTAMENTO, AP.NUM_APARTAMENTO, PRE.ID_PREDIO, BLO.ID_BLOCO, CON.ID_CONDOMINIO " +
-                                    "FROM APARTAMENTO AP " +
-                                    "LEFT JOIN PREDIO PRE ON PRE.COD_PREDIO = AP.COD_PREDIO " +
-                                    "LEFT JOIN BLOCO BLO ON BLO.COD_BLOCO = PRE.COD_BLOCO " +
-                                    "LEFT JOIN CONDOMINIO CON ON CON.COD_CONDOMINIO = BLO.COD_CONDOMINIO;";
-
+                String cmdSelect =  "SELECT COD_PREDIO, ID_PREDIO " +
+                                    "FROM PREDIO";
+                
                 MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
                 cmd.Prepare();
                 using (MySqlDataReader leitor = cmd.ExecuteReader())
                 {
                     while (leitor.Read())
                     {
-                        int index = apartamentoList.Rows.Add();
-                        DataGridViewRow linhaTabela = apartamentoList.Rows[index];
-                        linhaTabela.Cells["COD_APARTAMENTO"].Value = Convert.ToInt32(leitor["COD_APARTAMENTO"]);
-                        linhaTabela.Cells["NUM_APARTAMENTO"].Value = Convert.ToInt32(leitor["NUM_APARTAMENTO"]);
+                        int index = predioList.Rows.Add();
+                        DataGridViewRow linhaTabela = predioList.Rows[index];
+                        linhaTabela.Cells["COD_PREDIO"].Value = Convert.ToInt32(leitor["COD_PREDIO"]);
                         linhaTabela.Cells["ID_PREDIO"].Value = leitor["ID_PREDIO"];
-                        linhaTabela.Cells["ID_BLOCO"].Value = leitor["ID_BLOCO"];
-                        linhaTabela.Cells["ID_CONDOMINIO"].Value = leitor["ID_CONDOMINIO"];
                     }
                 }
 
             }
-            catch (Exception e)
+            catch (Exception excessao)
             {
-                MessageBox.Show("Um erro ocorreu ao tentar ler o banco de dados. \nDescrição: " + e.Message);
+                MessageBox.Show("Um erro ocorreu ao tentar ler o banco de dados. \nDescrição: " + excessao.Message);
             }
 
             ComandosSQL.conn.Close();
+        }
+
+        private void adicionarContatoBtn_Click(object sender, EventArgs e)
+        {
+            if (contatoTbox.Text.Length > 0 && tipoContatoCB.SelectedIndex != -1)
+            {
+                contatoList.Items.Add(contatoTbox.Text);
+            }
+            
+        }
+
+        private void removerContatoBtn_Click(object sender, EventArgs e)
+        {
+            if (contatoList.SelectedIndex >= 0)
+            {
+                contatoList.Items.RemoveAt(contatoList.SelectedIndex);
+            }
+        }
+
+        private void tipoContatoCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            contatoTbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (tipoContatoCB.Text == "Telefone")
+            {
+                contatoTbox.Mask = "(00) 0000-0000";
+            }
+            else
+            {
+                contatoTbox.Mask = "";
+            }
 
         }
-        
 
+
+        private void predioList_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (predioList.SelectedRows.Count > 0)
+            {
+                dadosCodsCondominio.Clear();
+                try
+                {
+                    ComandosSQL.conn = new MySqlConnection(ComandosSQL.str);
+                    ComandosSQL.conn.Open();
+
+                    // Apartamentos
+                    apartamentoList.Rows.Clear();
+
+                    String cmdSelect = "SELECT COD_APARTAMENTO, NUM_APARTAMENTO " +
+                                        "FROM APARTAMENTO " +
+                                        "WHERE COD_PREDIO = @cod;";
+
+                    MySqlCommand cmd = new MySqlCommand(cmdSelect, ComandosSQL.conn);
+
+                    DataGridViewSelectedRowCollection linhaSelecionada = predioList.SelectedRows;
+                    
+                    cmd.Parameters.AddWithValue("cod", Convert.ToInt32(linhaSelecionada[0].Cells["COD_PREDIO"].Value));
+
+
+                    cmd.Prepare();
+                    using (MySqlDataReader leitor = cmd.ExecuteReader())
+                    {
+                        while (leitor.Read())
+                        {
+
+                            int index = apartamentoList.Rows.Add();
+                            DataGridViewRow linhaTabela = apartamentoList.Rows[index];
+                            linhaTabela.Cells["COD_APARTAMENTO"].Value = Convert.ToInt32(leitor["COD_APARTAMENTO"]);
+                            linhaTabela.Cells["NUM_APARTAMENTO"].Value = Convert.ToInt32(leitor["NUM_APARTAMENTO"]);
+                        }
+                    }
+
+                }
+                catch (Exception excessao)
+                {
+                    MessageBox.Show("Um erro ocorreu ao tentar ler o banco de dados. \nDescrição: " + excessao.Message);
+                }
+
+                ComandosSQL.conn.Close();
+            }
+            
+        }
     }
 }
 

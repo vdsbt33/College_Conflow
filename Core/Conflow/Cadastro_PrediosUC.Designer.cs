@@ -41,11 +41,11 @@
             this.blocoList = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.qtdAndaresNud = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             this.COD_BLOCO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_BLOCO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtdAndaresNud = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qtdAPAndarNud)).BeginInit();
             this.localizacaoGB.SuspendLayout();
@@ -170,6 +170,7 @@
             this.blocoList.AllowUserToDeleteRows = false;
             this.blocoList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.blocoList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.blocoList.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.blocoList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.blocoList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.blocoList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -207,30 +208,6 @@
             this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
             // 
-            // COD_BLOCO
-            // 
-            this.COD_BLOCO.HeaderText = "Código";
-            this.COD_BLOCO.MinimumWidth = 80;
-            this.COD_BLOCO.Name = "COD_BLOCO";
-            this.COD_BLOCO.ReadOnly = true;
-            this.COD_BLOCO.Width = 80;
-            // 
-            // ID_BLOCO
-            // 
-            this.ID_BLOCO.HeaderText = "Identificador";
-            this.ID_BLOCO.MinimumWidth = 160;
-            this.ID_BLOCO.Name = "ID_BLOCO";
-            this.ID_BLOCO.ReadOnly = true;
-            this.ID_BLOCO.Width = 160;
-            // 
-            // ID_CONDOMINIO
-            // 
-            this.ID_CONDOMINIO.HeaderText = "Bloco que pertence";
-            this.ID_CONDOMINIO.MinimumWidth = 160;
-            this.ID_CONDOMINIO.Name = "ID_CONDOMINIO";
-            this.ID_CONDOMINIO.ReadOnly = true;
-            this.ID_CONDOMINIO.Width = 160;
-            // 
             // qtdAndaresNud
             // 
             this.qtdAndaresNud.Font = new System.Drawing.Font("Arial Narrow", 12F);
@@ -263,6 +240,33 @@
             this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.TabIndex = 62;
             this.label3.Text = "Qtd. andares:";
+            // 
+            // COD_BLOCO
+            // 
+            this.COD_BLOCO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COD_BLOCO.HeaderText = "Código";
+            this.COD_BLOCO.MinimumWidth = 80;
+            this.COD_BLOCO.Name = "COD_BLOCO";
+            this.COD_BLOCO.ReadOnly = true;
+            this.COD_BLOCO.Visible = false;
+            this.COD_BLOCO.Width = 80;
+            // 
+            // ID_BLOCO
+            // 
+            this.ID_BLOCO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ID_BLOCO.HeaderText = "Identificador";
+            this.ID_BLOCO.MinimumWidth = 160;
+            this.ID_BLOCO.Name = "ID_BLOCO";
+            this.ID_BLOCO.ReadOnly = true;
+            this.ID_BLOCO.Width = 160;
+            // 
+            // ID_CONDOMINIO
+            // 
+            this.ID_CONDOMINIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ID_CONDOMINIO.HeaderText = "Bloco que pertence";
+            this.ID_CONDOMINIO.MinimumWidth = 160;
+            this.ID_CONDOMINIO.Name = "ID_CONDOMINIO";
+            this.ID_CONDOMINIO.ReadOnly = true;
             // 
             // Cadastro_PrediosUC
             // 
@@ -306,10 +310,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView blocoList;
+        private System.Windows.Forms.NumericUpDown qtdAndaresNud;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn COD_BLOCO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_BLOCO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_CONDOMINIO;
-        private System.Windows.Forms.NumericUpDown qtdAndaresNud;
-        private System.Windows.Forms.Label label3;
     }
 }

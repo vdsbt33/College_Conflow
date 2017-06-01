@@ -180,7 +180,7 @@
   <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAAGYktHRAD/AP8A/6C9p5MAAAAHdElNRQfhBQsQBBPy2U1c
+        YQUAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAAGYktHRAD/AP8A/6C9p5MAAAAHdElNRQfhBQsQBBPy2U1c
         AAAJF0lEQVR4Xu2dV8hcRRTHY+/JZ3+wpSiKWLArgsYHFUvMRyxIbCB2RX2xi0KwixrJi6ghKhKxYkNR
         UUQUjYWYRNGHaBR7TdQYE/v5wa7ZbNy9u3tn5pwpBwY+vnt37in/OXfumXNmRoxIl4ZEtH2knSztWmmP
         SHtD2vvSPpX2o7TfG42/+R/XuId7+Q2/pY9R6aopHck2FFGGpd0ubZ60fxy3udLfVGlHSQNchQxoYCPh
@@ -223,13 +223,4 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="COD_BLOCO.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ID_BLOCO.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ID_CONDOMINIO.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>
