@@ -107,7 +107,9 @@
             this.P_END_BAIRRO_PROPRIETARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_END_RUA_PROPRIETARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_END_NUM_PROPRIETARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_COD_APARTAMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_NUM_APARTAMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_COD_PREDIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_ID_PREDIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_ID_BLOCO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_ID_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -253,7 +255,9 @@
             this.P_END_BAIRRO_PROPRIETARIO,
             this.P_END_RUA_PROPRIETARIO,
             this.P_END_NUM_PROPRIETARIO,
+            this.P_COD_APARTAMENTO,
             this.P_NUM_APARTAMENTO,
+            this.P_COD_PREDIO,
             this.P_ID_PREDIO,
             this.P_ID_BLOCO,
             this.P_ID_CONDOMINIO});
@@ -925,7 +929,6 @@
             this.P_EditarBtn.Name = "P_EditarBtn";
             this.P_EditarBtn.ReadOnly = true;
             this.P_EditarBtn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.P_EditarBtn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.P_EditarBtn.Text = "Editar";
             this.P_EditarBtn.UseColumnTextForButtonValue = true;
             this.P_EditarBtn.Width = 68;
@@ -1028,6 +1031,14 @@
             this.P_END_NUM_PROPRIETARIO.ReadOnly = true;
             this.P_END_NUM_PROPRIETARIO.Width = 104;
             // 
+            // P_COD_APARTAMENTO
+            // 
+            this.P_COD_APARTAMENTO.HeaderText = "Código Apartamento";
+            this.P_COD_APARTAMENTO.Name = "P_COD_APARTAMENTO";
+            this.P_COD_APARTAMENTO.ReadOnly = true;
+            this.P_COD_APARTAMENTO.Visible = false;
+            this.P_COD_APARTAMENTO.Width = 143;
+            // 
             // P_NUM_APARTAMENTO
             // 
             this.P_NUM_APARTAMENTO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -1035,6 +1046,14 @@
             this.P_NUM_APARTAMENTO.Name = "P_NUM_APARTAMENTO";
             this.P_NUM_APARTAMENTO.ReadOnly = true;
             this.P_NUM_APARTAMENTO.Width = 109;
+            // 
+            // P_COD_PREDIO
+            // 
+            this.P_COD_PREDIO.HeaderText = "Código Prédio";
+            this.P_COD_PREDIO.Name = "P_COD_PREDIO";
+            this.P_COD_PREDIO.ReadOnly = true;
+            this.P_COD_PREDIO.Visible = false;
+            this.P_COD_PREDIO.Width = 112;
             // 
             // P_ID_PREDIO
             // 
@@ -1173,7 +1192,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn P_END_BAIRRO_PROPRIETARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_END_RUA_PROPRIETARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_END_NUM_PROPRIETARIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn P_COD_APARTAMENTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_NUM_APARTAMENTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn P_COD_PREDIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_ID_PREDIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_ID_BLOCO;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_ID_CONDOMINIO;

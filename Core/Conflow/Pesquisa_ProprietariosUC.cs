@@ -101,6 +101,7 @@ namespace Conflow
                 ComandosSQL.comandoSql.Parameters.AddWithValue("cod_apartamento", linhaSelecionada[0].Cells["COD_APARTAMENTO"].Value);
                 ComandosSQL.comandoSql.Parameters.AddWithValue("timestamp_criacao", timestamp_criacao);
                 ComandosSQL.comandoSql.Parameters.AddWithValue("cod_proprietario", linhaSelecionada[0].Cells["COD_PROPRIETARIO"].Value);
+                // Problema aqui nessa linha: O COD do Proprietário não fica na tabela Apartamento, mas sim em Proprietário.
 
                 ComandosSQL.ExecutarComandoSql(cmdTxt);
                 // Atualizando CPF / CNPJ do Morador
@@ -337,7 +338,9 @@ namespace Conflow
                                                ",PRO.END_BAIRRO_PROPRIETARIO    " +
                                                ",PRO.END_RUA_PROPRIETARIO       " +
                                                ",PRO.END_NUM_PROPRIETARIO       " +
+                                               ",APA.COD_APARTAMENTO 'PROPRIETARIO-COD_APARTAMENTO' " +
                                                ",APA.NUM_APARTAMENTO 'PROPRIETARIO-NUM_APARTAMENTO' " +
+                                               ",PRE.COD_PREDIO 'PROPRIETARIO-COD_PREDIO'" +
                                                ",PRE.ID_PREDIO  'PROPRIETARIO-ID_PREDIO'            " +
                                                ",BLO.ID_BLOCO 'PROPRIETARIO-ID_BLOCO'               " +
                                                ",CON.ID_CONDOMINIO 'PROPRIETARIO-ID_CONDOMINIO'     " +
@@ -367,7 +370,9 @@ namespace Conflow
                                                ",PRO.END_BAIRRO_PROPRIETARIO    " +
                                                ",PRO.END_RUA_PROPRIETARIO       " +
                                                ",PRO.END_NUM_PROPRIETARIO       " +
+                                               ",APA.COD_APARTAMENTO 'PROPRIETARIO-COD_APARTAMENTO' " +
                                                ",APA.NUM_APARTAMENTO 'PROPRIETARIO-NUM_APARTAMENTO' " +
+                                               ",PRE.COD_PREDIO 'PROPRIETARIO-COD_PREDIO'" +
                                                ",PRE.ID_PREDIO  'PROPRIETARIO-ID_PREDIO'            " +
                                                ",BLO.ID_BLOCO 'PROPRIETARIO-ID_BLOCO'               " +
                                                ",CON.ID_CONDOMINIO 'PROPRIETARIO-ID_CONDOMINIO'     " +
@@ -397,7 +402,9 @@ namespace Conflow
                                                ",PRO.END_BAIRRO_PROPRIETARIO    " +
                                                ",PRO.END_RUA_PROPRIETARIO       " +
                                                ",PRO.END_NUM_PROPRIETARIO       " +
+                                               ",APA.COD_APARTAMENTO 'PROPRIETARIO-COD_APARTAMENTO' " +
                                                ",APA.NUM_APARTAMENTO 'PROPRIETARIO-NUM_APARTAMENTO' " +
+                                               ",PRE.COD_PREDIO 'PROPRIETARIO-COD_PREDIO'" +
                                                ",PRE.ID_PREDIO  'PROPRIETARIO-ID_PREDIO'            " +
                                                ",BLO.ID_BLOCO 'PROPRIETARIO-ID_BLOCO'               " +
                                                ",CON.ID_CONDOMINIO 'PROPRIETARIO-ID_CONDOMINIO'     " +
@@ -425,7 +432,9 @@ namespace Conflow
                                                ",PRO.END_BAIRRO_PROPRIETARIO    " +
                                                ",PRO.END_RUA_PROPRIETARIO       " +
                                                ",PRO.END_NUM_PROPRIETARIO       " +
+                                               ",APA.COD_APARTAMENTO 'PROPRIETARIO-COD_APARTAMENTO' " +
                                                ",APA.NUM_APARTAMENTO 'PROPRIETARIO-NUM_APARTAMENTO' " +
+                                               ",PRE.COD_PREDIO 'PROPRIETARIO-COD_PREDIO'" +
                                                ",PRE.ID_PREDIO  'PROPRIETARIO-ID_PREDIO'            " +
                                                ",BLO.ID_BLOCO 'PROPRIETARIO-ID_BLOCO'               " +
                                                ",CON.ID_CONDOMINIO 'PROPRIETARIO-ID_CONDOMINIO'     " +
@@ -477,7 +486,9 @@ namespace Conflow
                             linhaTabela.Cells["P_END_BAIRRO_PROPRIETARIO"].Value = leitor["END_BAIRRO_PROPRIETARIO"];
                             linhaTabela.Cells["P_END_RUA_PROPRIETARIO"].Value = leitor["END_RUA_PROPRIETARIO"];
                             linhaTabela.Cells["P_END_NUM_PROPRIETARIO"].Value = leitor["END_NUM_PROPRIETARIO"];
+                            linhaTabela.Cells["P_COD_APARTAMENTO"].Value = leitor["PROPRIETARIO-COD_APARTAMENTO"];
                             linhaTabela.Cells["P_NUM_APARTAMENTO"].Value = leitor["PROPRIETARIO-NUM_APARTAMENTO"];
+                            linhaTabela.Cells["P_COD_PREDIO"].Value = leitor["PROPRIETARIO-COD_PREDIO"];
                             linhaTabela.Cells["P_ID_PREDIO"].Value = leitor["PROPRIETARIO-ID_PREDIO"];
                             linhaTabela.Cells["P_ID_BLOCO"].Value = leitor["PROPRIETARIO-ID_BLOCO"];
                             linhaTabela.Cells["P_ID_CONDOMINIO"].Value = leitor["PROPRIETARIO-ID_CONDOMINIO"];
@@ -516,7 +527,6 @@ namespace Conflow
             contatoList.Items.Clear();
             tipoContatoCB.SelectedIndex = -1;
             contatoTbox.Clear();
-            AtualizarLocalizacao();
             apartamentoList.Rows.Clear();
             AtualizarLocalizacao();
 
@@ -542,7 +552,7 @@ namespace Conflow
         {
             DataGridViewSelectedRowCollection linhaSelecionada = pesquisaList.SelectedRows;
 
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
                 nomeTbox.Text = pesquisaList["P_NOME_PROPRIETARIO", e.RowIndex].Value.ToString();
                 if (pesquisaList["P_SEXO_PROPRIETARIO", e.RowIndex].Value.ToString() == "M")
@@ -620,18 +630,30 @@ namespace Conflow
                 ComandosSQL.conn.Close();
 
                 // Auto selecionando o Prédio e Apartamento do Proprietário
-                index = 0;
-                foreach (object o in pesquisaList.Rows)
+                predioList.Update();
+                for (index = 0; index < predioList.Rows.Count; index++)
                 {
-                    index++;
-                    if (linhaSelecionada[0].Cells["P_COD_PREDIO"] == predioList.Rows[index].Cells["COD_PREDIO"])
+
+                    if (Convert.ToInt32(linhaSelecionada[0].Cells["P_COD_PREDIO"].Value) == Convert.ToInt32(predioList.Rows[index].Cells["COD_PREDIO"].Value))
                     {
-                        predioList.Rows[index].Cells["COD_PREDIO"].Selected = true;
-                        MessageBox.Show("A linha foi selecionada");
+                        predioList.Rows[index].Selected = true;
+                        
+                        break;
                     }
                 }
                 
+                predioList_RowEnter(null, new DataGridViewCellEventArgs(linhaSelecionada[0].Index, Convert.ToInt32(linhaSelecionada[0].Cells["P_COD_PREDIO"].Value)));
 
+                for (index = 0; index < apartamentoList.Rows.Count; index++)
+                {
+                    if (Convert.ToInt32(linhaSelecionada[0].Cells["P_COD_APARTAMENTO"].Value) == Convert.ToInt32(apartamentoList.Rows[index].Cells["COD_APARTAMENTO"].Value))
+                    {
+                        apartamentoList.Rows[index].Selected = true;
+
+                        break;
+                    }
+                }
+                
             }
         }
     }
