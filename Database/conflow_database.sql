@@ -72,6 +72,15 @@ CREATE TABLE IF NOT EXISTS `condominio_despesa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
+-- Dumping structure for table conflow.conta_sistema
+CREATE TABLE IF NOT EXISTS `conta_sistema` (
+  `COD_CONTA` int(11) NOT NULL AUTO_INCREMENT,
+  `USERNAME_CONTA` varchar(80) NOT NULL,
+  `PASSWORD_CONTA` varchar(80) NOT NULL,
+  PRIMARY KEY (`COD_CONTA`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- Data exporting was unselected.
 -- Dumping structure for table conflow.estacionamento
 CREATE TABLE IF NOT EXISTS `estacionamento` (
   `COD_ESTACIONAMENTO` int(11) NOT NULL AUTO_INCREMENT,
