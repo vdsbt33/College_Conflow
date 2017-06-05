@@ -37,7 +37,7 @@
             this.passo2PBox = new System.Windows.Forms.PictureBox();
             this.Cadastrar_PredioBtn = new System.Windows.Forms.Button();
             this.passo3PBox = new System.Windows.Forms.PictureBox();
-            this.Pesquisar_MoradorBtn = new System.Windows.Forms.Button();
+            this.Pesquisar_ProprietarioBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passo1PBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passo2PBox)).BeginInit();
@@ -65,7 +65,7 @@
             this.flowLayoutPanel1.Controls.Add(this.passo2PBox);
             this.flowLayoutPanel1.Controls.Add(this.Cadastrar_PredioBtn);
             this.flowLayoutPanel1.Controls.Add(this.passo3PBox);
-            this.flowLayoutPanel1.Controls.Add(this.Pesquisar_MoradorBtn);
+            this.flowLayoutPanel1.Controls.Add(this.Pesquisar_ProprietarioBtn);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(531, 42);
@@ -149,21 +149,21 @@
             this.passo3PBox.TabIndex = 5;
             this.passo3PBox.TabStop = false;
             // 
-            // Pesquisar_MoradorBtn
+            // Pesquisar_ProprietarioBtn
             // 
-            this.Pesquisar_MoradorBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Pesquisar_MoradorBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pesquisar_MoradorBtn.Image = ((System.Drawing.Image)(resources.GetObject("Pesquisar_MoradorBtn.Image")));
-            this.Pesquisar_MoradorBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Pesquisar_MoradorBtn.Location = new System.Drawing.Point(417, 3);
-            this.Pesquisar_MoradorBtn.Name = "Pesquisar_MoradorBtn";
-            this.Pesquisar_MoradorBtn.Size = new System.Drawing.Size(110, 35);
-            this.Pesquisar_MoradorBtn.TabIndex = 2;
-            this.Pesquisar_MoradorBtn.Text = "Morador";
-            this.Pesquisar_MoradorBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Pesquisar_MoradorBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Pesquisar_MoradorBtn.UseVisualStyleBackColor = true;
-            this.Pesquisar_MoradorBtn.Click += new System.EventHandler(this.Pesquisar_MoradorBtn_Click);
+            this.Pesquisar_ProprietarioBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Pesquisar_ProprietarioBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pesquisar_ProprietarioBtn.Image = ((System.Drawing.Image)(resources.GetObject("Pesquisar_ProprietarioBtn.Image")));
+            this.Pesquisar_ProprietarioBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Pesquisar_ProprietarioBtn.Location = new System.Drawing.Point(417, 3);
+            this.Pesquisar_ProprietarioBtn.Name = "Pesquisar_ProprietarioBtn";
+            this.Pesquisar_ProprietarioBtn.Size = new System.Drawing.Size(110, 35);
+            this.Pesquisar_ProprietarioBtn.TabIndex = 2;
+            this.Pesquisar_ProprietarioBtn.Text = "Proprietário";
+            this.Pesquisar_ProprietarioBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Pesquisar_ProprietarioBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Pesquisar_ProprietarioBtn.UseVisualStyleBackColor = true;
+            this.Pesquisar_ProprietarioBtn.Click += new System.EventHandler(this.Pesquisar_ProprietarioBtn_Click);
             // 
             // Pesquisa_OpcoesUC
             // 
@@ -185,7 +185,7 @@
 
         private System.Windows.Forms.Panel PesquisarOPPanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button Pesquisar_MoradorBtn;
+        private System.Windows.Forms.Button Pesquisar_ProprietarioBtn;
         private System.Windows.Forms.PictureBox passo1PBox;
         private System.Windows.Forms.Button Cadastrar_BlocoBtn;
         private System.Windows.Forms.PictureBox passo2PBox;

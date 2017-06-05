@@ -22,7 +22,7 @@ namespace Conflow
         {
             InitializeComponent();
 
-            Pesquisar_CondominioBtn_Click(null, new EventArgs());
+            Pesquisar_ProprietarioBtn_Click(null, new EventArgs());
         }
 
         public void ResetarScroll()
@@ -58,7 +58,7 @@ namespace Conflow
             proprietarioUC.AtualizarLocalizacao();
         }
 
-        private void Pesquisar_MoradorBtn_Click(object sender, EventArgs e)
+        private void Pesquisar_ProprietarioBtn_Click(object sender, EventArgs e)
         {
             ResetarScroll();
             PesquisarOPPanel.Controls.Clear();

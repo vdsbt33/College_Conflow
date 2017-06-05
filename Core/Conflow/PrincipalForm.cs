@@ -17,72 +17,71 @@ namespace Conflow
         {
             InitializeComponent();
             FormSelecionado = this.Name;
+
+            contaPanelUC.Controls["painelConta"].Controls.Add(conectarUC);
         }
 
         // Variáveis
         string FormSelecionado; // Armazena qual o nome do form atualmente selecionado
         List<Form> FormLista = new List<Form>();
 
+        public static object cod_conta_conectada = null;
+
         // User controls
-        Cadastro_OpcoesUC cadastroOpcoesUC;
-        Pesquisa_OpcoesUC pesquisaOpcoesUC;
+        AvisosUC avisosUC = new AvisosUC();
+        Conta_PanelUC contaPanelUC = new Conta_PanelUC(cod_conta_conectada);
+        Conta_ConectarUC conectarUC = new Conta_ConectarUC();
+        Conta_DesconectarUC desconectarUC = new Conta_DesconectarUC();
+        Cadastro_OpcoesUC cadastroOpcoesUC = new Cadastro_OpcoesUC();
+        Pesquisa_OpcoesUC pesquisaOpcoesUC = new Pesquisa_OpcoesUC();
+        ConfigurarUC configurarUC = new ConfigurarUC();
+        AjudaUC ajudaUC = new AjudaUC();
 
 
-        // Lista de nome de formulários
-        List<string> NomesForms = new List<string>();
-        private void InicializarNomesForms()
+        private void AvisosBtn_Click(object sender, EventArgs e)
         {
-            NomesForms.Add("AvisosForm");
-            NomesForms.Add("ConectarForm");
-            NomesForms.Add("PesquisarForm");
-            NomesForms.Add("CadastrarForm");
-            NomesForms.Add("ConfigurarForm");
-            NomesForms.Add("AjudaForm");
-            NomesForms.Add("SairForm");
+            FormPanel.Controls.Clear();
+            avisosUC.Size = FormPanel.Size;
+            FormPanel.Controls.Add(avisosUC);
         }
 
-
-        // Troca os controles do painel, bem como a variável FormSelecionado, para os/as do Form especificado
-        public void TrocarForm(string nomeForm)
+        private void ConectarBtn_Click(object sender, EventArgs e)
         {
-            FormSelecionado = nomeForm;
-
-            // Busca pelo nome do formulário
-            foreach (string s in NomesForms)
-            {
-                if (nomeForm == s)
-                {
-                    // Já que o nome do Form é conhecido, busca ele na lista
-                    foreach (Form f in FormLista)
-                    {
-                        if (f.Name == nomeForm)
-                        {
-                            // Recria os controles do form no painel
-                            FormPanel.Controls.Clear();
-                            foreach (Control c in f.Controls)
-                            {
-                                FormPanel.Controls.Add(c);
-                            }
-                            
-                        }
-                    }
-                    
-                }
-            }
+            FormPanel.Controls.Clear();
+            contaPanelUC.Size = FormPanel.Size;
+            FormPanel.Controls.Add(contaPanelUC);
         }
-        
+
+        private void PesquisarBtn_Click(object sender, EventArgs e)
+        {
+
+            FormPanel.Controls.Clear();
+            pesquisaOpcoesUC.Size = FormPanel.Size;
+            FormPanel.Controls.Add(pesquisaOpcoesUC);
+        }
 
         private void CadastrarBtn_Click(object sender, EventArgs e)
         {
-            if (cadastroOpcoesUC == null)
-            {
-                cadastroOpcoesUC = new Cadastro_OpcoesUC();
-            }
-
+            
             FormPanel.Controls.Clear();
             cadastroOpcoesUC.Size = FormPanel.Size;
             FormPanel.Controls.Add(cadastroOpcoesUC);
         }
+        
+        private void ConfigurarBtn_Click(object sender, EventArgs e)
+        {
+            FormPanel.Controls.Clear();
+            configurarUC.Size = FormPanel.Size;
+            FormPanel.Controls.Add(configurarUC);
+        }
+
+        private void AjudaBtn_Click(object sender, EventArgs e)
+        {
+            FormPanel.Controls.Clear();
+            ajudaUC.Size = FormPanel.Size;
+            FormPanel.Controls.Add(ajudaUC);
+        }
+
 
         private void SairBtn_Click(object sender, EventArgs e)
         {
@@ -93,16 +92,37 @@ namespace Conflow
             }
         }
 
-        private void PesquisarBtn_Click(object sender, EventArgs e)
+        private void PrincipalForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (pesquisaOpcoesUC == null)
+            // Avisos
+            if (e.KeyCode == Keys.F1)
             {
-                pesquisaOpcoesUC = new Pesquisa_OpcoesUC();
+                AvisosBtn_Click(null, new EventArgs());
             }
-
-            FormPanel.Controls.Clear();
-            pesquisaOpcoesUC.Size = FormPanel.Size;
-            FormPanel.Controls.Add(pesquisaOpcoesUC);
+            else if (e.KeyCode == Keys.F2)
+            {
+                ConectarBtn_Click(null, new EventArgs());
+            }
+            else if (e.KeyCode == Keys.F3)
+            {
+                PesquisarBtn_Click(null, new EventArgs());
+            }
+            else if (e.KeyCode == Keys.F4)
+            {
+                CadastrarBtn_Click(null, new EventArgs());
+            }
+            else if (e.KeyCode == Keys.F5)
+            {
+                ConfigurarBtn_Click(null, new EventArgs());
+            }
+            else if (e.KeyCode == Keys.F6)
+            {
+                AjudaBtn_Click(null, new EventArgs());
+            }
+            else if (e.KeyCode == Keys.F12)
+            {
+                SairBtn_Click(null, new EventArgs());
+            }
         }
     }
 }

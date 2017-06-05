@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjudaUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AjudaUC.Designer.cs">
+      <DependentUpon>AjudaUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AvisosUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AvisosUC.Designer.cs">
+      <DependentUpon>AvisosUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cadastro_BlocoUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -78,6 +90,30 @@
       <DependentUpon>Cadastro_PredioUC.cs</DependentUpon>
     </Compile>
     <Compile Include="AtalhosSQL.cs" />
+    <Compile Include="Conta_ConectarUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Conta_ConectarUC.Designer.cs">
+      <DependentUpon>Conta_ConectarUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurarUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConfigurarUC.Designer.cs">
+      <DependentUpon>ConfigurarUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conta_PanelUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Conta_PanelUC.Designer.cs">
+      <DependentUpon>Conta_PanelUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conta_DesconectarUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Conta_DesconectarUC.Designer.cs">
+      <DependentUpon>Conta_DesconectarUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pesquisa_BlocoUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,6 +164,12 @@
     <Compile Include="UCPessoa_Juridica.Designer.cs">
       <DependentUpon>UCPessoa_Juridica.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AjudaUC.resx">
+      <DependentUpon>AjudaUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AvisosUC.resx">
+      <DependentUpon>AvisosUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cadastro_BlocoUC.resx">
       <DependentUpon>Cadastro_BlocoUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +184,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastro_PredioUC.resx">
       <DependentUpon>Cadastro_PredioUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conta_ConectarUC.resx">
+      <DependentUpon>Conta_ConectarUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigurarUC.resx">
+      <DependentUpon>ConfigurarUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conta_DesconectarUC.resx">
+      <DependentUpon>Conta_DesconectarUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conta_PanelUC.resx">
+      <DependentUpon>Conta_PanelUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pesquisa_BlocoUC.resx">
       <DependentUpon>Pesquisa_BlocoUC.cs</DependentUpon>

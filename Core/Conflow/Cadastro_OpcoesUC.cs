@@ -21,7 +21,7 @@ namespace Conflow
         {
             InitializeComponent();
 
-            Cadastrar_CondominioBtn_Click(null, new EventArgs());
+            Cadastrar_ProprietarioBtn_Click(null, new EventArgs());
         }
 
         public void ResetarScroll()
@@ -55,7 +55,7 @@ namespace Conflow
             prediosUC.AtualizarLocalizacao();
         }
 
-        private void Cadastrar_MoradorBtn_Click(object sender, EventArgs e)
+        private void Cadastrar_ProprietarioBtn_Click(object sender, EventArgs e)
         {
             ResetarScroll();
             CadastrarOPPanel.Controls.Clear();
@@ -63,11 +63,5 @@ namespace Conflow
 
             moradoresUC.AtualizarLocalizacao();
         }
-
-        
-
-        
-
-        
     }
 }

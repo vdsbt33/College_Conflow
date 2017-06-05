@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalForm));
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.AvisosBtn = new System.Windows.Forms.Button();
             this.iconsImageList = new System.Windows.Forms.ImageList(this.components);
+            this.FormPanel = new System.Windows.Forms.Panel();
+            this.SoftwareTitleLabel = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.cursorToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.TopPictureBox = new System.Windows.Forms.PictureBox();
+            this.AvisosBtn = new System.Windows.Forms.Button();
             this.ConectarBtn = new System.Windows.Forms.Button();
             this.PesquisarBtn = new System.Windows.Forms.Button();
             this.CadastrarBtn = new System.Windows.Forms.Button();
             this.ConfigurarBtn = new System.Windows.Forms.Button();
             this.AjudaBtn = new System.Windows.Forms.Button();
             this.SairBtn = new System.Windows.Forms.Button();
-            this.FormPanel = new System.Windows.Forms.Panel();
-            this.SoftwareTitleLabel = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.cursorToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.TopPictureBox = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,69 @@
             this.flowLayoutPanel.Size = new System.Drawing.Size(116, 490);
             this.flowLayoutPanel.TabIndex = 0;
             // 
+            // iconsImageList
+            // 
+            this.iconsImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("iconsImageList.ImageStream")));
+            this.iconsImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.iconsImageList.Images.SetKeyName(0, "icon_Avisos.png");
+            this.iconsImageList.Images.SetKeyName(1, "icon_Conectar.png");
+            this.iconsImageList.Images.SetKeyName(2, "icon_Pesquisar.png");
+            this.iconsImageList.Images.SetKeyName(3, "icon_Cadastrar.png");
+            this.iconsImageList.Images.SetKeyName(4, "icon_Configurar.png");
+            this.iconsImageList.Images.SetKeyName(5, "icon_Ajuda.png");
+            this.iconsImageList.Images.SetKeyName(6, "icon_Sair.png");
+            this.iconsImageList.Images.SetKeyName(7, "icon_Imprimir.png");
+            // 
+            // FormPanel
+            // 
+            this.FormPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FormPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FormPanel.Location = new System.Drawing.Point(134, 117);
+            this.FormPanel.Name = "FormPanel";
+            this.FormPanel.Size = new System.Drawing.Size(816, 490);
+            this.FormPanel.TabIndex = 2;
+            // 
+            // SoftwareTitleLabel
+            // 
+            this.SoftwareTitleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SoftwareTitleLabel.AutoSize = true;
+            this.SoftwareTitleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.SoftwareTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoftwareTitleLabel.Location = new System.Drawing.Point(404, 66);
+            this.SoftwareTitleLabel.Name = "SoftwareTitleLabel";
+            this.SoftwareTitleLabel.Size = new System.Drawing.Size(160, 42);
+            this.SoftwareTitleLabel.TabIndex = 3;
+            this.SoftwareTitleLabel.Text = "Conflow";
+            this.SoftwareTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 620);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(962, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // cursorToolTip
+            // 
+            this.cursorToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.cursorToolTip.ToolTipTitle = "Dica:";
+            // 
+            // TopPictureBox
+            // 
+            this.TopPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TopPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TopPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("TopPictureBox.Image")));
+            this.TopPictureBox.Location = new System.Drawing.Point(92, 9);
+            this.TopPictureBox.Name = "TopPictureBox";
+            this.TopPictureBox.Size = new System.Drawing.Size(774, 99);
+            this.TopPictureBox.TabIndex = 1;
+            this.TopPictureBox.TabStop = false;
+            // 
             // AvisosBtn
             // 
             this.AvisosBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -83,19 +146,7 @@
             this.AvisosBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cursorToolTip.SetToolTip(this.AvisosBtn, "Exibe os avisos definidos pelo administrador do sistema.");
             this.AvisosBtn.UseVisualStyleBackColor = true;
-            // 
-            // iconsImageList
-            // 
-            this.iconsImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("iconsImageList.ImageStream")));
-            this.iconsImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.iconsImageList.Images.SetKeyName(0, "icon_Avisos.png");
-            this.iconsImageList.Images.SetKeyName(1, "icon_Conectar.png");
-            this.iconsImageList.Images.SetKeyName(2, "icon_Pesquisar.png");
-            this.iconsImageList.Images.SetKeyName(3, "icon_Cadastrar.png");
-            this.iconsImageList.Images.SetKeyName(4, "icon_Configurar.png");
-            this.iconsImageList.Images.SetKeyName(5, "icon_Ajuda.png");
-            this.iconsImageList.Images.SetKeyName(6, "icon_Sair.png");
-            this.iconsImageList.Images.SetKeyName(7, "icon_Imprimir.png");
+            this.AvisosBtn.Click += new System.EventHandler(this.AvisosBtn_Click);
             // 
             // ConectarBtn
             // 
@@ -115,6 +166,7 @@
             this.cursorToolTip.SetToolTip(this.ConectarBtn, "Conecta-se a uma conta usando o nome de usuário e senha.\r\nCaso já esteja conectad" +
         "o, é possível desconectar-se dela.");
             this.ConectarBtn.UseVisualStyleBackColor = true;
+            this.ConectarBtn.Click += new System.EventHandler(this.ConectarBtn_Click);
             // 
             // PesquisarBtn
             // 
@@ -172,6 +224,7 @@
             this.ConfigurarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cursorToolTip.SetToolTip(this.ConfigurarBtn, "Alterar opções como idioma.");
             this.ConfigurarBtn.UseVisualStyleBackColor = true;
+            this.ConfigurarBtn.Click += new System.EventHandler(this.ConfigurarBtn_Click);
             // 
             // AjudaBtn
             // 
@@ -190,6 +243,7 @@
             this.AjudaBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cursorToolTip.SetToolTip(this.AjudaBtn, "Alterar opções como idioma.");
             this.AjudaBtn.UseVisualStyleBackColor = true;
+            this.AjudaBtn.Click += new System.EventHandler(this.AjudaBtn_Click);
             // 
             // SairBtn
             // 
@@ -210,56 +264,6 @@
             this.SairBtn.UseVisualStyleBackColor = true;
             this.SairBtn.Click += new System.EventHandler(this.SairBtn_Click);
             // 
-            // FormPanel
-            // 
-            this.FormPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FormPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FormPanel.Location = new System.Drawing.Point(134, 117);
-            this.FormPanel.Name = "FormPanel";
-            this.FormPanel.Size = new System.Drawing.Size(816, 490);
-            this.FormPanel.TabIndex = 2;
-            // 
-            // SoftwareTitleLabel
-            // 
-            this.SoftwareTitleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.SoftwareTitleLabel.AutoSize = true;
-            this.SoftwareTitleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.SoftwareTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoftwareTitleLabel.Location = new System.Drawing.Point(404, 66);
-            this.SoftwareTitleLabel.Name = "SoftwareTitleLabel";
-            this.SoftwareTitleLabel.Size = new System.Drawing.Size(160, 42);
-            this.SoftwareTitleLabel.TabIndex = 3;
-            this.SoftwareTitleLabel.Text = "Conflow";
-            this.SoftwareTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 620);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(962, 22);
-            this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // cursorToolTip
-            // 
-            this.cursorToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.cursorToolTip.ToolTipTitle = "Dica:";
-            // 
-            // TopPictureBox
-            // 
-            this.TopPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TopPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TopPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("TopPictureBox.Image")));
-            this.TopPictureBox.Location = new System.Drawing.Point(92, 9);
-            this.TopPictureBox.Name = "TopPictureBox";
-            this.TopPictureBox.Size = new System.Drawing.Size(774, 99);
-            this.TopPictureBox.TabIndex = 1;
-            this.TopPictureBox.TabStop = false;
-            // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,11 +275,13 @@
             this.Controls.Add(this.TopPictureBox);
             this.Controls.Add(this.flowLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PrincipalForm";
             this.Text = "PrincipalForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PrincipalForm_KeyDown);
             this.flowLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TopPictureBox)).EndInit();
             this.ResumeLayout(false);

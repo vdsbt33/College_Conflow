@@ -36,7 +36,7 @@
             this.passo2PBox = new System.Windows.Forms.PictureBox();
             this.Cadastrar_PredioBtn = new System.Windows.Forms.Button();
             this.passo3PBox = new System.Windows.Forms.PictureBox();
-            this.Cadastrar_MoradorBtn = new System.Windows.Forms.Button();
+            this.Cadastrar_ProprietarioBtn = new System.Windows.Forms.Button();
             this.CadastrarOPPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passo1PBox)).BeginInit();
@@ -54,7 +54,7 @@
             this.flowLayoutPanel1.Controls.Add(this.passo2PBox);
             this.flowLayoutPanel1.Controls.Add(this.Cadastrar_PredioBtn);
             this.flowLayoutPanel1.Controls.Add(this.passo3PBox);
-            this.flowLayoutPanel1.Controls.Add(this.Cadastrar_MoradorBtn);
+            this.flowLayoutPanel1.Controls.Add(this.Cadastrar_ProprietarioBtn);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(531, 42);
@@ -135,21 +135,21 @@
             this.passo3PBox.TabIndex = 5;
             this.passo3PBox.TabStop = false;
             // 
-            // Cadastrar_MoradorBtn
+            // Cadastrar_ProprietarioBtn
             // 
-            this.Cadastrar_MoradorBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Cadastrar_MoradorBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cadastrar_MoradorBtn.Image = ((System.Drawing.Image)(resources.GetObject("Cadastrar_MoradorBtn.Image")));
-            this.Cadastrar_MoradorBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Cadastrar_MoradorBtn.Location = new System.Drawing.Point(417, 3);
-            this.Cadastrar_MoradorBtn.Name = "Cadastrar_MoradorBtn";
-            this.Cadastrar_MoradorBtn.Size = new System.Drawing.Size(110, 35);
-            this.Cadastrar_MoradorBtn.TabIndex = 0;
-            this.Cadastrar_MoradorBtn.Text = "Morador";
-            this.Cadastrar_MoradorBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Cadastrar_MoradorBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Cadastrar_MoradorBtn.UseVisualStyleBackColor = true;
-            this.Cadastrar_MoradorBtn.Click += new System.EventHandler(this.Cadastrar_MoradorBtn_Click);
+            this.Cadastrar_ProprietarioBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Cadastrar_ProprietarioBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cadastrar_ProprietarioBtn.Image = ((System.Drawing.Image)(resources.GetObject("Cadastrar_ProprietarioBtn.Image")));
+            this.Cadastrar_ProprietarioBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Cadastrar_ProprietarioBtn.Location = new System.Drawing.Point(417, 3);
+            this.Cadastrar_ProprietarioBtn.Name = "Cadastrar_ProprietarioBtn";
+            this.Cadastrar_ProprietarioBtn.Size = new System.Drawing.Size(110, 35);
+            this.Cadastrar_ProprietarioBtn.TabIndex = 0;
+            this.Cadastrar_ProprietarioBtn.Text = "Proprietário";
+            this.Cadastrar_ProprietarioBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Cadastrar_ProprietarioBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Cadastrar_ProprietarioBtn.UseVisualStyleBackColor = true;
+            this.Cadastrar_ProprietarioBtn.Click += new System.EventHandler(this.Cadastrar_ProprietarioBtn_Click);
             // 
             // CadastrarOPPanel
             // 
@@ -181,7 +181,7 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button Cadastrar_MoradorBtn;
+        private System.Windows.Forms.Button Cadastrar_ProprietarioBtn;
         private System.Windows.Forms.Button Cadastrar_PredioBtn;
         private System.Windows.Forms.Button Cadastrar_CondominioBtn;
         private System.Windows.Forms.Panel CadastrarOPPanel;

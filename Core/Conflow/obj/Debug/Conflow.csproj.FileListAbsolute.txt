@@ -21,3 +21,9 @@ D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_BlocoUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_CondominioUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_PredioUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.AvisosUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.ConfigurarUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Conta_ConectarUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Conta_DesconectarUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Conta_PanelUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.AjudaUC.resources
