@@ -620,6 +620,16 @@ namespace Conflow
                 ComandosSQL.conn.Close();
 
                 // Auto selecionando o Prédio e Apartamento do Proprietário
+                index = 0;
+                foreach (object o in pesquisaList.Rows)
+                {
+                    index++;
+                    if (linhaSelecionada[0].Cells["P_COD_PREDIO"] == predioList.Rows[index].Cells["COD_PREDIO"])
+                    {
+                        predioList.Rows[index].Cells["COD_PREDIO"].Selected = true;
+                        MessageBox.Show("A linha foi selecionada");
+                    }
+                }
                 
 
             }
