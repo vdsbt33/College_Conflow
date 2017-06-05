@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cadastro_BlocosUC.cs">
+    <Compile Include="Cadastro_BlocoUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Cadastro_BlocosUC.Designer.cs">
-      <DependentUpon>Cadastro_BlocosUC.cs</DependentUpon>
+    <Compile Include="Cadastro_BlocoUC.Designer.cs">
+      <DependentUpon>Cadastro_BlocoUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Cadastro_CondominioUC.cs">
       <SubType>UserControl</SubType>
@@ -65,24 +65,42 @@
     <Compile Include="Cadastro_OpcoesUC.Designer.cs">
       <DependentUpon>Cadastro_OpcoesUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro_ProprietariosUC.cs">
+    <Compile Include="Cadastro_ProprietarioUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Cadastro_ProprietariosUC.Designer.cs">
-      <DependentUpon>Cadastro_ProprietariosUC.cs</DependentUpon>
+    <Compile Include="Cadastro_ProprietarioUC.Designer.cs">
+      <DependentUpon>Cadastro_ProprietarioUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro_PrediosUC.cs">
+    <Compile Include="Cadastro_PredioUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Cadastro_PrediosUC.Designer.cs">
-      <DependentUpon>Cadastro_PrediosUC.cs</DependentUpon>
+    <Compile Include="Cadastro_PredioUC.Designer.cs">
+      <DependentUpon>Cadastro_PredioUC.cs</DependentUpon>
     </Compile>
     <Compile Include="AtalhosSQL.cs" />
-    <Compile Include="Pesquisa_ProprietariosUC.cs">
+    <Compile Include="Pesquisa_BlocoUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pesquisa_ProprietariosUC.Designer.cs">
-      <DependentUpon>Pesquisa_ProprietariosUC.cs</DependentUpon>
+    <Compile Include="Pesquisa_BlocoUC.Designer.cs">
+      <DependentUpon>Pesquisa_BlocoUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisa_CondominioUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pesquisa_CondominioUC.Designer.cs">
+      <DependentUpon>Pesquisa_CondominioUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisa_PredioUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pesquisa_PredioUC.Designer.cs">
+      <DependentUpon>Pesquisa_PredioUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisa_ProprietarioUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pesquisa_ProprietarioUC.Designer.cs">
+      <DependentUpon>Pesquisa_ProprietarioUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Pesquisa_OpcoesUC.cs">
       <SubType>UserControl</SubType>
@@ -110,8 +128,8 @@
     <Compile Include="UCPessoa_Juridica.Designer.cs">
       <DependentUpon>UCPessoa_Juridica.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Cadastro_BlocosUC.resx">
-      <DependentUpon>Cadastro_BlocosUC.cs</DependentUpon>
+    <EmbeddedResource Include="Cadastro_BlocoUC.resx">
+      <DependentUpon>Cadastro_BlocoUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastro_CondominioUC.resx">
       <DependentUpon>Cadastro_CondominioUC.cs</DependentUpon>
@@ -119,14 +137,23 @@
     <EmbeddedResource Include="Cadastro_OpcoesUC.resx">
       <DependentUpon>Cadastro_OpcoesUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro_ProprietariosUC.resx">
-      <DependentUpon>Cadastro_ProprietariosUC.cs</DependentUpon>
+    <EmbeddedResource Include="Cadastro_ProprietarioUC.resx">
+      <DependentUpon>Cadastro_ProprietarioUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro_PrediosUC.resx">
-      <DependentUpon>Cadastro_PrediosUC.cs</DependentUpon>
+    <EmbeddedResource Include="Cadastro_PredioUC.resx">
+      <DependentUpon>Cadastro_PredioUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pesquisa_ProprietariosUC.resx">
-      <DependentUpon>Pesquisa_ProprietariosUC.cs</DependentUpon>
+    <EmbeddedResource Include="Pesquisa_BlocoUC.resx">
+      <DependentUpon>Pesquisa_BlocoUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisa_CondominioUC.resx">
+      <DependentUpon>Pesquisa_CondominioUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisa_PredioUC.resx">
+      <DependentUpon>Pesquisa_PredioUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisa_ProprietarioUC.resx">
+      <DependentUpon>Pesquisa_ProprietarioUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pesquisa_OpcoesUC.resx">
       <DependentUpon>Pesquisa_OpcoesUC.cs</DependentUpon>

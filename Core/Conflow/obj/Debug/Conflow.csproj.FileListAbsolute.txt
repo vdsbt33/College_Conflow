@@ -3,12 +3,8 @@ D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\bin\Debug\Conflow
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\bin\Debug\Conflow.pdb
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\bin\Debug\MySql.Data.dll
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\bin\Debug\MySql.Data.xml
-D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_BlocosUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_CondominioUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_OpcoesUC.resources
-D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_ProprietariosUC.resources
-D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_PrediosUC.resources
-D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_ProprietariosUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_OpcoesUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.PrincipalForm.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Properties.Resources.resources
@@ -18,3 +14,10 @@ D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.exe
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.pdb
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.csprojResolveAssemblyReference.cache
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_ProprietarioUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_ProprietarioUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_BlocoUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_PredioUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_BlocoUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_CondominioUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_PredioUC.resources

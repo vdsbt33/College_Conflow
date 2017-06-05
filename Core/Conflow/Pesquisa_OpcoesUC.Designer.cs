@@ -111,6 +111,7 @@
             this.Cadastrar_BlocoBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Cadastrar_BlocoBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Cadastrar_BlocoBtn.UseVisualStyleBackColor = true;
+            this.Cadastrar_BlocoBtn.Click += new System.EventHandler(this.Cadastrar_BlocoBtn_Click);
             // 
             // passo2PBox
             // 
@@ -136,6 +137,7 @@
             this.Cadastrar_PredioBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Cadastrar_PredioBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Cadastrar_PredioBtn.UseVisualStyleBackColor = true;
+            this.Cadastrar_PredioBtn.Click += new System.EventHandler(this.Cadastrar_PredioBtn_Click);
             // 
             // passo3PBox
             // 
