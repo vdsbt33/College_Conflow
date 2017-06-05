@@ -90,6 +90,7 @@
       <DependentUpon>Cadastro_PredioUC.cs</DependentUpon>
     </Compile>
     <Compile Include="AtalhosSQL.cs" />
+    <Compile Include="ContasSQL.cs" />
     <Compile Include="Conta_ConectarUC.cs">
       <SubType>UserControl</SubType>
     </Compile>

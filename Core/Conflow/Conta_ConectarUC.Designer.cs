@@ -83,7 +83,7 @@
             this.ConectarBtn.UseVisualStyleBackColor = true;
             this.ConectarBtn.Click += new System.EventHandler(this.ConectarBtn_Click);
             // 
-            // ConectarUC
+            // Conta_ConectarUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,7 +92,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.usernameTbox);
             this.Controls.Add(this.label1);
-            this.Name = "ConectarUC";
+            this.Name = "Conta_ConectarUC";
             this.Size = new System.Drawing.Size(357, 136);
             this.ResumeLayout(false);
             this.PerformLayout();

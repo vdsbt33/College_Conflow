@@ -7,20 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MySql.Data.MySqlClient;
 
 namespace Conflow
 {
     public partial class Conta_ConectarUC : UserControl
     {
-        public Conta_ConectarUC()
+        public ContasSQL contaSQL;
+
+        public Conta_ConectarUC(ContasSQL contaSQL)
         {
             InitializeComponent();
+
+            this.contaSQL = contaSQL;
         }
 
         private void ConectarBtn_Click(object sender, EventArgs e)
         {
-
+            passwordTbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            contaSQL.EntrarConta(usernameTbox.Text, passwordTbox.Text);
+            passwordTbox.TextMaskFormat = MaskFormat.IncludeLiterals;
         }
     }
 }

@@ -18,20 +18,21 @@ namespace Conflow
             InitializeComponent();
             FormSelecionado = this.Name;
 
-            contaPanelUC.Controls["painelConta"].Controls.Add(conectarUC);
+            contaSQL.PainelLogin(this, contaPanelUC, conectarUC, desconectarUC);
         }
 
         // Variáveis
         string FormSelecionado; // Armazena qual o nome do form atualmente selecionado
         List<Form> FormLista = new List<Form>();
 
-        public static object cod_conta_conectada = null;
+        static ContasSQL contaSQL = new ContasSQL();
 
         // User controls
         AvisosUC avisosUC = new AvisosUC();
-        Conta_PanelUC contaPanelUC = new Conta_PanelUC(cod_conta_conectada);
-        Conta_ConectarUC conectarUC = new Conta_ConectarUC();
-        Conta_DesconectarUC desconectarUC = new Conta_DesconectarUC();
+        Conta_PanelUC contaPanelUC = new Conta_PanelUC(contaSQL);
+        Conta_ConectarUC conectarUC = new Conta_ConectarUC(contaSQL);
+        Conta_DesconectarUC desconectarUC = new Conta_DesconectarUC(contaSQL);
+
         Cadastro_OpcoesUC cadastroOpcoesUC = new Cadastro_OpcoesUC();
         Pesquisa_OpcoesUC pesquisaOpcoesUC = new Pesquisa_OpcoesUC();
         ConfigurarUC configurarUC = new ConfigurarUC();
@@ -50,6 +51,12 @@ namespace Conflow
             FormPanel.Controls.Clear();
             contaPanelUC.Size = FormPanel.Size;
             FormPanel.Controls.Add(contaPanelUC);
+
+            if (contaSQL.cod_conta_conectada == null)
+            {
+                contaPanelUC.Controls.Clear();
+                contaPanelUC.Controls.Add(conectarUC);
+            }
         }
 
         private void PesquisarBtn_Click(object sender, EventArgs e)
@@ -123,6 +130,19 @@ namespace Conflow
             {
                 SairBtn_Click(null, new EventArgs());
             }
+        }
+
+        public void AtualizarContaConectada()
+        {
+            if (contaSQL.cod_conta_conectada != null)
+            {
+                contaConectadaTTip.Text = "Conta: " + contaSQL.id_conta_contada;
+            }
+            else
+            {
+                contaConectadaTTip.Text = "Conta: [Nenhuma]";
+            }
+            
         }
     }
 }

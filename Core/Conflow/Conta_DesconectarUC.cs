@@ -12,9 +12,18 @@ namespace Conflow
 {
     public partial class Conta_DesconectarUC : UserControl
     {
-        public Conta_DesconectarUC()
+        public ContasSQL contaSQL;
+
+        public Conta_DesconectarUC(ContasSQL contaSQL)
         {
             InitializeComponent();
+
+            this.contaSQL = contaSQL;
+        }
+
+        private void DesconectarBtn_Click(object sender, EventArgs e)
+        {
+            contaSQL.SairConta();
         }
     }
 }

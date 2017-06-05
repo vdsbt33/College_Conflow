@@ -40,13 +40,14 @@
             this.DesconectarBtn.TabIndex = 63;
             this.DesconectarBtn.Text = "Desconectar";
             this.DesconectarBtn.UseVisualStyleBackColor = true;
+            this.DesconectarBtn.Click += new System.EventHandler(this.DesconectarBtn_Click);
             // 
-            // DesconectarUC
+            // Conta_DesconectarUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.DesconectarBtn);
-            this.Name = "DesconectarUC";
+            this.Name = "Conta_DesconectarUC";
             this.Size = new System.Drawing.Size(357, 136);
             this.ResumeLayout(false);
 
