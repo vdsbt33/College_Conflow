@@ -38,10 +38,13 @@
             this.Cadastrar_PredioBtn = new System.Windows.Forms.Button();
             this.passo3PBox = new System.Windows.Forms.PictureBox();
             this.Pesquisar_ProprietarioBtn = new System.Windows.Forms.Button();
+            this.passo4PBox = new System.Windows.Forms.PictureBox();
+            this.Pesquisar_MoradorBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passo1PBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passo2PBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passo3PBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passo4PBox)).BeginInit();
             this.SuspendLayout();
             // 
             // PesquisarOPPanel
@@ -52,7 +55,7 @@
             this.PesquisarOPPanel.AutoScroll = true;
             this.PesquisarOPPanel.Location = new System.Drawing.Point(3, 51);
             this.PesquisarOPPanel.Name = "PesquisarOPPanel";
-            this.PesquisarOPPanel.Size = new System.Drawing.Size(531, 305);
+            this.PesquisarOPPanel.Size = new System.Drawing.Size(669, 407);
             this.PesquisarOPPanel.TabIndex = 45;
             // 
             // flowLayoutPanel1
@@ -66,9 +69,11 @@
             this.flowLayoutPanel1.Controls.Add(this.Cadastrar_PredioBtn);
             this.flowLayoutPanel1.Controls.Add(this.passo3PBox);
             this.flowLayoutPanel1.Controls.Add(this.Pesquisar_ProprietarioBtn);
+            this.flowLayoutPanel1.Controls.Add(this.passo4PBox);
+            this.flowLayoutPanel1.Controls.Add(this.Pesquisar_MoradorBtn);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(531, 42);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(669, 42);
             this.flowLayoutPanel1.TabIndex = 44;
             // 
             // Pesquisar_CondominioBtn
@@ -165,6 +170,31 @@
             this.Pesquisar_ProprietarioBtn.UseVisualStyleBackColor = true;
             this.Pesquisar_ProprietarioBtn.Click += new System.EventHandler(this.Pesquisar_ProprietarioBtn_Click);
             // 
+            // passo4PBox
+            // 
+            this.passo4PBox.Image = ((System.Drawing.Image)(resources.GetObject("passo4PBox.Image")));
+            this.passo4PBox.Location = new System.Drawing.Point(533, 3);
+            this.passo4PBox.Name = "passo4PBox";
+            this.passo4PBox.Size = new System.Drawing.Size(16, 35);
+            this.passo4PBox.TabIndex = 8;
+            this.passo4PBox.TabStop = false;
+            // 
+            // Pesquisar_MoradorBtn
+            // 
+            this.Pesquisar_MoradorBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Pesquisar_MoradorBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pesquisar_MoradorBtn.Image = ((System.Drawing.Image)(resources.GetObject("Pesquisar_MoradorBtn.Image")));
+            this.Pesquisar_MoradorBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Pesquisar_MoradorBtn.Location = new System.Drawing.Point(555, 3);
+            this.Pesquisar_MoradorBtn.Name = "Pesquisar_MoradorBtn";
+            this.Pesquisar_MoradorBtn.Size = new System.Drawing.Size(110, 35);
+            this.Pesquisar_MoradorBtn.TabIndex = 9;
+            this.Pesquisar_MoradorBtn.Text = "Morador";
+            this.Pesquisar_MoradorBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Pesquisar_MoradorBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Pesquisar_MoradorBtn.UseVisualStyleBackColor = true;
+            this.Pesquisar_MoradorBtn.Click += new System.EventHandler(this.Pesquisar_MoradorBtn_Click);
+            // 
             // Pesquisa_OpcoesUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,11 +202,12 @@
             this.Controls.Add(this.PesquisarOPPanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Pesquisa_OpcoesUC";
-            this.Size = new System.Drawing.Size(537, 359);
+            this.Size = new System.Drawing.Size(675, 461);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.passo1PBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passo2PBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passo3PBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passo4PBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,5 +223,7 @@
         private System.Windows.Forms.Button Cadastrar_PredioBtn;
         private System.Windows.Forms.PictureBox passo3PBox;
         private System.Windows.Forms.Button Pesquisar_CondominioBtn;
+        private System.Windows.Forms.PictureBox passo4PBox;
+        private System.Windows.Forms.Button Pesquisar_MoradorBtn;
     }
 }

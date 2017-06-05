@@ -27,3 +27,5 @@ D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Conta_DesconectarUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Conta_PanelUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.AjudaUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_MoradorUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_MoradorUC.resources

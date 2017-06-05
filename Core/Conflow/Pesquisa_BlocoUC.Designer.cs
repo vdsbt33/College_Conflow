@@ -38,6 +38,11 @@
             this.filtroValorTbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pesquisaList = new System.Windows.Forms.DataGridView();
+            this.P_EditarBtn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.P_COD_BLOCO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_ID_BLOCO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_COD_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_ID_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pesquisarBtn = new System.Windows.Forms.Button();
             this.apagarBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,11 +60,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.P_EditarBtn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.P_COD_BLOCO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P_ID_BLOCO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P_COD_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P_ID_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pesquisaList)).BeginInit();
             this.panel1.SuspendLayout();
             this.localizacaoGB.SuspendLayout();
@@ -168,6 +168,49 @@
             this.pesquisaList.Size = new System.Drawing.Size(740, 200);
             this.pesquisaList.TabIndex = 56;
             // 
+            // P_EditarBtn
+            // 
+            this.P_EditarBtn.HeaderText = "Editar";
+            this.P_EditarBtn.MinimumWidth = 68;
+            this.P_EditarBtn.Name = "P_EditarBtn";
+            this.P_EditarBtn.ReadOnly = true;
+            this.P_EditarBtn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.P_EditarBtn.Text = "Editar";
+            this.P_EditarBtn.UseColumnTextForButtonValue = true;
+            this.P_EditarBtn.Width = 68;
+            // 
+            // P_COD_BLOCO
+            // 
+            this.P_COD_BLOCO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.P_COD_BLOCO.HeaderText = "Código";
+            this.P_COD_BLOCO.MinimumWidth = 80;
+            this.P_COD_BLOCO.Name = "P_COD_BLOCO";
+            this.P_COD_BLOCO.ReadOnly = true;
+            this.P_COD_BLOCO.Visible = false;
+            // 
+            // P_ID_BLOCO
+            // 
+            this.P_ID_BLOCO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.P_ID_BLOCO.HeaderText = "Identificador";
+            this.P_ID_BLOCO.MinimumWidth = 160;
+            this.P_ID_BLOCO.Name = "P_ID_BLOCO";
+            this.P_ID_BLOCO.ReadOnly = true;
+            // 
+            // P_COD_CONDOMINIO
+            // 
+            this.P_COD_CONDOMINIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.P_COD_CONDOMINIO.HeaderText = "Código Condomínio";
+            this.P_COD_CONDOMINIO.Name = "P_COD_CONDOMINIO";
+            this.P_COD_CONDOMINIO.ReadOnly = true;
+            this.P_COD_CONDOMINIO.Visible = false;
+            // 
+            // P_ID_CONDOMINIO
+            // 
+            this.P_ID_CONDOMINIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.P_ID_CONDOMINIO.HeaderText = "Condomínio";
+            this.P_ID_CONDOMINIO.Name = "P_ID_CONDOMINIO";
+            this.P_ID_CONDOMINIO.ReadOnly = true;
+            // 
             // pesquisarBtn
             // 
             this.pesquisarBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -211,7 +254,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(740, 50);
             this.label7.TabIndex = 65;
-            this.label7.Text = "Editar Proprietário";
+            this.label7.Text = "Editar Bloco";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GuardarBtn
@@ -367,51 +410,6 @@
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
-            // 
-            // P_EditarBtn
-            // 
-            this.P_EditarBtn.HeaderText = "Editar";
-            this.P_EditarBtn.MinimumWidth = 68;
-            this.P_EditarBtn.Name = "P_EditarBtn";
-            this.P_EditarBtn.ReadOnly = true;
-            this.P_EditarBtn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.P_EditarBtn.Text = "Editar";
-            this.P_EditarBtn.UseColumnTextForButtonValue = true;
-            this.P_EditarBtn.Width = 68;
-            // 
-            // P_COD_BLOCO
-            // 
-            this.P_COD_BLOCO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.P_COD_BLOCO.HeaderText = "Código";
-            this.P_COD_BLOCO.MinimumWidth = 80;
-            this.P_COD_BLOCO.Name = "P_COD_BLOCO";
-            this.P_COD_BLOCO.ReadOnly = true;
-            this.P_COD_BLOCO.Visible = false;
-            this.P_COD_BLOCO.Width = 80;
-            // 
-            // P_ID_BLOCO
-            // 
-            this.P_ID_BLOCO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.P_ID_BLOCO.HeaderText = "Identificador";
-            this.P_ID_BLOCO.MinimumWidth = 160;
-            this.P_ID_BLOCO.Name = "P_ID_BLOCO";
-            this.P_ID_BLOCO.ReadOnly = true;
-            // 
-            // P_COD_CONDOMINIO
-            // 
-            this.P_COD_CONDOMINIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.P_COD_CONDOMINIO.HeaderText = "Código Condomínio";
-            this.P_COD_CONDOMINIO.Name = "P_COD_CONDOMINIO";
-            this.P_COD_CONDOMINIO.ReadOnly = true;
-            this.P_COD_CONDOMINIO.Visible = false;
-            this.P_COD_CONDOMINIO.Width = 154;
-            // 
-            // P_ID_CONDOMINIO
-            // 
-            this.P_ID_CONDOMINIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.P_ID_CONDOMINIO.HeaderText = "Condomínio";
-            this.P_ID_CONDOMINIO.Name = "P_ID_CONDOMINIO";
-            this.P_ID_CONDOMINIO.ReadOnly = true;
             // 
             // Pesquisa_BlocoUC
             // 

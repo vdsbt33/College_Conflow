@@ -71,6 +71,12 @@
     <Compile Include="Cadastro_CondominioUC.Designer.cs">
       <DependentUpon>Cadastro_CondominioUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cadastro_MoradorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cadastro_MoradorUC.Designer.cs">
+      <DependentUpon>Cadastro_MoradorUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cadastro_OpcoesUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,6 +133,12 @@
     <Compile Include="Pesquisa_CondominioUC.Designer.cs">
       <DependentUpon>Pesquisa_CondominioUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pesquisa_MoradorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pesquisa_MoradorUC.Designer.cs">
+      <DependentUpon>Pesquisa_MoradorUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pesquisa_PredioUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,6 +189,9 @@
     <EmbeddedResource Include="Cadastro_CondominioUC.resx">
       <DependentUpon>Cadastro_CondominioUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro_MoradorUC.resx">
+      <DependentUpon>Cadastro_MoradorUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cadastro_OpcoesUC.resx">
       <DependentUpon>Cadastro_OpcoesUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pesquisa_CondominioUC.resx">
       <DependentUpon>Pesquisa_CondominioUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisa_MoradorUC.resx">
+      <DependentUpon>Pesquisa_MoradorUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pesquisa_PredioUC.resx">
       <DependentUpon>Pesquisa_PredioUC.cs</DependentUpon>

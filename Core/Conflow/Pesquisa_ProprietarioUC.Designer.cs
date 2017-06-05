@@ -567,6 +567,7 @@
             this.contatoList.Name = "contatoList";
             this.contatoList.Size = new System.Drawing.Size(304, 104);
             this.contatoList.TabIndex = 21;
+            this.contatoList.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.contatoList_PreviewKeyDown);
             // 
             // adicionarContatoBtn
             // 

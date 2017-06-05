@@ -68,7 +68,7 @@ namespace Conflow
                 // Atualizando Morador
                 String cmdTxt = "";
                 String timestamp_criacao = ComandosSQL.current_timestamp;
-                cmdTxt =    "UPDATE PROPRIETARIO SET        " +
+                cmdTxt = "UPDATE PROPRIETARIO SET        " +
                             "NOME_PROPRIETARIO = @nome, " +
                             "RG_PROPRIETARIO = @rg," +
                             "SEXO_PROPRIETARIO = @sexo,       " +
@@ -100,19 +100,20 @@ namespace Conflow
                 ComandosSQL.comandoSql.Parameters.AddWithValue("end_num", Convert.ToInt32(localNumeroNud.Value));
                 ComandosSQL.comandoSql.Parameters.AddWithValue("cod_apartamento", linhaSelecionada[0].Cells["COD_APARTAMENTO"].Value);
                 ComandosSQL.comandoSql.Parameters.AddWithValue("timestamp_criacao", timestamp_criacao);
-                ComandosSQL.comandoSql.Parameters.AddWithValue("cod_proprietario", linhaSelecionada[0].Cells["COD_PROPRIETARIO"].Value);
+                DataGridViewSelectedRowCollection linhaCodigo = pesquisaList.SelectedRows;
+                ComandosSQL.comandoSql.Parameters.AddWithValue("cod_proprietario", linhaCodigo[0].Cells["P_COD_PROPRIETARIO"].Value);
                 // Problema aqui nessa linha: O COD do Proprietário não fica na tabela Apartamento, mas sim em Proprietário.
 
                 ComandosSQL.ExecutarComandoSql(cmdTxt);
                 // Atualizando CPF / CNPJ do Morador
                 if (pessoaFisicaRb.Checked)
                 {
-                    cmdTxt =    "UPDATE PROPRIETARIO_CPF SET       " +
+                    cmdTxt = "UPDATE PROPRIETARIO_CPF SET       " +
                                 "   CPF_PROPRIETARIO = @cpf        " +
                                 "WHERE COD_PROPRIETARIO = @cod;    ";
 
                     ComandosSQL.comandoSql.Parameters.AddWithValue("cpf", cpfCnpjDesmascarado);
-                    ComandosSQL.comandoSql.Parameters.AddWithValue("cod", linhaSelecionada[0].Cells["COD_PROPRIETARIO"].Value);
+                    ComandosSQL.comandoSql.Parameters.AddWithValue("cod", linhaCodigo[0].Cells["P_COD_PROPRIETARIO"].Value);
 
                 }
                 else
@@ -122,19 +123,21 @@ namespace Conflow
                                 "WHERE COD_PROPRIETARIO = @cod;    ";
 
                     ComandosSQL.comandoSql.Parameters.AddWithValue("cnpj", cpfCnpjDesmascarado);
-                    ComandosSQL.comandoSql.Parameters.AddWithValue("cod", linhaSelecionada[0].Cells["COD_PROPRIETARIO"].Value);
-                    
+                    ComandosSQL.comandoSql.Parameters.AddWithValue("cod", linhaCodigo[0].Cells["P_COD_PROPRIETARIO"].Value);
+
                 }
 
 
                 ComandosSQL.ExecutarComandoSql(cmdTxt, "", "Não foi possível atualizar o CPF/CNPJ do proprietário.");
 
-                // Adicionado contatos do proprietario
+                // Recomendo contatos antigos
+                ComandosSQL.ExecutarComandoSql("DELETE FROM PROPRIETARIO_CONTATO WHERE COD_PROPRIETARIO = " + Convert.ToInt32(linhaCodigo[0].Cells["P_COD_PROPRIETARIO"].Value));
 
+                // Adicionado contatos do proprietario
 
                 foreach (object o in contatoList.Items)
                 {
-                    
+
                     cmdTxt = "INSERT INTO PROPRIETARIO_CONTATO(     " +
                                 "   COD_PROPRIETARIO                " +
                                 "  ,DSC_CONTATO                     " +
@@ -150,6 +153,9 @@ namespace Conflow
                     ComandosSQL.ExecutarComandoSql(cmdTxt, "");
 
                 }
+
+                pesquisarBtn_Click(null, new EventArgs());
+
                 MessageBox.Show("Proprietário atualizado com sucesso!");
             }
             else
@@ -654,6 +660,14 @@ namespace Conflow
                     }
                 }
                 
+            }
+        }
+
+        private void contatoList_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                removerContatoBtn_Click(null, new EventArgs());
             }
         }
     }

@@ -12,7 +12,8 @@ namespace Conflow
 {
     public partial class Cadastro_OpcoesUC : UserControl
     {
-        Cadastro_ProprietarioUC moradoresUC = new Cadastro_ProprietarioUC();
+        Cadastro_MoradorUC moradoresUC = new Cadastro_MoradorUC();
+        Cadastro_ProprietarioUC proprietariosUC = new Cadastro_ProprietarioUC();
         Cadastro_PredioUC prediosUC = new Cadastro_PredioUC();
         Cadastro_BlocoUC blocosUC = new Cadastro_BlocoUC();
         Cadastro_CondominioUC condominiosUC = new Cadastro_CondominioUC();
@@ -56,6 +57,15 @@ namespace Conflow
         }
 
         private void Cadastrar_ProprietarioBtn_Click(object sender, EventArgs e)
+        {
+            ResetarScroll();
+            CadastrarOPPanel.Controls.Clear();
+            CadastrarOPPanel.Controls.Add(proprietariosUC);
+
+            proprietariosUC.AtualizarLocalizacao();
+        }
+
+        private void Cadastrar_MoradorBtn_Click(object sender, EventArgs e)
         {
             ResetarScroll();
             CadastrarOPPanel.Controls.Clear();

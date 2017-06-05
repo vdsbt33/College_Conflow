@@ -37,11 +37,14 @@
             this.Cadastrar_PredioBtn = new System.Windows.Forms.Button();
             this.passo3PBox = new System.Windows.Forms.PictureBox();
             this.Cadastrar_ProprietarioBtn = new System.Windows.Forms.Button();
+            this.Cadastrar_MoradorBtn = new System.Windows.Forms.Button();
             this.CadastrarOPPanel = new System.Windows.Forms.Panel();
+            this.passo4PBox = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passo1PBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passo2PBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passo3PBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passo4PBox)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -55,9 +58,11 @@
             this.flowLayoutPanel1.Controls.Add(this.Cadastrar_PredioBtn);
             this.flowLayoutPanel1.Controls.Add(this.passo3PBox);
             this.flowLayoutPanel1.Controls.Add(this.Cadastrar_ProprietarioBtn);
+            this.flowLayoutPanel1.Controls.Add(this.passo4PBox);
+            this.flowLayoutPanel1.Controls.Add(this.Cadastrar_MoradorBtn);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(531, 42);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(669, 42);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // Cadastrar_CondominioBtn
@@ -151,6 +156,22 @@
             this.Cadastrar_ProprietarioBtn.UseVisualStyleBackColor = true;
             this.Cadastrar_ProprietarioBtn.Click += new System.EventHandler(this.Cadastrar_ProprietarioBtn_Click);
             // 
+            // Cadastrar_MoradorBtn
+            // 
+            this.Cadastrar_MoradorBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Cadastrar_MoradorBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cadastrar_MoradorBtn.Image = ((System.Drawing.Image)(resources.GetObject("Cadastrar_MoradorBtn.Image")));
+            this.Cadastrar_MoradorBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Cadastrar_MoradorBtn.Location = new System.Drawing.Point(555, 3);
+            this.Cadastrar_MoradorBtn.Name = "Cadastrar_MoradorBtn";
+            this.Cadastrar_MoradorBtn.Size = new System.Drawing.Size(110, 35);
+            this.Cadastrar_MoradorBtn.TabIndex = 6;
+            this.Cadastrar_MoradorBtn.Text = "Morador";
+            this.Cadastrar_MoradorBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Cadastrar_MoradorBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Cadastrar_MoradorBtn.UseVisualStyleBackColor = true;
+            this.Cadastrar_MoradorBtn.Click += new System.EventHandler(this.Cadastrar_MoradorBtn_Click);
+            // 
             // CadastrarOPPanel
             // 
             this.CadastrarOPPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -159,8 +180,17 @@
             this.CadastrarOPPanel.AutoScroll = true;
             this.CadastrarOPPanel.Location = new System.Drawing.Point(3, 51);
             this.CadastrarOPPanel.Name = "CadastrarOPPanel";
-            this.CadastrarOPPanel.Size = new System.Drawing.Size(531, 305);
+            this.CadastrarOPPanel.Size = new System.Drawing.Size(669, 407);
             this.CadastrarOPPanel.TabIndex = 1;
+            // 
+            // passo4PBox
+            // 
+            this.passo4PBox.Image = ((System.Drawing.Image)(resources.GetObject("passo4PBox.Image")));
+            this.passo4PBox.Location = new System.Drawing.Point(533, 3);
+            this.passo4PBox.Name = "passo4PBox";
+            this.passo4PBox.Size = new System.Drawing.Size(16, 35);
+            this.passo4PBox.TabIndex = 7;
+            this.passo4PBox.TabStop = false;
             // 
             // Cadastro_OpcoesUC
             // 
@@ -169,11 +199,12 @@
             this.Controls.Add(this.CadastrarOPPanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Cadastro_OpcoesUC";
-            this.Size = new System.Drawing.Size(537, 359);
+            this.Size = new System.Drawing.Size(675, 461);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.passo1PBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passo2PBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passo3PBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passo4PBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -189,5 +220,7 @@
         private System.Windows.Forms.PictureBox passo1PBox;
         private System.Windows.Forms.PictureBox passo2PBox;
         private System.Windows.Forms.PictureBox passo3PBox;
+        private System.Windows.Forms.Button Cadastrar_MoradorBtn;
+        private System.Windows.Forms.PictureBox passo4PBox;
     }
 }

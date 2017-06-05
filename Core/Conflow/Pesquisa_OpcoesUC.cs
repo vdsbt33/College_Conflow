@@ -16,6 +16,7 @@ namespace Conflow
         Pesquisa_BlocoUC blocoUC = new Pesquisa_BlocoUC();
         Pesquisa_PredioUC predioUC = new Pesquisa_PredioUC();
         Pesquisa_ProprietarioUC proprietarioUC = new Pesquisa_ProprietarioUC();
+        Pesquisa_MoradorUC moradorUC = new Pesquisa_MoradorUC();
 
 
         public Pesquisa_OpcoesUC()
@@ -36,8 +37,7 @@ namespace Conflow
             ResetarScroll();
             PesquisarOPPanel.Controls.Clear();
             PesquisarOPPanel.Controls.Add(condominioUC);
-
-            proprietarioUC.AtualizarLocalizacao();
+            
         }
 
         private void Cadastrar_BlocoBtn_Click(object sender, EventArgs e)
@@ -45,8 +45,7 @@ namespace Conflow
             ResetarScroll();
             PesquisarOPPanel.Controls.Clear();
             PesquisarOPPanel.Controls.Add(blocoUC);
-
-            proprietarioUC.AtualizarLocalizacao();
+            
         }
 
         private void Cadastrar_PredioBtn_Click(object sender, EventArgs e)
@@ -54,8 +53,7 @@ namespace Conflow
             ResetarScroll();
             PesquisarOPPanel.Controls.Clear();
             PesquisarOPPanel.Controls.Add(predioUC);
-
-            proprietarioUC.AtualizarLocalizacao();
+            
         }
 
         private void Pesquisar_ProprietarioBtn_Click(object sender, EventArgs e)
@@ -65,6 +63,14 @@ namespace Conflow
             PesquisarOPPanel.Controls.Add(proprietarioUC);
 
             proprietarioUC.AtualizarLocalizacao();
+        }
+
+        private void Pesquisar_MoradorBtn_Click(object sender, EventArgs e)
+        {
+            ResetarScroll();
+            PesquisarOPPanel.Controls.Clear();
+            PesquisarOPPanel.Controls.Add(moradorUC);
+            
         }
     }
 }
