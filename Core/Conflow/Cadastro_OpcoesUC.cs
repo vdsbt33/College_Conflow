@@ -12,7 +12,7 @@ namespace Conflow
 {
     public partial class Cadastro_OpcoesUC : UserControl
     {
-        Cadastro_MoradoresUC moradoresUC = new Cadastro_MoradoresUC();
+        Cadastro_ProprietariosUC moradoresUC = new Cadastro_ProprietariosUC();
         Cadastro_PrediosUC prediosUC = new Cadastro_PrediosUC();
         Cadastro_BlocosUC blocosUC = new Cadastro_BlocosUC();
         Cadastro_CondominioUC condominiosUC = new Cadastro_CondominioUC();

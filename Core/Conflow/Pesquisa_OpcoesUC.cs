@@ -12,7 +12,7 @@ namespace Conflow
 {
     public partial class Pesquisa_OpcoesUC : UserControl
     {
-        Pesquisa_MoradoresUC moradorUC = new Pesquisa_MoradoresUC();
+        Pesquisa_ProprietariosUC moradorUC = new Pesquisa_ProprietariosUC();
 
 
         public Pesquisa_OpcoesUC()
@@ -25,12 +25,20 @@ namespace Conflow
             PesquisarOPPanel.Controls.Clear();
             PesquisarOPPanel.Controls.Add(moradorUC);
 
-
+            moradorUC.AtualizarLocalizacao();
         }
 
         private void Pesquisar_CondominioBtn_Click(object sender, EventArgs e)
         {
 
         }
+
+
+        public void ResetarScroll()
+        {
+            PesquisarOPPanel.VerticalScroll.Value = 0;
+            PesquisarOPPanel.HorizontalScroll.Value = 0;
+        }
+
     }
 }

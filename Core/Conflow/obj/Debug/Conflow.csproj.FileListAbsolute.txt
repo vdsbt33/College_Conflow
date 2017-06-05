@@ -6,9 +6,9 @@ D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\bin\Debug\MySql.D
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_BlocosUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_CondominioUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_OpcoesUC.resources
-D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_MoradoresUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_ProprietariosUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_PrediosUC.resources
-D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_MoradoresUC.resources
+D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_ProprietariosUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_OpcoesUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.PrincipalForm.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Properties.Resources.resources

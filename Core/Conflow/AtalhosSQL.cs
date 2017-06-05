@@ -162,5 +162,16 @@ namespace Conflow
             }
             return valor;
         }
+
+
+        // Checa se possui " ou ' no texto. Retorna true se tiver
+        public bool ContemSimbolos(String texto)
+        {
+            if (texto.Contains(Convert.ToChar("'")) || texto.Contains(Convert.ToChar("\"")))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

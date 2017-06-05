@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pesquisa_OpcoesUC));
             this.PesquisarOPPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.Pesquisar_MoradorBtn = new System.Windows.Forms.Button();
+            this.Pesquisar_CondominioBtn = new System.Windows.Forms.Button();
             this.passo1PBox = new System.Windows.Forms.PictureBox();
             this.Cadastrar_BlocoBtn = new System.Windows.Forms.Button();
             this.passo2PBox = new System.Windows.Forms.PictureBox();
             this.Cadastrar_PredioBtn = new System.Windows.Forms.Button();
             this.passo3PBox = new System.Windows.Forms.PictureBox();
-            this.Pesquisar_CondominioBtn = new System.Windows.Forms.Button();
+            this.Pesquisar_MoradorBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passo1PBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passo2PBox)).BeginInit();
@@ -71,21 +71,21 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(531, 42);
             this.flowLayoutPanel1.TabIndex = 44;
             // 
-            // Pesquisar_MoradorBtn
+            // Pesquisar_CondominioBtn
             // 
-            this.Pesquisar_MoradorBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Pesquisar_MoradorBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pesquisar_MoradorBtn.Image = ((System.Drawing.Image)(resources.GetObject("Pesquisar_MoradorBtn.Image")));
-            this.Pesquisar_MoradorBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Pesquisar_MoradorBtn.Location = new System.Drawing.Point(417, 3);
-            this.Pesquisar_MoradorBtn.Name = "Pesquisar_MoradorBtn";
-            this.Pesquisar_MoradorBtn.Size = new System.Drawing.Size(110, 35);
-            this.Pesquisar_MoradorBtn.TabIndex = 2;
-            this.Pesquisar_MoradorBtn.Text = "Morador";
-            this.Pesquisar_MoradorBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Pesquisar_MoradorBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Pesquisar_MoradorBtn.UseVisualStyleBackColor = true;
-            this.Pesquisar_MoradorBtn.Click += new System.EventHandler(this.Pesquisar_MoradorBtn_Click);
+            this.Pesquisar_CondominioBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Pesquisar_CondominioBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pesquisar_CondominioBtn.Image = ((System.Drawing.Image)(resources.GetObject("Pesquisar_CondominioBtn.Image")));
+            this.Pesquisar_CondominioBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Pesquisar_CondominioBtn.Location = new System.Drawing.Point(3, 3);
+            this.Pesquisar_CondominioBtn.Name = "Pesquisar_CondominioBtn";
+            this.Pesquisar_CondominioBtn.Size = new System.Drawing.Size(110, 35);
+            this.Pesquisar_CondominioBtn.TabIndex = 0;
+            this.Pesquisar_CondominioBtn.Text = "Condomínio";
+            this.Pesquisar_CondominioBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Pesquisar_CondominioBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Pesquisar_CondominioBtn.UseVisualStyleBackColor = true;
+            this.Pesquisar_CondominioBtn.Click += new System.EventHandler(this.Pesquisar_CondominioBtn_Click);
             // 
             // passo1PBox
             // 
@@ -147,21 +147,21 @@
             this.passo3PBox.TabIndex = 5;
             this.passo3PBox.TabStop = false;
             // 
-            // Pesquisar_CondominioBtn
+            // Pesquisar_MoradorBtn
             // 
-            this.Pesquisar_CondominioBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Pesquisar_CondominioBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pesquisar_CondominioBtn.Image = ((System.Drawing.Image)(resources.GetObject("Pesquisar_CondominioBtn.Image")));
-            this.Pesquisar_CondominioBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Pesquisar_CondominioBtn.Location = new System.Drawing.Point(3, 3);
-            this.Pesquisar_CondominioBtn.Name = "Pesquisar_CondominioBtn";
-            this.Pesquisar_CondominioBtn.Size = new System.Drawing.Size(110, 35);
-            this.Pesquisar_CondominioBtn.TabIndex = 0;
-            this.Pesquisar_CondominioBtn.Text = "Condomínio";
-            this.Pesquisar_CondominioBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Pesquisar_CondominioBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Pesquisar_CondominioBtn.UseVisualStyleBackColor = true;
-            this.Pesquisar_CondominioBtn.Click += new System.EventHandler(this.Pesquisar_CondominioBtn_Click);
+            this.Pesquisar_MoradorBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Pesquisar_MoradorBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pesquisar_MoradorBtn.Image = ((System.Drawing.Image)(resources.GetObject("Pesquisar_MoradorBtn.Image")));
+            this.Pesquisar_MoradorBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Pesquisar_MoradorBtn.Location = new System.Drawing.Point(417, 3);
+            this.Pesquisar_MoradorBtn.Name = "Pesquisar_MoradorBtn";
+            this.Pesquisar_MoradorBtn.Size = new System.Drawing.Size(110, 35);
+            this.Pesquisar_MoradorBtn.TabIndex = 2;
+            this.Pesquisar_MoradorBtn.Text = "Morador";
+            this.Pesquisar_MoradorBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Pesquisar_MoradorBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Pesquisar_MoradorBtn.UseVisualStyleBackColor = true;
+            this.Pesquisar_MoradorBtn.Click += new System.EventHandler(this.Pesquisar_MoradorBtn_Click);
             // 
             // Pesquisa_OpcoesUC
             // 

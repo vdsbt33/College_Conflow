@@ -65,11 +65,11 @@
     <Compile Include="Cadastro_OpcoesUC.Designer.cs">
       <DependentUpon>Cadastro_OpcoesUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro_MoradoresUC.cs">
+    <Compile Include="Cadastro_ProprietariosUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Cadastro_MoradoresUC.Designer.cs">
-      <DependentUpon>Cadastro_MoradoresUC.cs</DependentUpon>
+    <Compile Include="Cadastro_ProprietariosUC.Designer.cs">
+      <DependentUpon>Cadastro_ProprietariosUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Cadastro_PrediosUC.cs">
       <SubType>UserControl</SubType>
@@ -78,11 +78,11 @@
       <DependentUpon>Cadastro_PrediosUC.cs</DependentUpon>
     </Compile>
     <Compile Include="AtalhosSQL.cs" />
-    <Compile Include="Pesquisa_MoradoresUC.cs">
+    <Compile Include="Pesquisa_ProprietariosUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pesquisa_MoradoresUC.Designer.cs">
-      <DependentUpon>Pesquisa_MoradoresUC.cs</DependentUpon>
+    <Compile Include="Pesquisa_ProprietariosUC.Designer.cs">
+      <DependentUpon>Pesquisa_ProprietariosUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Pesquisa_OpcoesUC.cs">
       <SubType>UserControl</SubType>
@@ -119,14 +119,14 @@
     <EmbeddedResource Include="Cadastro_OpcoesUC.resx">
       <DependentUpon>Cadastro_OpcoesUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro_MoradoresUC.resx">
-      <DependentUpon>Cadastro_MoradoresUC.cs</DependentUpon>
+    <EmbeddedResource Include="Cadastro_ProprietariosUC.resx">
+      <DependentUpon>Cadastro_ProprietariosUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastro_PrediosUC.resx">
       <DependentUpon>Cadastro_PrediosUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pesquisa_MoradoresUC.resx">
-      <DependentUpon>Pesquisa_MoradoresUC.cs</DependentUpon>
+    <EmbeddedResource Include="Pesquisa_ProprietariosUC.resx">
+      <DependentUpon>Pesquisa_ProprietariosUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pesquisa_OpcoesUC.resx">
       <DependentUpon>Pesquisa_OpcoesUC.cs</DependentUpon>
