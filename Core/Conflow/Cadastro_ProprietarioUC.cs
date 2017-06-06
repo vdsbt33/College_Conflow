@@ -32,7 +32,7 @@ namespace Conflow
         private void CriarBtn_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection linhaSelecionada = apartamentoList.SelectedRows;
-            if (nomeTbox.Text.Length > 0 && rgTbox.Text.Length > 0 && numeroestacionamentoNud.Value > 0 && linhaSelecionada != null)
+            if (nomeTbox.Text.Length > 0 && rgTbox.Text.Length > 0 && numeroestacionamentoNud.Value > 0 && predioList.SelectedRows.Count > 0 && apartamentoList.SelectedRows.Count > 0)
             {
                 
                 String cpfcnpjPessoa = "";
@@ -165,12 +165,37 @@ namespace Conflow
                     ComandosSQL.ExecutarComandoSql(cmdTxt, "");
                     
                 }
+                // Limpa os campos
+                nomeTbox.Clear();
+                sexoMRBtn.Checked = true;
+                datanascimentoDtp.Value = DateTime.Today;
+                rgTbox.Clear();
+                if (pessoaFisicaRb.Checked)
+                {
+                    cpfCnpjPanel.Controls["UCPessoa_Fisica"].Controls["cpfTbox"].Text = "";
+                }
+                else
+                {
+                    cpfCnpjPanel.Controls["UCPessoa_Fisica"].Controls["cnpjTbox"].Text = "";
+                }
+                estadoCBox.Text = "";
+                cidadeTBox.Clear();
+                bairroTbox.Clear();
+                ruaTBox.Clear();
+                localNumeroNud.Value = localNumeroNud.Minimum;
+                numeroestacionamentoNud.Value = numeroestacionamentoNud.Minimum;
+                contatoList.Items.Clear();
+                tipoContatoCB.Text = "";
+                contatoTbox.Clear();
+                AtualizarLocalizacao();
+                predioList_RowEnter(null, new DataGridViewCellEventArgs(1, predioList.Rows.GetFirstRow(new DataGridViewElementStates())));
                 MessageBox.Show("Proprietário adicionado com sucesso!");
             }
             else
             {
                 MessageBox.Show("Erro: Um ou mais campos não foram preenchidos.");
             }
+
             
         }
         

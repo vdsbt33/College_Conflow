@@ -34,7 +34,7 @@ namespace Conflow
         private void GuardarBtn_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection linhaSelecionada = apartamentoList.SelectedRows;
-            if (nomeTbox.Text.Length > 0 && rgTbox.Text.Length > 0 && numeroestacionamentoNud.Value > 0 && linhaSelecionada != null)
+            if (nomeTbox.Text.Length > 0 && rgTbox.Text.Length > 0 && numeroestacionamentoNud.Value > 0 && linhaSelecionada != null && pesquisaList.SelectedRows.Count > 0 && apartamentoList.SelectedRows.Count > 0)
             {
 
                 String cpfcnpjPessoa = "";
@@ -102,7 +102,6 @@ namespace Conflow
                 ComandosSQL.comandoSql.Parameters.AddWithValue("timestamp_criacao", timestamp_criacao);
                 DataGridViewSelectedRowCollection linhaCodigo = pesquisaList.SelectedRows;
                 ComandosSQL.comandoSql.Parameters.AddWithValue("cod_proprietario", linhaCodigo[0].Cells["P_COD_PROPRIETARIO"].Value);
-                // Problema aqui nessa linha: O COD do Proprietário não fica na tabela Apartamento, mas sim em Proprietário.
 
                 ComandosSQL.ExecutarComandoSql(cmdTxt);
                 // Atualizando CPF / CNPJ do Morador
@@ -157,12 +156,39 @@ namespace Conflow
                 pesquisarBtn_Click(null, new EventArgs());
 
                 MessageBox.Show("Proprietário atualizado com sucesso!");
+
+                // Limpa os campos
+                nomeTbox.Clear();
+                sexoMRBtn.Checked = true;
+                datanascimentoDtp.Value = DateTime.Today;
+                rgTbox.Clear();
+                // Erro: Campo pode ser alterado, e um usuário pode passar de CPF para CNPJ.
+                // Mas o CPF/CNPJ não é deletado.
+                if (pessoaFisicaRb.Checked)
+                {
+                    cpfCnpjPanel.Controls["UCPessoa_Fisica"].Controls["cpfTbox"].Text = "";
+                }
+                else
+                {
+                    cpfCnpjPanel.Controls["UCPessoa_Fisica"].Controls["cnpjTbox"].Text = "";
+                }
+                estadoCBox.Text = "";
+                cidadeTBox.Clear();
+                bairroTbox.Clear();
+                ruaTBox.Clear();
+                localNumeroNud.Value = localNumeroNud.Minimum;
+                numeroestacionamentoNud.Value = numeroestacionamentoNud.Minimum;
+                contatoList.Items.Clear();
+                tipoContatoCB.Text = "";
+                contatoTbox.Clear();
+                AtualizarLocalizacao();
             }
             else
             {
                 MessageBox.Show("Erro: Um ou mais campos não foram preenchidos.");
             }
 
+            
         }
 
         //

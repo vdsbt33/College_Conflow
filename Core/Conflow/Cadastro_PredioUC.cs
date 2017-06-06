@@ -29,7 +29,7 @@ namespace Conflow
 
             DataGridViewSelectedRowCollection linhaSelecionada = blocoList.SelectedRows;
 
-            if (identificadorTbox.Text.Length > 0)
+            if (identificadorTbox.Text.Length > 0 && blocoList.SelectedRows.Count > 0)
             {
 
                 String cmdTxt = "INSERT INTO PREDIO(                " +
@@ -72,6 +72,11 @@ namespace Conflow
                         num_andar++;
                     }
 
+                    // Limpa os campos
+                    identificadorTbox.Clear();
+                    qtdAPAndarNud.Value = qtdAPAndarNud.Minimum;
+                    qtdAndaresNud.Value = qtdAndaresNud.Minimum;
+                    AtualizarLocalizacao();
                     ComandosSQL.ExecutarComandoSql(cmdTxt);
                 }
             }
@@ -79,6 +84,7 @@ namespace Conflow
             {
                 MessageBox.Show("Erro: Um ou mais campos não foram preenchidos.");
             }
+
             
         }
 

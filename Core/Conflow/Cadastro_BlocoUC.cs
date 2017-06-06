@@ -26,7 +26,7 @@ namespace Conflow
 
             DataGridViewSelectedRowCollection linhaSelecionada = condominioList.SelectedRows;
             
-            if (identificadorTbox.Text.Length > 0)
+            if (identificadorTbox.Text.Length > 0 && condominioList.SelectedRows.Count > 0)
             {
                 
                 String cmdTxt = "INSERT INTO BLOCO(" +
@@ -40,6 +40,9 @@ namespace Conflow
                 ComandosSQL.comandoSql.Parameters.AddWithValue("id", identificadorTbox.Text);
                 ComandosSQL.comandoSql.Parameters.AddWithValue("cod", linhaSelecionada[0].Cells["COD_CONDOMINIO"].Value);
 
+                // Limpa os campos
+                identificadorTbox.Clear();
+                AtualizarLocalizacao();
                 ComandosSQL.ExecutarComandoSql(cmdTxt, "Novo bloco adicionado com sucesso!", "Não foi possível adicionar o bloco.");
                 
             }
@@ -47,6 +50,8 @@ namespace Conflow
             {
                 MessageBox.Show("Erro: Um ou mais campos não foram preenchidos.");
             }
+
+            
         }
         
 

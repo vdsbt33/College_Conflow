@@ -31,7 +31,7 @@ namespace Conflow
         private void CriarBtn_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection linhaSelecionada = apartamentoList.SelectedRows;
-            if (nomeTbox.Text.Length > 0 && predioList.SelectedRows[0] != null && linhaSelecionada[0] != null)
+            if (nomeTbox.Text.Length > 0 && predioList.SelectedRows[0] != null && predioList.SelectedRows.Count > 0 && apartamentoList.SelectedRows.Count > 0)
             {
                 
 
@@ -69,7 +69,11 @@ namespace Conflow
                 ComandosSQL.comandoSql.Parameters.AddWithValue("cod_apartamento", linhaSelecionada[0].Cells["COD_APARTAMENTO"].Value);
                 ComandosSQL.comandoSql.Parameters.AddWithValue("timestamp_criacao", timestamp_criacao);
 
-
+                // Limpa os campos
+                nomeTbox.Clear();
+                sexoMRBtn.Checked = true;
+                datanascimentoDtp.Value = DateTime.Today;
+                AtualizarLocalizacao();
                 ComandosSQL.ExecutarComandoSql(cmdTxt, "Morador adicionado com sucesso!", "Ocorreu um problema e o morador não pôde ser adicionado. \n\nDescrição");
                 
             }
