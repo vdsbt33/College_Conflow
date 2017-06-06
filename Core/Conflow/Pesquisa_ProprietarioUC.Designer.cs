@@ -34,7 +34,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pesquisa_ProprietarioUC));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pesquisarBtn = new System.Windows.Forms.Button();
-            this.filtroAtivosChB = new System.Windows.Forms.CheckBox();
             this.filtroTipoCoB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.filtroValorTbox = new System.Windows.Forms.TextBox();
@@ -102,14 +101,12 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.sexoPanel = new System.Windows.Forms.Panel();
             this.sexoFRBtn = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.sexoMRBtn = new System.Windows.Forms.RadioButton();
             this.label20 = new System.Windows.Forms.Label();
-            this.numeroestacionamentoNud = new System.Windows.Forms.NumericUpDown();
             this.datanascimentoDtp = new System.Windows.Forms.DateTimePicker();
             this.nomeTbox = new System.Windows.Forms.TextBox();
             this.GuardarBtn = new System.Windows.Forms.Button();
@@ -128,13 +125,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.sexoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numeroestacionamentoNud)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.pesquisarBtn);
-            this.groupBox1.Controls.Add(this.filtroAtivosChB);
             this.groupBox1.Controls.Add(this.filtroTipoCoB);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.filtroValorTbox);
@@ -157,16 +152,6 @@
             this.pesquisarBtn.Text = "Pesquisar";
             this.pesquisarBtn.UseVisualStyleBackColor = true;
             this.pesquisarBtn.Click += new System.EventHandler(this.pesquisarBtn_Click);
-            // 
-            // filtroAtivosChB
-            // 
-            this.filtroAtivosChB.AutoSize = true;
-            this.filtroAtivosChB.Location = new System.Drawing.Point(128, 91);
-            this.filtroAtivosChB.Name = "filtroAtivosChB";
-            this.filtroAtivosChB.Size = new System.Drawing.Size(192, 24);
-            this.filtroAtivosChB.TabIndex = 3;
-            this.filtroAtivosChB.Text = "Apenas proprietários ativos";
-            this.filtroAtivosChB.UseVisualStyleBackColor = true;
             // 
             // filtroTipoCoB
             // 
@@ -453,11 +438,9 @@
             this.panel1.Controls.Add(this.localizacaoGB);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.sexoPanel);
             this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.numeroestacionamentoNud);
             this.panel1.Controls.Add(this.datanascimentoDtp);
             this.panel1.Controls.Add(this.nomeTbox);
             this.panel1.Controls.Add(this.GuardarBtn);
@@ -959,17 +942,6 @@
             this.pictureBox2.TabIndex = 75;
             this.pictureBox2.TabStop = false;
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(13, 796);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(178, 20);
-            this.label18.TabIndex = 67;
-            this.label18.Text = "Número do estacionamento:";
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -1037,19 +1009,6 @@
             this.label20.TabIndex = 69;
             this.label20.Text = "Nome:";
             // 
-            // numeroestacionamentoNud
-            // 
-            this.numeroestacionamentoNud.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numeroestacionamentoNud.Location = new System.Drawing.Point(197, 794);
-            this.numeroestacionamentoNud.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.numeroestacionamentoNud.Name = "numeroestacionamentoNud";
-            this.numeroestacionamentoNud.Size = new System.Drawing.Size(100, 26);
-            this.numeroestacionamentoNud.TabIndex = 20;
-            // 
             // datanascimentoDtp
             // 
             this.datanascimentoDtp.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1110,7 +1069,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.sexoPanel.ResumeLayout(false);
             this.sexoPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numeroestacionamentoNud)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1161,18 +1119,15 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel sexoPanel;
         private System.Windows.Forms.RadioButton sexoFRBtn;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton sexoMRBtn;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.NumericUpDown numeroestacionamentoNud;
         private System.Windows.Forms.DateTimePicker datanascimentoDtp;
         private System.Windows.Forms.TextBox nomeTbox;
         private System.Windows.Forms.Button GuardarBtn;
-        private System.Windows.Forms.CheckBox filtroAtivosChB;
         private System.Windows.Forms.Button pesquisarBtn;
         private System.Windows.Forms.Button apagarBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn COD_PREDIO;

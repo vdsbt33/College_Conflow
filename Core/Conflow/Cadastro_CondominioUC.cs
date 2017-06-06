@@ -20,13 +20,14 @@ namespace Conflow
 
         AtalhosSQL ComandosSQL = new AtalhosSQL();
         
-
+        // Botão Criar
         private void CriarBtn_Click(object sender, EventArgs e)
         {
             if (nomeDoCondominioTbox.Text.Length > 0 && telefoneTbox.Text.Length > 0 && estadoCBox.SelectedIndex != -1 && cidadeTBox.Text.Length > 0 && bairroTbox.Text.Length > 0 && ruaTBox.Text.Length > 0 && localNumeroNud.Value > 0)
             {
                 telefoneTbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
 
+                // Insere um novo Condomínio no DB
                 String cmdTxt = "INSERT INTO CONDOMINIO(" +
                                 "    ID_CONDOMINIO" +
                                 "  , TEL_CONTATO_CONDOMINIO" +

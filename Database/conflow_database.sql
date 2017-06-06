@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `bloco` (
   UNIQUE KEY `COD_BLOCO` (`COD_BLOCO`),
   KEY `COD_CONDOMINIO` (`COD_CONDOMINIO`),
   CONSTRAINT `bloco_ibfk_1` FOREIGN KEY (`COD_CONDOMINIO`) REFERENCES `condominio` (`COD_CONDOMINIO`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table conflow.condominio
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `conta_sistema` (
   `USERNAME_CONTA` varchar(80) NOT NULL,
   `PASSWORD_CONTA` varchar(80) NOT NULL,
   PRIMARY KEY (`COD_CONTA`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table conflow.estacionamento
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `proprietario` (
   UNIQUE KEY `COD_PROPRIETARIO` (`COD_PROPRIETARIO`),
   KEY `COD_APARTAMENTO_PROPRIETARIO` (`COD_APARTAMENTO_PROPRIETARIO`),
   CONSTRAINT `proprietario_ibfk_1` FOREIGN KEY (`COD_APARTAMENTO_PROPRIETARIO`) REFERENCES `apartamento` (`COD_APARTAMENTO`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table conflow.proprietario_boleto

@@ -21,20 +21,17 @@ namespace Conflow
             MudarTipoPessoa();
         }
 
-
-
-
+        // Criando UserControls
         private UCPessoa_Fisica ucPFisica = new UCPessoa_Fisica();
         private UCPessoa_Juridica ucPJuridica = new UCPessoa_Juridica();
 
-
         AtalhosSQL ComandosSQL = new AtalhosSQL();
         
-
+        // botão Guardar
         private void GuardarBtn_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection linhaSelecionada = apartamentoList.SelectedRows;
-            if (nomeTbox.Text.Length > 0 && rgTbox.Text.Length > 0 && numeroestacionamentoNud.Value > 0 && linhaSelecionada != null && pesquisaList.SelectedRows.Count > 0 && apartamentoList.SelectedRows.Count > 0)
+            if (nomeTbox.Text.Length > 0 && rgTbox.Text.Length > 0 && linhaSelecionada != null && pesquisaList.SelectedRows.Count > 0 && apartamentoList.SelectedRows.Count > 0)
             {
 
                 String cpfcnpjPessoa = "";
@@ -65,7 +62,7 @@ namespace Conflow
                 dataNascimento += ComandosSQL.ConverterDataHora(datanascimentoDtp.Value.Date.Day.ToString());
 
 
-                // Atualizando Morador
+                // Atualizando Proprietario
                 String cmdTxt = "";
                 String timestamp_criacao = ComandosSQL.current_timestamp;
                 cmdTxt = "UPDATE PROPRIETARIO SET        " +
@@ -136,7 +133,7 @@ namespace Conflow
 
                 foreach (object o in contatoList.Items)
                 {
-
+                    // Insere os contatos inseridos para o Proprietario escolhido
                     cmdTxt = "INSERT INTO PROPRIETARIO_CONTATO(     " +
                                 "   COD_PROPRIETARIO                " +
                                 "  ,DSC_CONTATO                     " +
@@ -162,8 +159,7 @@ namespace Conflow
                 sexoMRBtn.Checked = true;
                 datanascimentoDtp.Value = DateTime.Today;
                 rgTbox.Clear();
-                // Erro: Campo pode ser alterado, e um usuário pode passar de CPF para CNPJ.
-                // Mas o CPF/CNPJ não é deletado.
+                
                 if (pessoaFisicaRb.Checked)
                 {
                     cpfCnpjPanel.Controls["UCPessoa_Fisica"].Controls["cpfTbox"].Text = "";
@@ -177,7 +173,6 @@ namespace Conflow
                 bairroTbox.Clear();
                 ruaTBox.Clear();
                 localNumeroNud.Value = localNumeroNud.Minimum;
-                numeroestacionamentoNud.Value = numeroestacionamentoNud.Minimum;
                 contatoList.Items.Clear();
                 tipoContatoCB.Text = "";
                 contatoTbox.Clear();
@@ -191,9 +186,7 @@ namespace Conflow
             
         }
 
-        //
-
-
+        // Verifica qual tipo de pessoa está selecionada: Física ou Jurídica
         private void MudarTipoPessoa()
         {
             if (pessoaFisicaRb.Checked == true)
@@ -214,11 +207,13 @@ namespace Conflow
             }
         }
 
+        //  Executa ao trocar o tipo de pessoa
         private void pessoaFisicaRb_CheckedChanged(object sender, EventArgs e)
         {
             MudarTipoPessoa();
         }
 
+        //  Executa ao trocar o tipo de pessoa
         private void pessoaJuridicaRb_CheckedChanged(object sender, EventArgs e)
         {
             MudarTipoPessoa();
@@ -261,6 +256,7 @@ namespace Conflow
             ComandosSQL.conn.Close();
         }
 
+        // Botão Adicionar de Contato
         private void adicionarContatoBtn_Click(object sender, EventArgs e)
         {
             if (contatoTbox.Text.Length > 0 && tipoContatoCB.SelectedIndex != -1)
@@ -270,6 +266,7 @@ namespace Conflow
 
         }
 
+        // Botão Remover de Contato
         private void removerContatoBtn_Click(object sender, EventArgs e)
         {
             if (contatoList.SelectedIndex >= 0)
@@ -278,6 +275,7 @@ namespace Conflow
             }
         }
 
+        // Ao trocar o tipo de contato que será inserido
         private void tipoContatoCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             contatoTbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
@@ -292,7 +290,7 @@ namespace Conflow
 
         }
 
-
+        // Ao clicar no botão Editar da lista de Prédios
         private void predioList_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (predioList.SelectedRows.Count > 0)
@@ -305,7 +303,7 @@ namespace Conflow
 
                     // Apartamentos
                     apartamentoList.Rows.Clear();
-
+                    
                     String cmdSelect = "SELECT COD_APARTAMENTO, NUM_APARTAMENTO " +
                                         "FROM APARTAMENTO " +
                                         "WHERE COD_PREDIO = @cod;";
@@ -357,7 +355,7 @@ namespace Conflow
                     switch (filtroTipoCoB.Text)
                     {
                         case "Nome":
-
+                            // Seleciona o proprietário e seus dados
                             cmdSelect = "SELECT  PRO.COD_PROPRIETARIO               " +
                                                ",PRO.NOME_PROPRIETARIO              " +
                                                ",PRO.DAT_NASCIMENTO_PROPRIETARIO    " +
@@ -504,6 +502,7 @@ namespace Conflow
                     {
                         while (leitor.Read())
                         {
+                            // Lê o DB e salva os dados na DataGridView
                             int index = pesquisaList.Rows.Add();
                             DataGridViewRow linhaTabela = pesquisaList.Rows[index];
                             linhaTabela.Cells["P_COD_PROPRIETARIO"].Value = Convert.ToInt32(leitor["COD_PROPRIETARIO"]);
@@ -541,6 +540,7 @@ namespace Conflow
             }
         }
 
+        // Botão Apagar
         private void apagarBtn_Click(object sender, EventArgs e)
         {
             nomeTbox.Clear();
@@ -555,7 +555,6 @@ namespace Conflow
             bairroTbox.Clear();
             ruaTBox.Clear();
             localNumeroNud.Value = 0;
-            numeroestacionamentoNud.Value = 0;
             contatoList.Items.Clear();
             tipoContatoCB.SelectedIndex = -1;
             contatoTbox.Clear();
@@ -609,6 +608,7 @@ namespace Conflow
                     ucPFisica.Controls["cpfTbox"].Text = pesquisaList["P_CPF_PROPRIETARIO", e.RowIndex].Value.ToString();
 
                 }
+
                 // Selecionando o Estado correto
                 int index = 0;
                 foreach (object o in estadoCBox.Items)
@@ -689,6 +689,7 @@ namespace Conflow
             }
         }
 
+        // Atalho para remover um contato da lista
         private void contatoList_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)

@@ -42,9 +42,9 @@
             this.FormPanel = new System.Windows.Forms.Panel();
             this.SoftwareTitleLabel = new System.Windows.Forms.Label();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.contaConectadaTTip = new System.Windows.Forms.ToolStripStatusLabel();
             this.cursorToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TopPictureBox = new System.Windows.Forms.PictureBox();
-            this.contaConectadaTTip = new System.Windows.Forms.ToolStripStatusLabel();
             this.flowLayoutPanel.SuspendLayout();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopPictureBox)).BeginInit();
@@ -174,7 +174,7 @@
             this.ConfigurarBtn.Text = "Con&figurar";
             this.ConfigurarBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ConfigurarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.cursorToolTip.SetToolTip(this.ConfigurarBtn, "Alterar opções como idioma.");
+            this.cursorToolTip.SetToolTip(this.ConfigurarBtn, "Opções preferenciais que podem ser alteradas.");
             this.ConfigurarBtn.UseVisualStyleBackColor = true;
             this.ConfigurarBtn.Click += new System.EventHandler(this.ConfigurarBtn_Click);
             // 
@@ -193,7 +193,7 @@
             this.AjudaBtn.Text = "A&juda";
             this.AjudaBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.AjudaBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.cursorToolTip.SetToolTip(this.AjudaBtn, "Alterar opções como idioma.");
+            this.cursorToolTip.SetToolTip(this.AjudaBtn, "Exibe informações básicas das telas.");
             this.AjudaBtn.UseVisualStyleBackColor = true;
             this.AjudaBtn.Click += new System.EventHandler(this.AjudaBtn_Click);
             // 
@@ -212,7 +212,7 @@
             this.SairBtn.Text = "&Sair";
             this.SairBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.SairBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.cursorToolTip.SetToolTip(this.SairBtn, "Alterar opções como idioma.");
+            this.cursorToolTip.SetToolTip(this.SairBtn, "Encerra o programa e retorna à área de trabalho.");
             this.SairBtn.UseVisualStyleBackColor = true;
             this.SairBtn.Click += new System.EventHandler(this.SairBtn_Click);
             // 
@@ -251,6 +251,12 @@
             this.statusStrip.TabIndex = 4;
             this.statusStrip.Text = "statusStrip1";
             // 
+            // contaConectadaTTip
+            // 
+            this.contaConectadaTTip.Name = "contaConectadaTTip";
+            this.contaConectadaTTip.Size = new System.Drawing.Size(106, 17);
+            this.contaConectadaTTip.Text = "Conta: [Nenhuma]";
+            // 
             // cursorToolTip
             // 
             this.cursorToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
@@ -267,12 +273,6 @@
             this.TopPictureBox.Size = new System.Drawing.Size(774, 99);
             this.TopPictureBox.TabIndex = 1;
             this.TopPictureBox.TabStop = false;
-            // 
-            // contaConectadaTTip
-            // 
-            this.contaConectadaTTip.Name = "contaConectadaTTip";
-            this.contaConectadaTTip.Size = new System.Drawing.Size(106, 17);
-            this.contaConectadaTTip.Text = "Conta: [Nenhuma]";
             // 
             // PrincipalForm
             // 

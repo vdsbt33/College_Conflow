@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pesquisa_BlocoUC));
-            this.filtroAtivosChB = new System.Windows.Forms.CheckBox();
             this.filtroTipoCoB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.filtroValorTbox = new System.Windows.Forms.TextBox();
@@ -60,6 +60,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cursorToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pesquisaList)).BeginInit();
             this.panel1.SuspendLayout();
             this.localizacaoGB.SuspendLayout();
@@ -67,17 +69,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // filtroAtivosChB
-            // 
-            this.filtroAtivosChB.AutoSize = true;
-            this.filtroAtivosChB.Location = new System.Drawing.Point(151, 91);
-            this.filtroAtivosChB.Name = "filtroAtivosChB";
-            this.filtroAtivosChB.Size = new System.Drawing.Size(158, 24);
-            this.filtroAtivosChB.TabIndex = 5;
-            this.filtroAtivosChB.Text = "Apenas blocos ativos";
-            this.filtroAtivosChB.UseVisualStyleBackColor = true;
             // 
             // filtroTipoCoB
             // 
@@ -128,14 +121,14 @@
             this.pesquisaList.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.pesquisaList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pesquisaList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pesquisaList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pesquisaList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.pesquisaList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pesquisaList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.P_EditarBtn,
@@ -143,26 +136,26 @@
             this.P_ID_BLOCO,
             this.P_COD_CONDOMINIO,
             this.P_ID_CONDOMINIO});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.pesquisaList.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.pesquisaList.DefaultCellStyle = dataGridViewCellStyle8;
             this.pesquisaList.Location = new System.Drawing.Point(18, 245);
             this.pesquisaList.MultiSelect = false;
             this.pesquisaList.Name = "pesquisaList";
             this.pesquisaList.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pesquisaList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pesquisaList.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.pesquisaList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pesquisaList.ShowCellToolTips = false;
             this.pesquisaList.Size = new System.Drawing.Size(740, 200);
@@ -398,7 +391,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.pesquisarBtn);
-            this.groupBox1.Controls.Add(this.filtroAtivosChB);
             this.groupBox1.Controls.Add(this.filtroTipoCoB);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.filtroValorTbox);
@@ -411,10 +403,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
             // 
+            // cursorToolTip
+            // 
+            this.cursorToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.cursorToolTip.ToolTipTitle = "Em construção:";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Location = new System.Drawing.Point(18, 18);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox4.TabIndex = 63;
+            this.pictureBox4.TabStop = false;
+            this.cursorToolTip.SetToolTip(this.pictureBox4, "Essa tela está em construção e possui recursos indisponíveis.");
+            // 
             // Pesquisa_BlocoUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pesquisaList);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
@@ -430,12 +440,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.CheckBox filtroAtivosChB;
         private System.Windows.Forms.ComboBox filtroTipoCoB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox filtroValorTbox;
@@ -463,5 +473,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn P_ID_BLOCO;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_COD_CONDOMINIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_ID_CONDOMINIO;
+        private System.Windows.Forms.ToolTip cursorToolTip;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

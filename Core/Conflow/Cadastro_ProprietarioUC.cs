@@ -28,11 +28,11 @@ namespace Conflow
             
         }
         
-
+        // Ao clicar no botão Criar
         private void CriarBtn_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection linhaSelecionada = apartamentoList.SelectedRows;
-            if (nomeTbox.Text.Length > 0 && rgTbox.Text.Length > 0 && numeroestacionamentoNud.Value > 0 && predioList.SelectedRows.Count > 0 && apartamentoList.SelectedRows.Count > 0)
+            if (nomeTbox.Text.Length > 0 && rgTbox.Text.Length > 0 && predioList.SelectedRows.Count > 0 && apartamentoList.SelectedRows.Count > 0)
             {
                 
                 String cpfcnpjPessoa = "";
@@ -183,7 +183,6 @@ namespace Conflow
                 bairroTbox.Clear();
                 ruaTBox.Clear();
                 localNumeroNud.Value = localNumeroNud.Minimum;
-                numeroestacionamentoNud.Value = numeroestacionamentoNud.Minimum;
                 contatoList.Items.Clear();
                 tipoContatoCB.Text = "";
                 contatoTbox.Clear();
@@ -199,9 +198,7 @@ namespace Conflow
             
         }
         
-        //
-
-
+        // Ao trocar o tipo de pessoa
         private void MudarTipoPessoa()
         {
             if (pessoaFisicaRb.Checked == true)
@@ -236,11 +233,13 @@ namespace Conflow
             }
         }
 
+        // Ao trocar o tipo de pessoa
         private void pessoaFisicaRb_CheckedChanged(object sender, EventArgs e)
         {
             MudarTipoPessoa();
         }
 
+        // Ao trocar o tipo de pessoa
         private void pessoaJuridicaRb_CheckedChanged(object sender, EventArgs e)
         {
             MudarTipoPessoa();
@@ -283,6 +282,7 @@ namespace Conflow
             ComandosSQL.conn.Close();
         }
 
+        // Ao clicar no botão Adicionar contato
         private void adicionarContatoBtn_Click(object sender, EventArgs e)
         {
             if (contatoTbox.Text.Length > 0 && tipoContatoCB.SelectedIndex != -1)
@@ -292,6 +292,7 @@ namespace Conflow
             
         }
 
+        // Ao pressionar o botão Remover contato
         private void removerContatoBtn_Click(object sender, EventArgs e)
         {
             if (contatoList.SelectedIndex >= 0)
@@ -300,6 +301,7 @@ namespace Conflow
             }
         }
 
+        // Ao trocar o tipo de contato que será inserido
         private void tipoContatoCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             contatoTbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
@@ -314,7 +316,7 @@ namespace Conflow
 
         }
 
-
+        // Ao trocar de prédio, atualizar apartamentos
         private void predioList_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (predioList.SelectedRows.Count > 0)
@@ -361,6 +363,15 @@ namespace Conflow
                 ComandosSQL.conn.Close();
             }
             
+        }
+
+        // Atalho para remover um contato da lista
+        private void contatoList_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                removerContatoBtn_Click(null, new EventArgs());
+            }
         }
     }
 }

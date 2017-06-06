@@ -20,12 +20,10 @@ namespace Conflow
 
         AtalhosSQL ComandosSQL = new AtalhosSQL();
 
+        //
         private void contatoList_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            if (e.KeyCode == Keys.Delete)
-            {
-
-            }
+            
         }
 
         private void CriarBtn_Click(object sender, EventArgs e)

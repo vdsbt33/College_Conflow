@@ -34,12 +34,10 @@
             this.pessoaFisicaRb = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.cpfCnpjPanel = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.rgTbox = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.numeroestacionamentoNud = new System.Windows.Forms.NumericUpDown();
             this.datanascimentoDtp = new System.Windows.Forms.DateTimePicker();
             this.nomeTbox = new System.Windows.Forms.TextBox();
             this.CriarBtn = new System.Windows.Forms.Button();
@@ -80,7 +78,6 @@
             this.estadoCBox = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numeroestacionamentoNud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.localizacaoGB.SuspendLayout();
@@ -155,17 +152,6 @@
             this.cpfCnpjPanel.Size = new System.Drawing.Size(284, 65);
             this.cpfCnpjPanel.TabIndex = 5;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 796);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(178, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Número do estacionamento:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -207,19 +193,6 @@
             this.label1.Size = new System.Drawing.Size(49, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
-            // 
-            // numeroestacionamentoNud
-            // 
-            this.numeroestacionamentoNud.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numeroestacionamentoNud.Location = new System.Drawing.Point(197, 794);
-            this.numeroestacionamentoNud.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.numeroestacionamentoNud.Name = "numeroestacionamentoNud";
-            this.numeroestacionamentoNud.Size = new System.Drawing.Size(100, 26);
-            this.numeroestacionamentoNud.TabIndex = 14;
             // 
             // datanascimentoDtp
             // 
@@ -708,16 +681,13 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numeroestacionamentoNud);
             this.Controls.Add(this.datanascimentoDtp);
             this.Controls.Add(this.nomeTbox);
             this.Controls.Add(this.CriarBtn);
             this.Name = "Cadastro_ProprietarioUC";
             this.Size = new System.Drawing.Size(744, 943);
-            ((System.ComponentModel.ISupportInitialize)(this.numeroestacionamentoNud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.localizacaoGB.ResumeLayout(false);
@@ -747,12 +717,10 @@
         private System.Windows.Forms.RadioButton pessoaFisicaRb;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel cpfCnpjPanel;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox rgTbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numeroestacionamentoNud;
         private System.Windows.Forms.DateTimePicker datanascimentoDtp;
         private System.Windows.Forms.TextBox nomeTbox;
         private System.Windows.Forms.Button CriarBtn;

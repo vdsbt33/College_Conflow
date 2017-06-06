@@ -65,7 +65,7 @@
             this.sexoFRBtn.Location = new System.Drawing.Point(175, 5);
             this.sexoFRBtn.Name = "sexoFRBtn";
             this.sexoFRBtn.Size = new System.Drawing.Size(82, 24);
-            this.sexoFRBtn.TabIndex = 66;
+            this.sexoFRBtn.TabIndex = 3;
             this.sexoFRBtn.Text = "Feminino";
             this.sexoFRBtn.UseVisualStyleBackColor = true;
             // 
@@ -88,7 +88,7 @@
             this.sexoMRBtn.Location = new System.Drawing.Point(64, 5);
             this.sexoMRBtn.Name = "sexoMRBtn";
             this.sexoMRBtn.Size = new System.Drawing.Size(87, 24);
-            this.sexoMRBtn.TabIndex = 65;
+            this.sexoMRBtn.TabIndex = 2;
             this.sexoMRBtn.TabStop = true;
             this.sexoMRBtn.Text = "Masculino";
             this.sexoMRBtn.UseVisualStyleBackColor = true;
@@ -113,7 +113,8 @@
             this.predioList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.predioList.ShowCellToolTips = false;
             this.predioList.Size = new System.Drawing.Size(304, 137);
-            this.predioList.TabIndex = 13;
+            this.predioList.StandardTab = true;
+            this.predioList.TabIndex = 5;
             this.predioList.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.predioList_RowEnter);
             // 
             // COD_PREDIO
@@ -152,7 +153,8 @@
             this.apartamentoList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.apartamentoList.ShowCellToolTips = false;
             this.apartamentoList.Size = new System.Drawing.Size(304, 175);
-            this.apartamentoList.TabIndex = 14;
+            this.apartamentoList.StandardTab = true;
+            this.apartamentoList.TabIndex = 6;
             // 
             // COD_APARTAMENTO
             // 
@@ -281,7 +283,7 @@
             this.datanascimentoDtp.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.datanascimentoDtp.Name = "datanascimentoDtp";
             this.datanascimentoDtp.Size = new System.Drawing.Size(166, 26);
-            this.datanascimentoDtp.TabIndex = 71;
+            this.datanascimentoDtp.TabIndex = 4;
             // 
             // nomeTbox
             // 
@@ -289,7 +291,7 @@
             this.nomeTbox.Location = new System.Drawing.Point(73, 111);
             this.nomeTbox.Name = "nomeTbox";
             this.nomeTbox.Size = new System.Drawing.Size(248, 26);
-            this.nomeTbox.TabIndex = 70;
+            this.nomeTbox.TabIndex = 1;
             // 
             // CriarBtn
             // 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Conflow
 {
-    class AtalhosSQL
+    public class AtalhosSQL
     {
         public String str = @"server=127.0.0.1;database=conflow;userid=root;password=123456;";
         public MySqlConnection conn = null;

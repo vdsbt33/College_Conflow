@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pesquisa_PredioUC));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pesquisarBtn = new System.Windows.Forms.Button();
-            this.filtroAtivosChB = new System.Windows.Forms.CheckBox();
             this.filtroTipoCoB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.filtroValorTbox = new System.Windows.Forms.TextBox();
@@ -44,6 +44,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.apagarBtn = new System.Windows.Forms.Button();
             this.pesquisaList = new System.Windows.Forms.DataGridView();
+            this.P_EditarBtn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.P_COD_PREDIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_ID_PREDIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_COD_BLOCO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_ID_BLOCO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_COD_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_ID_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.qtdAndaresNud = new System.Windows.Forms.NumericUpDown();
@@ -60,13 +67,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.identificadorTbox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.P_EditarBtn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.P_COD_PREDIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P_ID_PREDIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P_COD_BLOCO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P_ID_BLOCO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P_COD_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P_ID_CONDOMINIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.cursorToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pesquisaList)).BeginInit();
             this.panel1.SuspendLayout();
@@ -76,12 +78,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qtdAPAndarNud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.pesquisarBtn);
-            this.groupBox1.Controls.Add(this.filtroAtivosChB);
             this.groupBox1.Controls.Add(this.filtroTipoCoB);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.filtroValorTbox);
@@ -103,16 +105,6 @@
             this.pesquisarBtn.TabIndex = 75;
             this.pesquisarBtn.Text = "Pesquisar";
             this.pesquisarBtn.UseVisualStyleBackColor = true;
-            // 
-            // filtroAtivosChB
-            // 
-            this.filtroAtivosChB.AutoSize = true;
-            this.filtroAtivosChB.Location = new System.Drawing.Point(149, 91);
-            this.filtroAtivosChB.Name = "filtroAtivosChB";
-            this.filtroAtivosChB.Size = new System.Drawing.Size(163, 24);
-            this.filtroAtivosChB.TabIndex = 5;
-            this.filtroAtivosChB.Text = "Apenas prédios ativos";
-            this.filtroAtivosChB.UseVisualStyleBackColor = true;
             // 
             // filtroTipoCoB
             // 
@@ -210,14 +202,14 @@
             this.pesquisaList.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.pesquisaList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pesquisaList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pesquisaList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pesquisaList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.pesquisaList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pesquisaList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.P_EditarBtn,
@@ -227,30 +219,91 @@
             this.P_ID_BLOCO,
             this.P_COD_CONDOMINIO,
             this.P_ID_CONDOMINIO});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.pesquisaList.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.pesquisaList.DefaultCellStyle = dataGridViewCellStyle11;
             this.pesquisaList.Location = new System.Drawing.Point(18, 245);
             this.pesquisaList.MultiSelect = false;
             this.pesquisaList.Name = "pesquisaList";
             this.pesquisaList.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pesquisaList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pesquisaList.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.pesquisaList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pesquisaList.ShowCellToolTips = false;
             this.pesquisaList.Size = new System.Drawing.Size(740, 200);
             this.pesquisaList.TabIndex = 60;
+            // 
+            // P_EditarBtn
+            // 
+            this.P_EditarBtn.HeaderText = "Editar";
+            this.P_EditarBtn.MinimumWidth = 68;
+            this.P_EditarBtn.Name = "P_EditarBtn";
+            this.P_EditarBtn.ReadOnly = true;
+            this.P_EditarBtn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.P_EditarBtn.Text = "Editar";
+            this.P_EditarBtn.UseColumnTextForButtonValue = true;
+            this.P_EditarBtn.Width = 68;
+            // 
+            // P_COD_PREDIO
+            // 
+            this.P_COD_PREDIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.P_COD_PREDIO.HeaderText = "Código";
+            this.P_COD_PREDIO.MinimumWidth = 80;
+            this.P_COD_PREDIO.Name = "P_COD_PREDIO";
+            this.P_COD_PREDIO.ReadOnly = true;
+            this.P_COD_PREDIO.Visible = false;
+            // 
+            // P_ID_PREDIO
+            // 
+            this.P_ID_PREDIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.P_ID_PREDIO.HeaderText = "Identificador";
+            this.P_ID_PREDIO.MinimumWidth = 160;
+            this.P_ID_PREDIO.Name = "P_ID_PREDIO";
+            this.P_ID_PREDIO.ReadOnly = true;
+            // 
+            // P_COD_BLOCO
+            // 
+            this.P_COD_BLOCO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.P_COD_BLOCO.HeaderText = "Código Bloco";
+            this.P_COD_BLOCO.Name = "P_COD_BLOCO";
+            this.P_COD_BLOCO.ReadOnly = true;
+            this.P_COD_BLOCO.Visible = false;
+            // 
+            // P_ID_BLOCO
+            // 
+            this.P_ID_BLOCO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.P_ID_BLOCO.HeaderText = "Bloco";
+            this.P_ID_BLOCO.MinimumWidth = 160;
+            this.P_ID_BLOCO.Name = "P_ID_BLOCO";
+            this.P_ID_BLOCO.ReadOnly = true;
+            this.P_ID_BLOCO.Width = 160;
+            // 
+            // P_COD_CONDOMINIO
+            // 
+            this.P_COD_CONDOMINIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.P_COD_CONDOMINIO.HeaderText = "Código Condomínio";
+            this.P_COD_CONDOMINIO.Name = "P_COD_CONDOMINIO";
+            this.P_COD_CONDOMINIO.ReadOnly = true;
+            this.P_COD_CONDOMINIO.Visible = false;
+            // 
+            // P_ID_CONDOMINIO
+            // 
+            this.P_ID_CONDOMINIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.P_ID_CONDOMINIO.HeaderText = "Condomínio";
+            this.P_ID_CONDOMINIO.Name = "P_ID_CONDOMINIO";
+            this.P_ID_CONDOMINIO.ReadOnly = true;
+            this.P_ID_CONDOMINIO.Width = 106;
             // 
             // panel1
             // 
@@ -462,74 +515,28 @@
             this.label9.TabIndex = 82;
             this.label9.Text = "Identificador:";
             // 
-            // P_EditarBtn
+            // pictureBox3
             // 
-            this.P_EditarBtn.HeaderText = "Editar";
-            this.P_EditarBtn.MinimumWidth = 68;
-            this.P_EditarBtn.Name = "P_EditarBtn";
-            this.P_EditarBtn.ReadOnly = true;
-            this.P_EditarBtn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.P_EditarBtn.Text = "Editar";
-            this.P_EditarBtn.UseColumnTextForButtonValue = true;
-            this.P_EditarBtn.Width = 68;
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(18, 18);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.TabIndex = 62;
+            this.pictureBox3.TabStop = false;
+            this.cursorToolTip.SetToolTip(this.pictureBox3, "Essa tela está em construção e possui recursos indisponíveis.");
             // 
-            // P_COD_PREDIO
+            // cursorToolTip
             // 
-            this.P_COD_PREDIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.P_COD_PREDIO.HeaderText = "Código";
-            this.P_COD_PREDIO.MinimumWidth = 80;
-            this.P_COD_PREDIO.Name = "P_COD_PREDIO";
-            this.P_COD_PREDIO.ReadOnly = true;
-            this.P_COD_PREDIO.Visible = false;
-            this.P_COD_PREDIO.Width = 80;
-            // 
-            // P_ID_PREDIO
-            // 
-            this.P_ID_PREDIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.P_ID_PREDIO.HeaderText = "Identificador";
-            this.P_ID_PREDIO.MinimumWidth = 160;
-            this.P_ID_PREDIO.Name = "P_ID_PREDIO";
-            this.P_ID_PREDIO.ReadOnly = true;
-            // 
-            // P_COD_BLOCO
-            // 
-            this.P_COD_BLOCO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.P_COD_BLOCO.HeaderText = "Código Bloco";
-            this.P_COD_BLOCO.Name = "P_COD_BLOCO";
-            this.P_COD_BLOCO.ReadOnly = true;
-            this.P_COD_BLOCO.Visible = false;
-            this.P_COD_BLOCO.Width = 117;
-            // 
-            // P_ID_BLOCO
-            // 
-            this.P_ID_BLOCO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.P_ID_BLOCO.HeaderText = "Bloco";
-            this.P_ID_BLOCO.MinimumWidth = 160;
-            this.P_ID_BLOCO.Name = "P_ID_BLOCO";
-            this.P_ID_BLOCO.ReadOnly = true;
-            this.P_ID_BLOCO.Width = 160;
-            // 
-            // P_COD_CONDOMINIO
-            // 
-            this.P_COD_CONDOMINIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.P_COD_CONDOMINIO.HeaderText = "Código Condomínio";
-            this.P_COD_CONDOMINIO.Name = "P_COD_CONDOMINIO";
-            this.P_COD_CONDOMINIO.ReadOnly = true;
-            this.P_COD_CONDOMINIO.Visible = false;
-            this.P_COD_CONDOMINIO.Width = 154;
-            // 
-            // P_ID_CONDOMINIO
-            // 
-            this.P_ID_CONDOMINIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.P_ID_CONDOMINIO.HeaderText = "Condomínio";
-            this.P_ID_CONDOMINIO.Name = "P_ID_CONDOMINIO";
-            this.P_ID_CONDOMINIO.ReadOnly = true;
-            this.P_ID_CONDOMINIO.Width = 106;
+            this.cursorToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.cursorToolTip.ToolTipTitle = "Em construção:";
             // 
             // Pesquisa_PredioUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pesquisaList);
@@ -547,6 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qtdAPAndarNud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -554,7 +562,6 @@
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button pesquisarBtn;
-        private System.Windows.Forms.CheckBox filtroAtivosChB;
         private System.Windows.Forms.ComboBox filtroTipoCoB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox filtroValorTbox;
@@ -587,5 +594,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn P_ID_BLOCO;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_COD_CONDOMINIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_ID_CONDOMINIO;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.ToolTip cursorToolTip;
     }
 }

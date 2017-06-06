@@ -72,7 +72,7 @@
             this.nomeDoCondominioTbox.Location = new System.Drawing.Point(69, 91);
             this.nomeDoCondominioTbox.Name = "nomeDoCondominioTbox";
             this.nomeDoCondominioTbox.Size = new System.Drawing.Size(221, 26);
-            this.nomeDoCondominioTbox.TabIndex = 46;
+            this.nomeDoCondominioTbox.TabIndex = 1;
             // 
             // label1
             // 
@@ -109,7 +109,7 @@
             this.cidadeTBox.Location = new System.Drawing.Point(65, 76);
             this.cidadeTBox.Name = "cidadeTBox";
             this.cidadeTBox.Size = new System.Drawing.Size(217, 26);
-            this.cidadeTBox.TabIndex = 9;
+            this.cidadeTBox.TabIndex = 4;
             // 
             // label11
             // 
@@ -146,7 +146,7 @@
             this.ruaTBox.Location = new System.Drawing.Point(53, 153);
             this.ruaTBox.Name = "ruaTBox";
             this.ruaTBox.Size = new System.Drawing.Size(241, 26);
-            this.ruaTBox.TabIndex = 5;
+            this.ruaTBox.TabIndex = 6;
             // 
             // label5
             // 
@@ -162,7 +162,7 @@
             this.bairroTbox.Location = new System.Drawing.Point(65, 114);
             this.bairroTbox.Name = "bairroTbox";
             this.bairroTbox.Size = new System.Drawing.Size(217, 26);
-            this.bairroTbox.TabIndex = 3;
+            this.bairroTbox.TabIndex = 5;
             // 
             // label4
             // 
@@ -209,7 +209,7 @@
             this.estadoCBox.Location = new System.Drawing.Point(47, 35);
             this.estadoCBox.Name = "estadoCBox";
             this.estadoCBox.Size = new System.Drawing.Size(77, 28);
-            this.estadoCBox.TabIndex = 1;
+            this.estadoCBox.TabIndex = 3;
             // 
             // label3
             // 
@@ -248,7 +248,7 @@
             this.CriarBtn.Location = new System.Drawing.Point(129, 412);
             this.CriarBtn.Name = "CriarBtn";
             this.CriarBtn.Size = new System.Drawing.Size(97, 29);
-            this.CriarBtn.TabIndex = 61;
+            this.CriarBtn.TabIndex = 8;
             this.CriarBtn.Text = "Cadastrar";
             this.CriarBtn.UseVisualStyleBackColor = true;
             this.CriarBtn.Click += new System.EventHandler(this.CriarBtn_Click);
@@ -270,7 +270,7 @@
             this.telefoneTbox.Mask = "(00) 0000-0000";
             this.telefoneTbox.Name = "telefoneTbox";
             this.telefoneTbox.Size = new System.Drawing.Size(93, 26);
-            this.telefoneTbox.TabIndex = 63;
+            this.telefoneTbox.TabIndex = 2;
             // 
             // Cadastro_CondominioUC
             // 

@@ -21,6 +21,7 @@ namespace Conflow
             this.contaSQL = contaSQL;
         }
 
+        // Botão Desconectar
         private void DesconectarBtn_Click(object sender, EventArgs e)
         {
             contaSQL.SairConta();

@@ -111,6 +111,7 @@
             this.condominioList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.condominioList.ShowCellToolTips = false;
             this.condominioList.Size = new System.Drawing.Size(304, 175);
+            this.condominioList.StandardTab = true;
             this.condominioList.TabIndex = 2;
             // 
             // COD_CONDOMINIO
@@ -157,7 +158,7 @@
             this.CriarBtn.Location = new System.Drawing.Point(133, 411);
             this.CriarBtn.Name = "CriarBtn";
             this.CriarBtn.Size = new System.Drawing.Size(97, 29);
-            this.CriarBtn.TabIndex = 59;
+            this.CriarBtn.TabIndex = 3;
             this.CriarBtn.Text = "Cadastrar";
             this.CriarBtn.UseVisualStyleBackColor = true;
             this.CriarBtn.Click += new System.EventHandler(this.CriarBtn_Click);

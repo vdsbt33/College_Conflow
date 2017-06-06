@@ -43,7 +43,7 @@
             this.avisoTbox.Name = "avisoTbox";
             this.avisoTbox.Size = new System.Drawing.Size(516, 325);
             this.avisoTbox.TabIndex = 0;
-            this.avisoTbox.Text = "O texto de aviso se adapta ao tamanho do Form.";
+            this.avisoTbox.Text = "Sistema de Gerenciamento de Condomínio Conflow\n\nAvisos:\nNenhum aviso.";
             // 
             // AvisosUC
             // 

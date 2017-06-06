@@ -22,6 +22,8 @@ namespace Conflow
 
         public List<Int32> dadosCodsCondominio = new List<Int32>();
         
+
+        // Ao clicar no botão Criar
         private void CriarBtn_Click(object sender, EventArgs e)
         {
             String timestamp_criacao = ComandosSQL.current_timestamp;

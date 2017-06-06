@@ -71,6 +71,7 @@
             this.passwordTbox.PasswordChar = '*';
             this.passwordTbox.Size = new System.Drawing.Size(172, 26);
             this.passwordTbox.TabIndex = 50;
+            this.passwordTbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTbox_KeyDown);
             // 
             // ConectarBtn
             // 

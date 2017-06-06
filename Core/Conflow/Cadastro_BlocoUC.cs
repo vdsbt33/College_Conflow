@@ -19,13 +19,14 @@ namespace Conflow
         }
 
         AtalhosSQL ComandosSQL = new AtalhosSQL();
-        
-        
+
+        // Botão Criar
         private void CriarBtn_Click(object sender, EventArgs e)
         {
 
             DataGridViewSelectedRowCollection linhaSelecionada = condominioList.SelectedRows;
             
+            // Insere um novo bloco no DB
             if (identificadorTbox.Text.Length > 0 && condominioList.SelectedRows.Count > 0)
             {
                 
