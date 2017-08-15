@@ -11,16 +11,27 @@ using MySql.Data.MySqlClient;
 
 namespace Conflow
 {
+    /*
+    Classe: Cadastro_CondominioUC
+    Descrição: Contém os métodos do user control Cadastro_CondominioUC.
+    */
     public partial class Cadastro_CondominioUC : UserControl
     {
+        /*
+        Construtor: Cadastro_CondominioUC()
+        Descrição: -.
+        */
         public Cadastro_CondominioUC()
         {
             InitializeComponent();
         }
 
         AtalhosSQL ComandosSQL = new AtalhosSQL();
-        
-        // Botão Criar
+
+        /*
+        Função: CriarBtn_Click(object sender, EventArgs e)
+        Descrição: Adiciona o Condomínio ao Banco de Dados.
+        */
         private void CriarBtn_Click(object sender, EventArgs e)
         {
             if (nomeDoCondominioTbox.Text.Length > 0 && telefoneTbox.Text.Length > 0 && estadoCBox.SelectedIndex != -1 && cidadeTBox.Text.Length > 0 && bairroTbox.Text.Length > 0 && ruaTBox.Text.Length > 0 && localNumeroNud.Value > 0)

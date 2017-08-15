@@ -11,8 +11,16 @@ using MySql.Data.MySqlClient;
 
 namespace Conflow
 {
+    /*
+    Classe: Cadastro_PredioUC
+    Descrição: Contém os métodos do user control Cadastro_PredioUC.
+    */
     public partial class Cadastro_PredioUC : UserControl
     {
+        /*
+        Construtor: Cadastro_MoradorUC()
+        Descrição: -.
+        */
         public Cadastro_PredioUC()
         {
             InitializeComponent();
@@ -21,9 +29,12 @@ namespace Conflow
         AtalhosSQL ComandosSQL = new AtalhosSQL();
 
         public List<Int32> dadosCodsCondominio = new List<Int32>();
-        
 
-        // Ao clicar no botão Criar
+
+        /*
+        Função: CriarBtn_Click(object sender, EventArgs e)
+        Descrição: Contém os métodos do user control CriarBtn_Click.
+        */
         private void CriarBtn_Click(object sender, EventArgs e)
         {
             String timestamp_criacao = ComandosSQL.current_timestamp;
@@ -73,14 +84,15 @@ namespace Conflow
                         num_apartamento = 0;
                         num_andar++;
                     }
-
-                    // Limpa os campos
-                    identificadorTbox.Clear();
-                    qtdAPAndarNud.Value = qtdAPAndarNud.Minimum;
-                    qtdAndaresNud.Value = qtdAndaresNud.Minimum;
-                    AtualizarLocalizacao();
                     ComandosSQL.ExecutarComandoSql(cmdTxt);
+
                 }
+                // Limpa os campos
+                identificadorTbox.Clear();
+                qtdAPAndarNud.Value = qtdAPAndarNud.Minimum;
+                qtdAndaresNud.Value = qtdAndaresNud.Minimum;
+                AtualizarLocalizacao();
+                
             }
             else
             {
@@ -90,7 +102,11 @@ namespace Conflow
             
         }
 
-        // Atualiza as listas do grupo Localização
+
+        /*
+        Função: AtualizarLocalizacao()
+        Descrição: Atualiza as listas do grupo Localização.
+        */
         public void AtualizarLocalizacao()
         {
             dadosCodsCondominio.Clear();

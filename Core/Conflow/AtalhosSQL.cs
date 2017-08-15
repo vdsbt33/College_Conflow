@@ -10,26 +10,43 @@ using System.Windows.Forms;
 
 namespace Conflow
 {
+    /*
+    Classe: AtalhosSQL
+    Descrição: Contém variáveis e funções para manipular um banco de dados SQL.
+    */
     public class AtalhosSQL
     {
-        public String str = @"server=127.0.0.1;database=conflow;userid=root;password=123456;";
+        public String str = @"server=127.0.0.1;database=conflow;userid=root;password=admin;"; // O servidor, banco de dados, nome de usuário e senha
         public MySqlConnection conn = null;
         public MySqlCommand comandoSql = new MySqlCommand();
 
+
+        /*
+        Construtor: AtalhosSQL()
+        Descrição: Inicializa o objeto com a conexão padrão.
+        */
         public AtalhosSQL()
         {
             comandoSql.Connection = conn;
         }
 
+
+        /*
+        Função: AtalhosSQL(String db)
+        Descrição: Contém variáveis e funções para manipular um banco de dados SQL.
+        */
         public AtalhosSQL(String db)
         {
             str = db;
             comandoSql.Connection = conn;
         }
-        
 
-        // Executa um comando SQL e retorna se houve um erro ou não. True sucesso. False erro.
-        // Possui mensagem de erro
+
+        /*
+        Função: AtalhosSQL(String db)
+        Descrição: Executa um comando SQL e retorna se houve um erro (False) ou não (True).
+                   Exibe uma mensagem de sucesso e uma mensagem de erro.
+        */
         public bool ExecutarComandoSql(String textoCmd, String msgSucesso, String msgExcessao)
         {
             try
@@ -74,8 +91,11 @@ namespace Conflow
         }
 
 
-        // Executa um comando SQL e retorna se houve um erro ou não. True sucesso. False erro.
-        // NÃO possui mensagem de erro
+        /*
+        Função: AtalhosSQL(String db)
+        Descrição: Executa um comando SQL e retorna se houve um erro (False) ou não (True).
+                   Exibe apenas uma mensagem de sucesso.
+        */
         public bool ExecutarComandoSql(String textoCmd, String msgSucesso)
         {
             try
@@ -111,8 +131,12 @@ namespace Conflow
             }
         }
 
-        // Executa um comando SQL e retorna se houve um erro ou não. True sucesso. False erro.
-        // Não exibe nenhuma mensagem
+
+        /*
+        Função: AtalhosSQL(String db)
+        Descrição: Executa um comando SQL e retorna se houve um erro (False) ou não (True).
+                   Não exibe nenhuma mensagem ao terminar.
+        */
         public bool ExecutarComandoSql(String textoCmd)
         {
             try
@@ -143,7 +167,11 @@ namespace Conflow
             }
         }
 
-        // Retorna a data e hora atual no formato do SQL
+
+        /*
+        Propriedade: current_timestamp
+        Descrição: Retorna a data e hora atual no formato do SQL.
+        */
         public String current_timestamp
         {
             get
@@ -152,8 +180,12 @@ namespace Conflow
             }
         }
 
-        // Faz com que valores menores que 10 retornem com um zero antes. Ex: 07, 08, 09, 10.
-        // Como em datas (03/05/2000)
+
+        /*
+        Propriedade: ConverterDataHora(String valor)
+        Descrição: Retorna valores menores que 10 com um zero antes. 
+                   Ex: 07, 08, 09, 10 como em 03/05/2000
+        */
         public String ConverterDataHora(String valor)
         {
             if (Convert.ToInt32(valor) < 10)
@@ -164,7 +196,10 @@ namespace Conflow
         }
 
 
-        // Checa se possui " ou ' no texto. Retorna true se tiver
+        /*
+        Propriedade: ContemSimbolos(String texto)
+        Descrição: Chega se possui " ou ' no texto. Retorna true se houver.
+        */
         public bool ContemSimbolos(String texto)
         {
             if (texto.Contains(Convert.ToChar("'")) || texto.Contains(Convert.ToChar("\"")))

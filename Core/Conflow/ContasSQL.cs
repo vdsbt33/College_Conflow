@@ -8,6 +8,10 @@ using System.Windows.Forms;
 
 namespace Conflow
 {
+    /*
+    Classe: ContasSQL
+    Descrição: Contém variáveis e funções para manipular contas salvas em um banco de dados SQL.
+    */
     public class ContasSQL
     {
         public object cod_conta_conectada = null;
@@ -18,7 +22,11 @@ namespace Conflow
         private Conta_ConectarUC conectarUC;
         private Conta_DesconectarUC desconectarUC;
 
-        // Tenta conectar-se a uma conta e retorna se houve sucesso ou não
+
+        /*
+        Função: EntrarConta(String username, String password)
+        Descrição: Tenta conectar-se a uma conta e retorna se houve sucesso ou não.
+        */
         public bool EntrarConta(String username, String password)
         {
             this.cod_conta_conectada = null;
@@ -70,7 +78,11 @@ namespace Conflow
             return false;
         }
 
-        // Desconecta-se da conta atualmente conectada
+
+        /*
+        Função: SairConta()
+        Descrição: Desconecta-se da conta atualmente conectada.
+        */
         public void SairConta()
         {
             if (this.cod_conta_conectada != null)
@@ -84,7 +96,10 @@ namespace Conflow
         }
 
 
-        // Define o painel onde pode-se conectar a uma conta e desconectar-se
+        /*
+        Função: PainelLogin(PrincipalForm principalForm, Conta_PanelUC contaPanel, Conta_ConectarUC conectarUC, Conta_DesconectarUC desconectarUC)
+        Descrição: Define o painel onde pode-se conectar a uma conta e desconectar-se.
+        */
         public void PainelLogin(PrincipalForm principalForm, Conta_PanelUC contaPanel, Conta_ConectarUC conectarUC, Conta_DesconectarUC desconectarUC)
         {
             this.principalForm = principalForm;

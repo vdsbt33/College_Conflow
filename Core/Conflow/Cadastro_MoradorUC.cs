@@ -11,8 +11,16 @@ using MySql.Data.MySqlClient;
 
 namespace Conflow
 {
+    /*
+    Classe: Cadastro_MoradorUC
+    Descrição: Contém os métodos do user control Cadastro_MoradorUC.
+    */
     public partial class Cadastro_MoradorUC : UserControl
     {
+        /*
+        Construtor: Cadastro_MoradorUC()
+        Descrição: -.
+        */
         public Cadastro_MoradorUC()
         {
             InitializeComponent();
@@ -20,12 +28,10 @@ namespace Conflow
 
         AtalhosSQL ComandosSQL = new AtalhosSQL();
 
-        //
-        private void contatoList_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            
-        }
-
+        /*
+        Função: CriarBtn_Click(object sender, EventArgs e)
+        Descrição: Adiciona o Morador ao Banco de Dados.
+        */
         private void CriarBtn_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection linhaSelecionada = apartamentoList.SelectedRows;
@@ -81,7 +87,10 @@ namespace Conflow
             }
         }
 
-        // Atualiza as listas do grupo Localização
+        /*
+        Função: AtualizarLocalizacao()
+        Descrição: Atualiza as listas do grupo Localização.
+        */
         public void AtualizarLocalizacao()
         {
             try
@@ -117,6 +126,11 @@ namespace Conflow
             ComandosSQL.conn.Close();
         }
 
+
+        /*
+        Função: predioList_RowEnter(object sender, DataGridViewCellEventArgs e)
+        Descrição: Atualiza a lista de Prédios.
+        */
         private void predioList_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (predioList.SelectedRows.Count > 0)

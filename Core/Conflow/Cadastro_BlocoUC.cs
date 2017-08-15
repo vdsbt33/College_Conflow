@@ -11,8 +11,16 @@ using MySql.Data.MySqlClient;
 
 namespace Conflow
 {
+    /*
+    Classe: Cadastro_BlocoUC
+    Descrição: Contém os métodos do user control Cadastro_BlocoUC.
+    */
     public partial class Cadastro_BlocoUC : UserControl
     {
+        /*
+        Construtor: AjudaUC()
+        Descrição: -.
+        */
         public Cadastro_BlocoUC()
         {
             InitializeComponent();
@@ -20,7 +28,10 @@ namespace Conflow
 
         AtalhosSQL ComandosSQL = new AtalhosSQL();
 
-        // Botão Criar
+        /*
+        Função: CriarBtn_Click(object sender, EventArgs e)
+        Descrição: Adiciona o Bloco ao Banco de Dados.
+        */
         private void CriarBtn_Click(object sender, EventArgs e)
         {
 
@@ -54,10 +65,12 @@ namespace Conflow
 
             
         }
-        
 
 
-        // Atualiza as listas do grupo Localização
+        /*
+        Função: AtualizarLocalizacao()
+        Descrição: Atualiza as listas do grupo Localização.
+        */
         public void AtualizarLocalizacao()
         {
             

@@ -11,8 +11,16 @@ using System.IO;
 
 namespace Conflow
 {
+    /*
+    Classe: AjudaUC
+    Descrição: Contém os métodos do user control AjudaUC.
+    */
     public partial class AjudaUC : UserControl
     {
+        /*
+        Construtor: AjudaUC()
+        Descrição: Exibe a página HTML de ajuda ao criar uma instância da classe.
+        */
         public AjudaUC()
         {
             InitializeComponent();

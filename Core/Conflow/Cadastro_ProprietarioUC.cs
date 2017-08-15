@@ -11,7 +11,10 @@ using MySql.Data.MySqlClient;
 
 namespace Conflow
 {
-
+    /*
+    Classe: Cadastro_ProprietarioUC
+    Descrição: Contém os métodos do user control Cadastro_ProprietarioUC.
+    */
     public partial class Cadastro_ProprietarioUC : UserControl
     {
         private UCPessoa_Fisica ucPFisica = null;
@@ -20,6 +23,11 @@ namespace Conflow
 
         AtalhosSQL ComandosSQL = new AtalhosSQL();
 
+
+        /*
+        Construtor: Cadastro_MoradorUC()
+        Descrição: -.
+        */
         public Cadastro_ProprietarioUC()
         {
             InitializeComponent();
@@ -27,8 +35,12 @@ namespace Conflow
             MudarTipoPessoa();
             
         }
-        
-        // Ao clicar no botão Criar
+
+
+        /*
+        Função: CriarBtn_Click(object sender, EventArgs e)
+        Descrição: Adiciona o Proprietário ao Banco de Dados.
+        */
         private void CriarBtn_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection linhaSelecionada = apartamentoList.SelectedRows;
@@ -197,8 +209,12 @@ namespace Conflow
 
             
         }
-        
-        // Ao trocar o tipo de pessoa
+
+
+        /*
+        Função: MudarTipoPessoa()
+        Descrição: Alterar os controls ao alternar entre CPF / CNPJ.
+        */
         private void MudarTipoPessoa()
         {
             if (pessoaFisicaRb.Checked == true)
@@ -233,6 +249,11 @@ namespace Conflow
             }
         }
 
+
+        /*
+        Função: predioList_RowEnter(object sender, DataGridViewCellEventArgs e)
+        Descrição: Atualiza a lista de Prédios.
+        */
         // Ao trocar o tipo de pessoa
         private void pessoaFisicaRb_CheckedChanged(object sender, EventArgs e)
         {
@@ -245,8 +266,11 @@ namespace Conflow
             MudarTipoPessoa();
         }
 
-        
-        // Atualiza as listas do grupo Localização
+
+        /*
+        Função: AtualizarLocalizacao()
+        Descrição: Atualiza as listas do grupo Localização.
+        */
         public void AtualizarLocalizacao()
         {
             try
@@ -282,7 +306,11 @@ namespace Conflow
             ComandosSQL.conn.Close();
         }
 
-        // Ao clicar no botão Adicionar contato
+
+        /*
+        Função: AtualizarLocalizacao()
+        Descrição: Adiciona um meio de contato ao Proprietário.
+        */
         private void adicionarContatoBtn_Click(object sender, EventArgs e)
         {
             if (contatoTbox.Text.Length > 0 && tipoContatoCB.SelectedIndex != -1)
@@ -292,7 +320,11 @@ namespace Conflow
             
         }
 
-        // Ao pressionar o botão Remover contato
+
+        /*
+        Função: AtualizarLocalizacao()
+        Descrição: Remove o meio de contato selecionado do Proprietário.
+        */
         private void removerContatoBtn_Click(object sender, EventArgs e)
         {
             if (contatoList.SelectedIndex >= 0)
@@ -301,7 +333,11 @@ namespace Conflow
             }
         }
 
-        // Ao trocar o tipo de contato que será inserido
+
+        /*
+        Função: AtualizarLocalizacao()
+        Descrição: Altera a máscara do campo ao mudar o tipo de meio de contato a ser adicionado.
+        */
         private void tipoContatoCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             contatoTbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
@@ -316,7 +352,11 @@ namespace Conflow
 
         }
 
-        // Ao trocar de prédio, atualizar apartamentos
+
+        /*
+        Função: AtualizarLocalizacao()
+        Descrição: Atualiza a lista de Apartamentos ao trocar o Prédio selecionado.
+        */
         private void predioList_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (predioList.SelectedRows.Count > 0)
@@ -365,7 +405,11 @@ namespace Conflow
             
         }
 
-        // Atalho para remover um contato da lista
+
+        /*
+        Função: AtualizarLocalizacao()
+        Descrição: Remove o contato selecionado ao pressionar a tecla Delete.
+        */
         private void contatoList_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)

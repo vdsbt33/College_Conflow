@@ -10,8 +10,16 @@ using System.Windows.Forms;
 
 namespace Conflow
 {
+    /*
+    Classe: AvisosUC
+    Descrição: Contém os métodos do user control AvisosUC.
+    */
     public partial class AvisosUC : UserControl
     {
+        /*
+        Construtor: AvisosUC()
+        Descrição: -.
+        */
         public AvisosUC()
         {
             InitializeComponent();

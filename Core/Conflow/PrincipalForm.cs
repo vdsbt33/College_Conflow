@@ -10,9 +10,16 @@ using System.Windows.Forms;
 
 namespace Conflow
 {
+    /*
+    Classe: PrincipalForm
+    Descrição: Contém os métodos do form PrincipalForm.
+    */
     public partial class PrincipalForm : Form
     {
-        // Construtor do Form
+        /*
+        Construtor: PrincipalForm()
+        Descrição: -.
+        */
         public PrincipalForm()
         {
             InitializeComponent();
@@ -41,7 +48,11 @@ namespace Conflow
         ConfigurarUC configurarUC = new ConfigurarUC();
         AjudaUC ajudaUC = new AjudaUC();
 
-        // Botão Avisos
+
+        /*
+        Função: AvisosBtn_Click(object sender, EventArgs e)
+        Descrição: Inicia o user control Avisos
+        */
         private void AvisosBtn_Click(object sender, EventArgs e)
         {
             FormPanel.Controls.Clear();
@@ -49,7 +60,11 @@ namespace Conflow
             FormPanel.Controls.Add(avisosUC);
         }
 
-        // Botão Conectar
+
+        /*
+        Função: ConectarBtn_Click(object sender, EventArgs e)
+        Descrição: Inicia o user control Conectar
+        */
         private void ConectarBtn_Click(object sender, EventArgs e)
         {
             FormPanel.Controls.Clear();
@@ -63,7 +78,11 @@ namespace Conflow
                             }
         }
 
-        // Botão Pesquisar
+
+        /*
+        Função: PesquisarBtn_Click(object sender, EventArgs e)
+        Descrição: Inicia o user control Pesquisar
+        */
         private void PesquisarBtn_Click(object sender, EventArgs e)
         {
 
@@ -72,7 +91,11 @@ namespace Conflow
             FormPanel.Controls.Add(pesquisaOpcoesUC);
         }
 
-        // Botão Cadastrar
+
+        /*
+        Função: CadastrarBtn_Click(object sender, EventArgs e)
+        Descrição: Inicia o user control Cadastrar
+        */
         private void CadastrarBtn_Click(object sender, EventArgs e)
         {
             
@@ -81,7 +104,11 @@ namespace Conflow
             FormPanel.Controls.Add(cadastroOpcoesUC);
         }
 
-        // Botão Configurar
+
+        /*
+        Função: ConfigurarBtn_Click(object sender, EventArgs e)
+        Descrição: Inicia o user control Configurar
+        */
         private void ConfigurarBtn_Click(object sender, EventArgs e)
         {
             FormPanel.Controls.Clear();
@@ -89,7 +116,11 @@ namespace Conflow
             FormPanel.Controls.Add(configurarUC);
         }
 
-        // Botão Ajuda
+
+        /*
+        Função: AjudaBtn_Click(object sender, EventArgs e)
+        Descrição: Inicia o user control Ajuda
+        */
         private void AjudaBtn_Click(object sender, EventArgs e)
         {
             FormPanel.Controls.Clear();
@@ -97,7 +128,11 @@ namespace Conflow
             FormPanel.Controls.Add(ajudaUC);
         }
 
-        // Fecha o programa
+
+        /*
+        Função: SairBtn_Click(object sender, EventArgs e)
+        Descrição: Inicia o user control Sair
+        */
         private void SairBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja realmente encerrar o programa?", "Encerrar programa", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
@@ -107,6 +142,11 @@ namespace Conflow
             }
         }
 
+
+        /*
+        Função: PrincipalForm_KeyDown(object sender, KeyEventArgs e)
+        Descrição: Contém as teclas de atalho para os principais botões
+        */
         // Teclas de atalho
         private void PrincipalForm_KeyDown(object sender, KeyEventArgs e)
         {
@@ -147,7 +187,11 @@ namespace Conflow
             }
         }
 
-        // Muda os controls do programa de acordo com a conta
+
+        /*
+        Função: AtualizarContaConectada()
+        Descrição: Muda os controls do programa de acordo com a conta
+        */
         public void AtualizarContaConectada()
         {
             if (contaSQL.cod_conta_conectada != null)
