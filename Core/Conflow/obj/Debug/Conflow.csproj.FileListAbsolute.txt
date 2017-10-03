@@ -29,3 +29,34 @@ D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.AjudaUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Cadastro_MoradorUC.resources
 D:\UNIP\Projeto Integrado Multidisciplinar III\Conflow\Conflow\obj\Debug\Conflow.Pesquisa_MoradorUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.csprojResolveAssemblyReference.cache
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.AjudaUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.AvisosUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Cadastro_BlocoUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Cadastro_CondominioUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Cadastro_MoradorUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Cadastro_OpcoesUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Cadastro_ProprietarioUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Cadastro_PredioUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Conta_ConectarUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.ConfigurarUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Conta_DesconectarUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Conta_PanelUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Pesquisa_BlocoUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Pesquisa_CondominioUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Pesquisa_MoradorUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Pesquisa_PredioUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Pesquisa_ProprietarioUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Pesquisa_OpcoesUC.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.PrincipalForm.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.Properties.Resources.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.UCPessoa_Fisica.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.UCPessoa_Juridica.resources
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.csproj.GenerateResource.Cache
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.csproj.CoreCompileInputs.cache
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.exe
+D:\Faculdade\PIM IV\Conflow\obj\Debug\Conflow.pdb
+D:\Faculdade\PIM IV\Conflow\bin\Debug\Conflow.exe.config
+D:\Faculdade\PIM IV\Conflow\bin\Debug\Conflow.exe
+D:\Faculdade\PIM IV\Conflow\bin\Debug\Conflow.pdb
+D:\Faculdade\PIM IV\Conflow\bin\Debug\MySql.Data.xml

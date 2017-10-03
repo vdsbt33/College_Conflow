@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,191 +48,215 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AjudaUC.cs">
+    <Compile Include="Models\Bloco\Bloco.cs" />
+    <Compile Include="Models\Bloco\IBlocoDao.cs" />
+    <Compile Include="Models\Condominio\Condominio.cs" />
+    <Compile Include="Models\Condominio\ICondominioDao.cs" />
+    <Compile Include="Models\Proprietario\IProprietarioDao.cs" />
+    <Compile Include="Models\Predio\IPredioDao.cs" />
+    <Compile Include="Models\Morador\IMoradorDao.cs" />
+    <Compile Include="Models\Morador\Morador.cs" />
+    <Compile Include="Models\Predio\Predio.cs" />
+    <Compile Include="Models\Proprietario\IProprietario_CNPJDao.cs" />
+    <Compile Include="Models\Proprietario\IProprietario_ContatoDao.cs" />
+    <Compile Include="Models\Proprietario\IProprietario_CPFDao.cs" />
+    <Compile Include="Models\Proprietario\Proprietario.cs" />
+    <Compile Include="Models\Proprietario\Proprietario_CNPJ.cs" />
+    <Compile Include="Models\Proprietario\Proprietario_Contato.cs" />
+    <Compile Include="Models\Proprietario\Proprietario_CPF.cs" />
+    <Compile Include="Views\AjudaUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AjudaUC.Designer.cs">
+    <Compile Include="Views\AjudaUC.Designer.cs">
       <DependentUpon>AjudaUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="AvisosUC.cs">
+    <Compile Include="Views\AvisosUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AvisosUC.Designer.cs">
+    <Compile Include="Views\AvisosUC.Designer.cs">
       <DependentUpon>AvisosUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro_BlocoUC.cs">
+    <Compile Include="Views\Cadastro\Cadastro_BlocoUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Cadastro_BlocoUC.Designer.cs">
+    <Compile Include="Views\Cadastro\Cadastro_BlocoUC.Designer.cs">
       <DependentUpon>Cadastro_BlocoUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro_CondominioUC.cs">
+    <Compile Include="Views\Cadastro\Cadastro_CondominioUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Cadastro_CondominioUC.Designer.cs">
+    <Compile Include="Views\Cadastro\Cadastro_CondominioUC.Designer.cs">
       <DependentUpon>Cadastro_CondominioUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro_MoradorUC.cs">
+    <Compile Include="Views\Cadastro\Cadastro_MoradorUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Cadastro_MoradorUC.Designer.cs">
+    <Compile Include="Views\Cadastro\Cadastro_MoradorUC.Designer.cs">
       <DependentUpon>Cadastro_MoradorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro_OpcoesUC.cs">
+    <Compile Include="Views\Cadastro\Cadastro_OpcoesUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Cadastro_OpcoesUC.Designer.cs">
+    <Compile Include="Views\Cadastro\Cadastro_OpcoesUC.Designer.cs">
       <DependentUpon>Cadastro_OpcoesUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro_ProprietarioUC.cs">
+    <Compile Include="Views\Cadastro\Cadastro_ProprietarioUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Cadastro_ProprietarioUC.Designer.cs">
+    <Compile Include="Views\Cadastro\Cadastro_ProprietarioUC.Designer.cs">
       <DependentUpon>Cadastro_ProprietarioUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro_PredioUC.cs">
+    <Compile Include="Views\Cadastro\Cadastro_PredioUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Cadastro_PredioUC.Designer.cs">
+    <Compile Include="Views\Cadastro\Cadastro_PredioUC.Designer.cs">
       <DependentUpon>Cadastro_PredioUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="AtalhosSQL.cs" />
-    <Compile Include="ContasSQL.cs" />
-    <Compile Include="Conta_ConectarUC.cs">
+    <Compile Include="Controllers\BlocoDao.cs" />
+    <Compile Include="Controllers\CondominioDao.cs" />
+    <Compile Include="Controllers\MoradorDao.cs" />
+    <Compile Include="Controllers\PredioDao.cs" />
+    <Compile Include="Controllers\ProprietarioDao.cs" />
+    <Compile Include="Controllers\Proprietario_CNPJDao.cs" />
+    <Compile Include="Controllers\Proprietario_ContatoDao.cs" />
+    <Compile Include="Controllers\Proprietario_CPFDao.cs" />
+    <Compile Include="Controllers\SQL\AtalhosSQL.cs" />
+    <Compile Include="Controllers\SQL\ContasSQL.cs" />
+    <Compile Include="Views\Conta\Conta_ConectarUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Conta_ConectarUC.Designer.cs">
+    <Compile Include="Views\Conta\Conta_ConectarUC.Designer.cs">
       <DependentUpon>Conta_ConectarUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConfigurarUC.cs">
+    <Compile Include="Views\ConfigurarUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ConfigurarUC.Designer.cs">
+    <Compile Include="Views\ConfigurarUC.Designer.cs">
       <DependentUpon>ConfigurarUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Conta_PanelUC.cs">
+    <Compile Include="Views\Conta\Conta_PanelUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Conta_PanelUC.Designer.cs">
+    <Compile Include="Views\Conta\Conta_PanelUC.Designer.cs">
       <DependentUpon>Conta_PanelUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Conta_DesconectarUC.cs">
+    <Compile Include="Views\Conta\Conta_DesconectarUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Conta_DesconectarUC.Designer.cs">
+    <Compile Include="Views\Conta\Conta_DesconectarUC.Designer.cs">
       <DependentUpon>Conta_DesconectarUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pesquisa_BlocoUC.cs">
+    <Compile Include="Views\Pesquisa\Pesquisa_BlocoUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pesquisa_BlocoUC.Designer.cs">
+    <Compile Include="Views\Pesquisa\Pesquisa_BlocoUC.Designer.cs">
       <DependentUpon>Pesquisa_BlocoUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pesquisa_CondominioUC.cs">
+    <Compile Include="Views\Pesquisa\Pesquisa_CondominioUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pesquisa_CondominioUC.Designer.cs">
+    <Compile Include="Views\Pesquisa\Pesquisa_CondominioUC.Designer.cs">
       <DependentUpon>Pesquisa_CondominioUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pesquisa_MoradorUC.cs">
+    <Compile Include="Views\Pesquisa\Pesquisa_MoradorUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pesquisa_MoradorUC.Designer.cs">
+    <Compile Include="Views\Pesquisa\Pesquisa_MoradorUC.Designer.cs">
       <DependentUpon>Pesquisa_MoradorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pesquisa_PredioUC.cs">
+    <Compile Include="Views\Pesquisa\Pesquisa_PredioUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pesquisa_PredioUC.Designer.cs">
+    <Compile Include="Views\Pesquisa\Pesquisa_PredioUC.Designer.cs">
       <DependentUpon>Pesquisa_PredioUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pesquisa_ProprietarioUC.cs">
+    <Compile Include="Views\Pesquisa\Pesquisa_ProprietarioUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pesquisa_ProprietarioUC.Designer.cs">
+    <Compile Include="Views\Pesquisa\Pesquisa_ProprietarioUC.Designer.cs">
       <DependentUpon>Pesquisa_ProprietarioUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pesquisa_OpcoesUC.cs">
+    <Compile Include="Views\Pesquisa\Pesquisa_OpcoesUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pesquisa_OpcoesUC.Designer.cs">
+    <Compile Include="Views\Pesquisa\Pesquisa_OpcoesUC.Designer.cs">
       <DependentUpon>Pesquisa_OpcoesUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrincipalForm.cs">
+    <Compile Include="Views\PrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PrincipalForm.Designer.cs">
+    <Compile Include="Views\PrincipalForm.Designer.cs">
       <DependentUpon>PrincipalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UCPessoa_Fisica.cs">
+    <Compile Include="Views\UCPessoa_Fisica.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCPessoa_Fisica.Designer.cs">
+    <Compile Include="Views\UCPessoa_Fisica.Designer.cs">
       <DependentUpon>UCPessoa_Fisica.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCPessoa_Juridica.cs">
+    <Compile Include="Views\UCPessoa_Juridica.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCPessoa_Juridica.Designer.cs">
+    <Compile Include="Views\UCPessoa_Juridica.Designer.cs">
       <DependentUpon>UCPessoa_Juridica.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AjudaUC.resx">
+    <EmbeddedResource Include="Views\AjudaUC.resx">
       <DependentUpon>AjudaUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AvisosUC.resx">
+    <EmbeddedResource Include="Views\AvisosUC.resx">
       <DependentUpon>AvisosUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro_BlocoUC.resx">
+    <EmbeddedResource Include="Views\Cadastro\Cadastro_BlocoUC.resx">
       <DependentUpon>Cadastro_BlocoUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro_CondominioUC.resx">
+    <EmbeddedResource Include="Views\Cadastro\Cadastro_CondominioUC.resx">
       <DependentUpon>Cadastro_CondominioUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro_MoradorUC.resx">
+    <EmbeddedResource Include="Views\Cadastro\Cadastro_MoradorUC.resx">
       <DependentUpon>Cadastro_MoradorUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro_OpcoesUC.resx">
+    <EmbeddedResource Include="Views\Cadastro\Cadastro_OpcoesUC.resx">
       <DependentUpon>Cadastro_OpcoesUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro_ProprietarioUC.resx">
+    <EmbeddedResource Include="Views\Cadastro\Cadastro_ProprietarioUC.resx">
       <DependentUpon>Cadastro_ProprietarioUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro_PredioUC.resx">
+    <EmbeddedResource Include="Views\Cadastro\Cadastro_PredioUC.resx">
       <DependentUpon>Cadastro_PredioUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Conta_ConectarUC.resx">
+    <EmbeddedResource Include="Views\Conta\Conta_ConectarUC.resx">
       <DependentUpon>Conta_ConectarUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConfigurarUC.resx">
+    <EmbeddedResource Include="Views\ConfigurarUC.resx">
       <DependentUpon>ConfigurarUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Conta_DesconectarUC.resx">
+    <EmbeddedResource Include="Views\Conta\Conta_DesconectarUC.resx">
       <DependentUpon>Conta_DesconectarUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Conta_PanelUC.resx">
+    <EmbeddedResource Include="Views\Conta\Conta_PanelUC.resx">
       <DependentUpon>Conta_PanelUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pesquisa_BlocoUC.resx">
+    <EmbeddedResource Include="Views\Pesquisa\Pesquisa_BlocoUC.resx">
       <DependentUpon>Pesquisa_BlocoUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pesquisa_CondominioUC.resx">
+    <EmbeddedResource Include="Views\Pesquisa\Pesquisa_CondominioUC.resx">
       <DependentUpon>Pesquisa_CondominioUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pesquisa_MoradorUC.resx">
+    <EmbeddedResource Include="Views\Pesquisa\Pesquisa_MoradorUC.resx">
       <DependentUpon>Pesquisa_MoradorUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pesquisa_PredioUC.resx">
+    <EmbeddedResource Include="Views\Pesquisa\Pesquisa_PredioUC.resx">
       <DependentUpon>Pesquisa_PredioUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pesquisa_ProprietarioUC.resx">
+    <EmbeddedResource Include="Views\Pesquisa\Pesquisa_ProprietarioUC.resx">
       <DependentUpon>Pesquisa_ProprietarioUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pesquisa_OpcoesUC.resx">
+    <EmbeddedResource Include="Views\Pesquisa\Pesquisa_OpcoesUC.resx">
       <DependentUpon>Pesquisa_OpcoesUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PrincipalForm.resx">
+    <EmbeddedResource Include="Views\PrincipalForm.resx">
       <DependentUpon>PrincipalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -239,10 +264,10 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCPessoa_Fisica.resx">
+    <EmbeddedResource Include="Views\UCPessoa_Fisica.resx">
       <DependentUpon>UCPessoa_Fisica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCPessoa_Juridica.resx">
+    <EmbeddedResource Include="Views\UCPessoa_Juridica.resx">
       <DependentUpon>UCPessoa_Juridica.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
