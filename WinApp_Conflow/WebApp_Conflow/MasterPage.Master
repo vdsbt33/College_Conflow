@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="WebApp_Conflow.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+            <div id="upper">
+                <div id="top">
+                    <div id="text">
+                        <h1>Cistine Condomínios & Cia</h1>
+                        <h3>Realizando sonhos</h3>
+                    </div>
+
+                    <div id="navigation">
+                        <a href="index.aspx" id="nav-inicio" class="nav-button" title="Início"></a>
+                        <a href="imagens.aspx" id="nav-imagens" class="nav-button" title="Imagens"></a>
+                        <a href="sobre.aspx" id="nav-sobre" class="nav-button" title="Sobre nós"></a>
+                        <a href="usuario.aspx" id="nav-usuario" class="nav-button" title="Acesso do usuário"></a>
+
+                    </div>
+                </div>
+
+                <div id="center">
+                    <div class="content">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+
+            <div id="lower">
+                <div id="bottom">
+                    <div id="social">
+                        <h3>Nos siga nas redes sociais.</h3>
+                        <span style="height: 8px; display: block;"></span>
+                        <a href="https://www.facebook.com/" id="soc-facebook" class="soc-button" title="Facebook"></a>
+                        <a href="https://twitter.com/" id="soc-twitter" class="soc-button" title="Twitter"></a>
+                        <a href="https://plus.google.com/" id="soc-googleplus" class="soc-button" title="Google+"></a>
+                    </div>
+                    <div id="credits">
+                        <div>Ícones feitos por <a href="http://www.freepik.com" title="Freepik">Freepik</a> e <a href="http://www.smashicons.com" title="Smashicons">Smashicons</a> de <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>. Licenciado pela <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+                    </div>
+                </div>
+            </div>
+
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,240 @@
+﻿/*
+    Cores:
+    Light Blue : 3, 169, 244
+    Dark Blue : 22, 139, 191
+    Teal : 100, 255, 218
+    Dark Teal : 90, 199, 173
+
+    Light Gray : 239, 239, 239
+    Dark Gray : 66, 66, 66
+
+*/
+
+body {
+    background: url(../img/background.jpg);
+    font-family: 'Trebuchet MS'; 
+    margin: 0;
+
+}
+
+h1 {
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 12px 12px 12px 12px;
+    margin: 0px 4px 0px 4px;
+    background: rgb(100, 255, 218);
+
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+
+}
+
+li:hover {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    background: rgb(90, 199, 173);
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#upper {
+    background: rgba(0, 0, 0, 0.8);
+    margin: 0px 10% 0px 10%;
+    box-shadow: 1px 2px 6px 0.2px rgba(0, 0, 0, 0.4);
+}
+
+#top {
+    padding: 0 0px 12px 0px;
+    background: rgba(3, 169, 244, 0.8);
+    text-align: center;
+}
+
+#top #text {
+    padding: 8px 6px 8px 6px;
+    margin: 0px 6px 0px 6px;
+}
+
+#top #navigation {
+    padding: 8px 6px 4px 6px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#center {
+    display: inline-block;
+    width: 100%;
+    background: rgba(3, 169, 244, 0.8);
+}
+
+#center .content {
+    margin: 0px 0px 24px 0px;
+}
+
+#center .variation {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#lower {
+    background: rgba(0, 0, 0, 0.8);
+    margin: 24px 10% 0px 10%;
+    box-shadow: 1px 2px 6px 0.2px rgba(0, 0, 0, 0.4);
+}
+
+#bottom {
+    background: rgba(3, 169, 244, 0.8);
+    padding: 8px;
+    text-align: center;
+    margin: 0px 0px 24px 0px;
+}
+
+#bottom #social .soc-button {
+    width: 32px;
+    height: 32px;
+    margin: 0px 2px 0px 2px;
+    display: inline-block;
+    background: rgb(100, 255, 218);
+    border-radius: 50%;
+    box-shadow: 0px -1px 1px 0px rgba(0, 0, 0, 0.2) inset;
+    transition: 0.12s ease-in-out;
+}
+
+#bottom #social .soc-button:hover {
+    box-shadow: 0px -1px 1px 20px rgba(0, 0, 0, 0.2) inset;
+}
+
+
+#bottom #social #soc-facebook {
+    background-image: url(../img/svg/facebook.svg);
+    background-size: cover;
+}
+
+#bottom #social #soc-twitter {
+    background-image: url(../img/svg/twitter.svg);
+    background-size: cover;
+}
+
+#bottom #social #soc-googleplus {
+    background-image: url(../img/svg/google-plus.svg);
+    background-size: cover;
+}
+
+#bottom #credits {
+    margin: 24px 0px 0px 0px;
+}
+
+#nav-inicio {
+    background-image: url(../img/svg/home.svg);
+    background-size: cover;
+}
+
+#nav-imagens {
+    background-image: url(../img/svg/photo-camera.svg);
+    background-size: cover;
+}
+
+#nav-sobre {
+    background-image: url(../img/svg/file.svg);
+    background-size: cover;
+}
+
+#nav-usuario {
+    background-image: url(../img/svg/user.svg);
+    background-size: cover;
+}
+
+.nav-button {
+    width: 48px;
+    height: 48px;
+    margin: 0px 4px 0px 4px;
+    display: inline-block;
+    background: rgb(100, 255, 218);
+    border-radius: 50%;
+    box-shadow: 0px -1px 1px 0px rgba(0, 0, 0, 0.2) inset;
+    transition: 0.12s ease-in-out;
+}
+
+.nav-button:hover {
+    margin: 0 12px 0px 12px;
+    box-shadow: 0px -1px 1px 0px rgba(0, 0, 0, 0.2) inset, 0px 0px 1px 32px rgba(255, 255, 255, 0.2) inset;
+    /*background: rgb(90, 199, 173);*/
+}
+
+.nav-button:active {
+    box-shadow: 0px 0px 1px 32px rgba(0, 0, 0, 0.2) inset;
+}
+
+.img-panel {
+    display: inline-table;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.img-panel a {
+    color: black;
+}
+
+.img-display {
+    width: 250px;
+    height: auto;
+    float: left;
+    padding: 6px 6px 4px 6px;
+    margin: 12px 6px 12px 12px;
+    background: rgba(0, 0, 0, 0.1);
+
+    cursor: pointer;
+    transition: 0.1s ease-in-out
+}
+
+.img-display:hover {
+    box-shadow: 0px 0px 1px 32px rgba(255, 255, 255, 0.2) inset;
+}
+
+.btn {
+    cursor: pointer;
+    border-radius: 25px;
+    padding: 6px 8px 6px 8px;
+    background: rgb(100, 255, 218);
+    color: black;
+    border: none;
+    display: inline-block;
+
+    transition: 0.1s ease-in-out;
+    box-shadow: 0px -1px 1px 0px rgba(0, 0, 0, 0.2) inset;
+}
+
+.btn:hover {
+    box-shadow: 0px -1px 1px 0px rgba(0, 0, 0, 0.2) inset, 0px 0px 1px 32px rgba(255, 255, 255, 0.2) inset;
+}
+
+.tbox {
+    border-radius: 25px;
+    padding: 2px 6px 2px 6px;
+    background: rgb(100, 255, 218);
+    color: black;
+
+    border: 2px solid rgba(90, 199, 173, 0.0);
+    transition: 0.2s ease-in-out;
+}
+
+.tbox:focus {
+    border: 2px solid rgba(90, 199, 173, 1.0);
+}
